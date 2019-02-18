@@ -1,5 +1,6 @@
-package com.epam.travelagency.bean;
+package config;
 
+import com.epam.travelagency.bean.User;
 import com.epam.travelagency.repository.UserRepository;
 import com.epam.travelagency.storage.posgresql.UserDataContext;
 import com.zaxxer.hikari.HikariDataSource;
@@ -8,33 +9,33 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 @Configuration
-public class AppConfig {
+public class TestConfig {
+
     @Bean
-    public User getUser(){
+    public User getUser() {
         return new User();
     }
 
     @Bean
-    public HikariDataSource getDataSource(){
+    public HikariDataSource getDataSource() {
         HikariDataSource dataSource = new HikariDataSource();
-        dataSource.setDriverClassName("org.postgresql.Driver");
-        dataSource.setJdbcUrl("jdbc:postgresql://localhost:5432/travelagencydb");
-        dataSource.setUsername("postgres");
-        dataSource.setPassword("1623107");
+        dataSource.setDriverClassName("org.h2.Driver");
+        dataSource.setJdbcUrl("jdbc:h2:mem:dbtest;DB_CLOSE_DELAY=-1");
         return dataSource;
     }
 
     @Bean
-    public JdbcTemplate getJdbcTemplate(){
+    public JdbcTemplate getJdbcTemplate() {
         return new JdbcTemplate(getDataSource());
     }
 
     @Bean
-    public UserDataContext getUserDataContext(){
+    public UserDataContext getUserDataContext() {
         return new UserDataContext(getJdbcTemplate());
     }
 
-    public UserRepository getUserRepository(){
+    @Bean
+    public UserRepository getUserRepository() {
         return new UserRepository();
     }
 }

@@ -1,13 +1,15 @@
 package com.epam.travelagency.repository;
 
 import com.epam.travelagency.bean.User;
-import com.epam.travelagency.storage.DataContext;
-import com.epam.travelagency.storage.UserDataContext;
+import com.epam.travelagency.storage.posgresql.UserDataContext;
+import org.springframework.beans.factory.annotation.Autowired;
 
+@org.springframework.stereotype.Repository
 public class UserRepository implements Repository<User> {
 
     private UserDataContext storage;
 
+    @Autowired
     public void setStorage(UserDataContext storage) {
         this.storage = storage;
     }

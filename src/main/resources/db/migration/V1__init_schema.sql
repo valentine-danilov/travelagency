@@ -11,6 +11,8 @@ CREATE TYPE HOTEL_FEATURES AS ENUM
     'food_delivery', 'pool', 'conference_hall', 'safe'
     );
 
+
+
 CREATE TABLE IF NOT EXISTS "user"
 (
   id       SERIAL,

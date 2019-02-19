@@ -1,0 +1,1 @@
+INSERT INTO "user" (login, password) VALUES ('asdasd', 'asdasd');

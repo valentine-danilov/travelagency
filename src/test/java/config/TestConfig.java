@@ -1,27 +1,28 @@
 package config;
 
-import com.epam.travelagency.bean.User;
 import com.epam.travelagency.repository.UserRepository;
 import com.epam.travelagency.storage.posgresql.UserDataContext;
-import com.zaxxer.hikari.HikariDataSource;
+import org.springframework.boot.autoconfigure.flyway.FlywayDataSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
+import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
+
+import javax.sql.DataSource;
+
 
 @Configuration
 public class TestConfig {
-
     @Bean
-    public User getUser() {
-        return new User();
-    }
-
-    @Bean
-    public HikariDataSource getDataSource() {
-        HikariDataSource dataSource = new HikariDataSource();
-        dataSource.setDriverClassName("org.h2.Driver");
-        dataSource.setJdbcUrl("jdbc:h2:mem:dbtest;DB_CLOSE_DELAY=-1");
-        return dataSource;
+    @FlywayDataSource
+    public DataSource getDataSource() {
+        EmbeddedDatabaseBuilder builder = new EmbeddedDatabaseBuilder();
+        return builder
+                .setType(EmbeddedDatabaseType.H2)
+                .addScript("classpath:db/migration/V1__init_schema.sql")
+                .addScript("classpath:db/migration/V1_1__init_data.sql")
+                .build();
     }
 
     @Bean
@@ -33,6 +34,7 @@ public class TestConfig {
     public UserDataContext getUserDataContext() {
         return new UserDataContext(getJdbcTemplate());
     }
+
 
     @Bean
     public UserRepository getUserRepository() {

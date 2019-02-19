@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+    <Appenders>
+        <File name="LogFile" fileName="logs/test.log">
+            <PatternLayout>
+                <Pattern>%d{HH:mm} LOG: %-5level[%msg]%n</Pattern>
+            </PatternLayout>
+        </File>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout>
+                <Pattern>LOG: %-5level[%msg]%n</Pattern>
+            </PatternLayout>
+        </Console>
+    </Appenders>
+    <Loggers>
+        <Root level="all">
+            <AppenderRef ref="LogFile"/>
+            <AppenderRef ref="Console"/>
+        </Root>
+    </Loggers>
+</Configuration>

@@ -3,18 +3,16 @@ package com.epam.travelagency.bean;
 import com.epam.travelagency.repository.UserRepository;
 import com.epam.travelagency.storage.posgresql.UserDataContext;
 import com.zaxxer.hikari.HikariDataSource;
+import org.springframework.boot.autoconfigure.flyway.FlywayDataSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 @Configuration
 public class AppConfig {
-    @Bean
-    public User getUser(){
-        return new User();
-    }
 
     @Bean
+    @FlywayDataSource
     public HikariDataSource getDataSource(){
         HikariDataSource dataSource = new HikariDataSource();
         dataSource.setDriverClassName("org.postgresql.Driver");
@@ -24,17 +22,20 @@ public class AppConfig {
         return dataSource;
     }
 
-    @Bean
+    /*@Bean
     public JdbcTemplate getJdbcTemplate(){
         return new JdbcTemplate(getDataSource());
     }
-
-    @Bean
+*/
+    /*@Bean
     public UserDataContext getUserDataContext(){
         return new UserDataContext(getJdbcTemplate());
-    }
+    }*/
 
+    /*@Bean
     public UserRepository getUserRepository(){
-        return new UserRepository();
-    }
+        UserRepository repository = new UserRepository();
+        repository.setStorage(getUserDataContext());
+        return repository;
+    }*/
 }

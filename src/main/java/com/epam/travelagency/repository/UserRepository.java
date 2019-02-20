@@ -1,18 +1,10 @@
 package com.epam.travelagency.repository;
 
 import com.epam.travelagency.bean.User;
-import com.epam.travelagency.storage.posgresql.UserDataContext;
-import org.springframework.beans.factory.annotation.Autowired;
 
-@org.springframework.stereotype.Repository
-public class UserRepository implements Repository<User> {
+import java.util.List;
 
-    private UserDataContext storage;
-
-    @Autowired
-    public void setStorage(UserDataContext storage) {
-        this.storage = storage;
-    }
+public class UserRepository extends Repository<User> {
 
     public void create(User entity) {
         storage.create(entity);
@@ -28,5 +20,9 @@ public class UserRepository implements Repository<User> {
 
     public void delete(Integer id) {
         storage.delete(id);
+    }
+
+    public List<User> read(){
+        return storage.read();
     }
 }

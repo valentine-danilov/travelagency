@@ -1,13 +1,26 @@
 package com.epam.travelagency.repository;
 
 import com.epam.travelagency.bean.AbstractEntity;
+import com.epam.travelagency.bean.User;
+import com.epam.travelagency.storage.DataContext;
+import com.epam.travelagency.storage.posgresql.UserDataContext;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
-public interface Repository<T extends AbstractEntity> {
-    void create(T entity);
+public abstract class Repository<T extends AbstractEntity> {
 
-    T read(Integer id);
+    protected DataContext<T> storage;
 
-    void update(T entity);
+    @Autowired
+    public void setDataContext(DataContext<T> storage) {
+        this.storage = storage;
+    }
 
-    void delete(Integer id);
+    public abstract void create(T entity);
+
+    public abstract T read(Integer id);
+
+    public abstract void update(T entity);
+
+    public abstract void delete(Integer id);
 }

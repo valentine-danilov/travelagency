@@ -1,11 +1,10 @@
 package com.epam.travelagency.bean;
 
-import com.epam.travelagency.bean.enumeration.HotelFeatures;
+import com.epam.travelagency.bean.enumeration.HotelFeature;
 import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Objects;
 
 @Component
 public class Hotel extends AbstractEntity{
@@ -14,7 +13,7 @@ public class Hotel extends AbstractEntity{
     private String website;
     private BigDecimal latitude;
     private BigDecimal longitude;
-    private List<HotelFeatures> hotelFeatures;
+    private HotelFeature features;
 
     public Hotel() {
         name = "";
@@ -22,7 +21,6 @@ public class Hotel extends AbstractEntity{
         website = "";
         latitude = new BigDecimal(0);
         latitude = new BigDecimal(0);
-        hotelFeatures = new ArrayList<HotelFeatures>();
     }
 
     public String getName() {
@@ -65,12 +63,12 @@ public class Hotel extends AbstractEntity{
         this.longitude = longitude;
     }
 
-    public List<HotelFeatures> getHotelFeatures() {
-        return hotelFeatures;
+    public HotelFeature getFeatures() {
+        return features;
     }
 
-    public void setHotelFeatures(List<HotelFeatures> hotelFeatures) {
-        this.hotelFeatures = hotelFeatures;
+    public void setFeatures(HotelFeature features) {
+        this.features = features;
     }
 
     @Override
@@ -81,7 +79,26 @@ public class Hotel extends AbstractEntity{
                 ", website='" + website + '\'' +
                 ", latitude=" + latitude +
                 ", longitude=" + longitude +
-                ", hotelFeatures=" + hotelFeatures +
+                ", features=" + features +
+                ", id=" + id +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Hotel hotel = (Hotel) o;
+        return name.equals(hotel.name) &&
+                stars.equals(hotel.stars) &&
+                website.equals(hotel.website) &&
+                latitude.equals(hotel.latitude) &&
+                longitude.equals(hotel.longitude) &&
+                features == hotel.features;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, stars, website, latitude, longitude, features);
     }
 }

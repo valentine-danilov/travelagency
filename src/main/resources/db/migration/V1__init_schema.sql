@@ -5,7 +5,7 @@ CREATE TYPE TOUR_TYPE AS ENUM
     'escorted', 'guided', 'rail', 'extreme'
     );
 
-CREATE TYPE HOTEL_FEATURES AS ENUM
+CREATE TYPE HOTEL_FEATURE AS ENUM
   (
     'cleanliness', 'security', 'wi-fi', 'breakfast', 'parking', 'air_conditioning',
     'food_delivery', 'pool', 'conference_hall', 'safe'
@@ -29,7 +29,7 @@ CREATE TABLE IF NOT EXISTS "hotel"
   website   VARCHAR(255)   NOT NULL,
   latitude  DECIMAL(8, 6)  NOT NULL,
   longitude DECIMAL(8, 6)  NOT NULL,
-  feature   HOTEL_FEATURES NOT NULL,
+  feature   HOTEL_FEATURE NOT NULL,
   PRIMARY KEY (id)
 );
 

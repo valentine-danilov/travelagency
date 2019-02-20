@@ -1,6 +1,8 @@
 package config;
 
+import com.epam.travelagency.repository.HotelRepository;
 import com.epam.travelagency.repository.UserRepository;
+import com.epam.travelagency.storage.posgresql.HotelDataContext;
 import com.epam.travelagency.storage.posgresql.UserDataContext;
 import org.springframework.boot.autoconfigure.flyway.FlywayDataSource;
 import org.springframework.context.annotation.Bean;
@@ -31,13 +33,23 @@ public class TestConfig {
     }
 
     @Bean
-    public UserDataContext getUserDataContext() {
+    public UserRepository userRepository(){
+        return new UserRepository();
+    }
+
+    @Bean
+    public HotelRepository hotelRepository(){
+        return new HotelRepository();
+    }
+
+    @Bean
+    public UserDataContext userDataContext(){
         return new UserDataContext(getJdbcTemplate());
     }
 
-
     @Bean
-    public UserRepository getUserRepository() {
-        return new UserRepository();
+    public HotelDataContext hotelDataContext(){
+        return new HotelDataContext(getJdbcTemplate());
     }
+
 }

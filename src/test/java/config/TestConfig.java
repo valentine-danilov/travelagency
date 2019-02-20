@@ -4,6 +4,7 @@ import com.epam.travelagency.repository.HotelRepository;
 import com.epam.travelagency.repository.UserRepository;
 import com.epam.travelagency.storage.posgresql.HotelDataContext;
 import com.epam.travelagency.storage.posgresql.UserDataContext;
+import org.junit.BeforeClass;
 import org.springframework.boot.autoconfigure.flyway.FlywayDataSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -16,6 +17,9 @@ import javax.sql.DataSource;
 
 @Configuration
 public class TestConfig {
+
+
+
     @Bean
     @FlywayDataSource
     public DataSource getDataSource() {

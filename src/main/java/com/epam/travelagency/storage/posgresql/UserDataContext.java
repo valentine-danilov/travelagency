@@ -27,7 +27,7 @@ public class UserDataContext implements DataContext<User> {
 
     public User read(Integer id) {
         return jdbcTemplate.queryForObject("SELECT id, login, password FROM \"user\" WHERE \"user\".id=?",
-                new UserRowMapper(), id);
+                new BeanPropertyRowMapper<>(User.class), id);
     }
 
     public void update(User entity) {

@@ -3,19 +3,24 @@ package repository;
 import com.epam.travelagency.bean.User;
 import com.epam.travelagency.repository.UserRepository;
 import com.epam.travelagency.storage.posgresql.UserDataContext;
+import com.opentable.db.postgres.embedded.FlywayPreparer;
+import com.opentable.db.postgres.junit.EmbeddedPostgresRules;
+import com.opentable.db.postgres.junit.PreparedDbRule;
 import config.TestConfig;
 import org.junit.Assert;
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = TestConfig.class)
 public class UserRepositoryTest {
+
+
 
     @Autowired
     private UserDataContext dataContext;
@@ -28,6 +33,7 @@ public class UserRepositoryTest {
 
     @Before
     public void init() {
+
         userRepository.setDataContext(dataContext);
         testUser.setId(1);
         testUser.setLogin("testLogin");

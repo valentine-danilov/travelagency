@@ -3,6 +3,7 @@ package com.epam.travelagency.bean;
 import com.epam.travelagency.repository.HotelRepository;
 import com.epam.travelagency.repository.UserRepository;
 import com.epam.travelagency.storage.posgresql.HotelDataContext;
+import com.epam.travelagency.storage.posgresql.TourDataContext;
 import com.epam.travelagency.storage.posgresql.UserDataContext;
 import com.zaxxer.hikari.HikariDataSource;
 import org.springframework.boot.autoconfigure.flyway.FlywayDataSource;
@@ -47,6 +48,11 @@ public class AppConfig {
     @Bean
     public HotelDataContext hotelDataContext(){
         return new HotelDataContext(getJdbcTemplate());
+    }
+
+    @Bean
+    TourDataContext tourDataContext(){
+        return new TourDataContext(getJdbcTemplate());
     }
 
 }

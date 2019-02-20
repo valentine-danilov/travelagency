@@ -89,11 +89,11 @@ public class Hotel extends AbstractEntity{
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Hotel hotel = (Hotel) o;
-        return name.equals(hotel.name) &&
-                stars.equals(hotel.stars) &&
-                website.equals(hotel.website) &&
-                latitude.equals(hotel.latitude) &&
-                longitude.equals(hotel.longitude) &&
+        return Objects.equals(name, hotel.name) &&
+                Objects.equals(stars, hotel.stars) &&
+                Objects.equals(website, hotel.website) &&
+                Objects.equals(latitude, hotel.latitude) &&
+                Objects.equals(longitude, hotel.longitude) &&
                 features == hotel.features;
     }
 

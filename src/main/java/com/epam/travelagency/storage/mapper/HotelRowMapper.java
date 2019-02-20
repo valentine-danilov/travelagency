@@ -4,6 +4,7 @@ import com.epam.travelagency.bean.Hotel;
 import com.epam.travelagency.bean.enumeration.HotelFeature;
 import org.springframework.jdbc.core.RowMapper;
 
+import java.math.BigDecimal;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 

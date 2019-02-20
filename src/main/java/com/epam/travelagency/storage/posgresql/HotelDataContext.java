@@ -46,7 +46,7 @@ public class HotelDataContext implements DataContext<Hotel> {
 
     @Override
     public void update(Hotel entity) {
-        jdbcTemplate.update("UPDATE hotel SET name=?, stars=?, website=?," +
+        jdbcTemplate.update("UPDATE \"hotel\" SET name=?, stars=?, website=?," +
                         "latitude=?, longitude=?, feature=?::hotel_feature WHERE id=?",
                 entity.getName(),
                 entity.getStars(),
@@ -64,7 +64,7 @@ public class HotelDataContext implements DataContext<Hotel> {
     @Override
     public List<Hotel> read() {
         return jdbcTemplate.query("SELECT id, name, stars, website," +
-                        " latitude, longitude, feature FROM hotel WHERE id=?",
+                        " latitude, longitude, feature FROM hotel",
                 new HotelRowMapper());
     }
 

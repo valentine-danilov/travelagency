@@ -7,13 +7,14 @@ import org.springframework.stereotype.Component;
 import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.Date;
+import java.util.Objects;
 
 @Component
 public class Tour extends AbstractEntity {
     private String photo;
-    private Date date;
+    private String date;
     private Integer duration;
-    private String[] description;
+    private String description;
     private BigDecimal cost;
     private TourType tourType;
     private Hotel hotel;
@@ -21,9 +22,9 @@ public class Tour extends AbstractEntity {
 
     public Tour() {
         photo = "";
-        date = new Date();
+        date = "";
         duration = 0;
-        description = new String[1];
+        description = "";
         cost = new BigDecimal(0);
     }
 
@@ -35,11 +36,11 @@ public class Tour extends AbstractEntity {
         this.photo = photo;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
@@ -51,11 +52,11 @@ public class Tour extends AbstractEntity {
         this.duration = duration;
     }
 
-    public String[] getDescription() {
+    public String getDescription() {
         return description;
     }
 
-    public void setDescription(String[] description) {
+    public void setDescription(String description) {
         this.description = description;
     }
 
@@ -100,11 +101,31 @@ public class Tour extends AbstractEntity {
                 ", photo='" + photo + '\'' +
                 ", date=" + date +
                 ", duration=" + duration +
-                ", description=" + Arrays.toString(description) +
+                ", description=" + description +
                 ", cost=" + cost +
                 ", tourType=" + tourType +
                 ", hotel=" + hotel +
                 ", country=" + country +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Tour tour = (Tour) o;
+        return Objects.equals(photo, tour.photo) &&
+                Objects.equals(date, tour.date) &&
+                Objects.equals(duration, tour.duration) &&
+                Objects.equals(description, tour.description) &&
+                Objects.equals(cost, tour.cost) &&
+                tourType == tour.tourType &&
+                Objects.equals(hotel, tour.hotel) &&
+                Objects.equals(country, tour.country);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(photo, date, duration, description, cost, tourType, hotel, country);
     }
 }

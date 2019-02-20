@@ -1,23 +1,22 @@
 package com.epam.travelagency.repository;
 
-import com.epam.travelagency.bean.Hotel;
-import com.epam.travelagency.repository.Repository;
+import com.epam.travelagency.bean.Tour;
 
 import java.util.List;
 
-public class HotelRepository extends Repository<Hotel> {
+public class TourRepository extends Repository<Tour> {
     @Override
-    public void create(Hotel entity) {
+    public void create(Tour entity) {
         storage.create(entity);
     }
 
     @Override
-    public Hotel read(Integer id) {
+    public Tour read(Integer id) {
         return storage.read(id);
     }
 
     @Override
-    public void update(Hotel entity) {
+    public void update(Tour entity) {
         storage.update(entity);
     }
 
@@ -26,7 +25,7 @@ public class HotelRepository extends Repository<Hotel> {
         storage.delete(id);
     }
 
-    public List<Hotel> read(){
+    public List<Tour> read(){
         return storage.read();
     }
 }

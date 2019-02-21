@@ -14,7 +14,7 @@ public class TourRowMapper implements RowMapper<Tour> {
     @Override
     public Tour mapRow(ResultSet resultSet, int i) throws SQLException {
         Tour tour = new Tour();
-        tour.setId(resultSet.getInt("tour_id"));
+        tour.setId(resultSet.getInt("id"));
         tour.setPhoto(resultSet.getString("photo"));
         tour.setDate(resultSet.getString("date"));
         tour.setDuration(resultSet.getInt("duration"));

@@ -14491,3 +14491,880 @@ Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No q
 	... 24 more
 14:24 LOG: TRACE[afterTestClass(): class [service.UserServiceTest]]
 14:24 LOG: DEBUG[After test class: context [DefaultTestContext@35d08e6c testClass = UserServiceTest, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [MergedContextConfiguration@53d102a2 testClass = UserServiceTest, locations = '{}', classes = '{class config.TestConfig}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextCustomizers = set[[empty]], contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]], attributes = map[[empty]]], class annotated with @DirtiesContext [false] with mode [null].]
+13:52 LOG: WARN [Direct configuration of the Flyway object has been deprecated and will be removed in Flyway 6.0. Use Flyway.configure() instead.]
+13:52 LOG: INFO [Detected a Windows x86_64 system]
+13:52 LOG: INFO [Postgres binaries at C:\Users\valik\AppData\Local\Temp\embedded-pg\PG-91c1fa33789b0c913345bf0253da6836]
+13:52 LOG: TRACE[d82c253d-8da2-46fd-a9de-3af140bbfb1d postgres data directory is C:\Users\valik\AppData\Local\Temp\epg18400335931919827674]
+13:52 LOG: INFO [The files belonging to this database system will be owned by user "valik".]
+13:52 LOG: INFO [This user must also own the server process.]
+13:52 LOG: INFO []
+13:52 LOG: INFO [The database cluster will be initialized with locale "Russian_Belarus.1251".]
+13:52 LOG: INFO [The default text search configuration will be set to "russian".]
+13:52 LOG: INFO []
+13:52 LOG: INFO [Data page checksums are disabled.]
+13:52 LOG: INFO []
+13:52 LOG: INFO [fixing permissions on existing directory C:/Users/valik/AppData/Local/Temp/epg18400335931919827674 ... ok]
+13:52 LOG: INFO [creating subdirectories ... ok]
+13:52 LOG: INFO [selecting default max_connections ... 100]
+13:52 LOG: INFO [selecting default shared_buffers ... 128MB]
+13:52 LOG: INFO [selecting dynamic shared memory implementation ... windows]
+13:52 LOG: INFO [creating configuration files ... ok]
+13:52 LOG: INFO [running bootstrap script ... ok]
+13:52 LOG: INFO [performing post-bootstrap initialization ... ok]
+13:52 LOG: INFO [syncing data to disk ... ok]
+13:52 LOG: INFO []
+13:52 LOG: INFO [Success. You can now start the database server using:]
+13:52 LOG: INFO []
+13:52 LOG: INFO [    C:/Users/valik/AppData/Local/Temp/embedded-pg/PG-91c1fa33789b0c913345bf0253da6836/bin/pg_ctl -D ^"C^:^\Users^\valik^\AppData^\Local^\Temp^\epg18400335931919827674^" -l logfile start]
+13:52 LOG: INFO []
+13:52 LOG: INFO [d82c253d-8da2-46fd-a9de-3af140bbfb1d initdb completed in 00:00:12.226]
+13:52 LOG: INFO [d82c253d-8da2-46fd-a9de-3af140bbfb1d postmaster started as Process[pid=16408, exitValue="not exited"] on port 61084.  Waiting up to PT10S for server startup to finish.]
+13:52 LOG: INFO [waiting for server to start....2019-02-21 13:52:57.100 +03 [17292] ���������:  ��� ����� ����������� �� ������ IPv6 "::1" ������ ���� 61084]
+13:52 LOG: INFO [2019-02-21 13:52:57.100 +03 [17292] ���������:  ��� ����� ����������� �� ������ IPv4 "127.0.0.1" ������ ���� 61084]
+13:52 LOG: INFO [2019-02-21 13:52:57.187 +03 [7392] ���������:  ������� �� ���� ���������: 2019-02-21 13:52:55 +03]
+13:52 LOG: INFO [2019-02-21 13:52:57.266 +03 [17292] ���������:  ������� �� ������ ��������� �����������]
+13:52 LOG: INFO [ done]
+13:52 LOG: TRACE[While waiting for server startup]
+java.sql.SQLException: connect failed
+	at com.opentable.db.postgres.embedded.EmbeddedPostgres.verifyReady(EmbeddedPostgres.java:341) ~[otj-pg-embedded-0.13.1.jar:0.13.1]
+	at com.opentable.db.postgres.embedded.EmbeddedPostgres.waitForServerStartup(EmbeddedPostgres.java:315) [otj-pg-embedded-0.13.1.jar:0.13.1]
+	at com.opentable.db.postgres.embedded.EmbeddedPostgres.startPostmaster(EmbeddedPostgres.java:275) [otj-pg-embedded-0.13.1.jar:0.13.1]
+	at com.opentable.db.postgres.embedded.EmbeddedPostgres.<init>(EmbeddedPostgres.java:162) [otj-pg-embedded-0.13.1.jar:0.13.1]
+	at com.opentable.db.postgres.embedded.EmbeddedPostgres$Builder.start(EmbeddedPostgres.java:580) [otj-pg-embedded-0.13.1.jar:0.13.1]
+	at com.opentable.db.postgres.embedded.PreparedDbProvider.createOrFindPreparer(PreparedDbProvider.java:82) [otj-pg-embedded-0.13.1.jar:0.13.1]
+	at com.opentable.db.postgres.embedded.PreparedDbProvider.<init>(PreparedDbProvider.java:62) [otj-pg-embedded-0.13.1.jar:0.13.1]
+	at com.opentable.db.postgres.embedded.PreparedDbProvider.forPreparer(PreparedDbProvider.java:57) [otj-pg-embedded-0.13.1.jar:0.13.1]
+	at com.opentable.db.postgres.junit.PreparedDbRule.before(PreparedDbRule.java:55) [otj-pg-embedded-0.13.1.jar:0.13.1]
+	at org.junit.rules.ExternalResource$1.evaluate(ExternalResource.java:46) [junit-4.12.jar:4.12]
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit-4.12.jar:4.12]
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137) [junit-4.12.jar:4.12]
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68) [junit-rt.jar:?]
+	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:47) [junit-rt.jar:?]
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242) [junit-rt.jar:?]
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70) [junit-rt.jar:?]
+Caused by: java.net.SocketTimeoutException: connect timed out
+	at java.net.PlainSocketImpl.waitForConnect(Native Method) ~[?:?]
+	at java.net.PlainSocketImpl.socketConnect(PlainSocketImpl.java:107) ~[?:?]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:399) ~[?:?]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:242) ~[?:?]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:224) ~[?:?]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:403) ~[?:?]
+	at java.net.Socket.connect(Socket.java:591) ~[?:?]
+	at com.opentable.db.postgres.embedded.EmbeddedPostgres.verifyReady(EmbeddedPostgres.java:339) ~[otj-pg-embedded-0.13.1.jar:0.13.1]
+	... 16 more
+13:52 LOG: INFO [d82c253d-8da2-46fd-a9de-3af140bbfb1d postmaster startup finished in 00:00:00.925]
+13:52 LOG: WARN [Direct configuration of the Flyway object has been deprecated and will be removed in Flyway 6.0. Use Flyway.configure() instead.]
+13:52 LOG: INFO [Flyway Community Edition 5.2.4 by Boxfuse]
+13:52 LOG: INFO [Database: jdbc:postgresql://localhost:61084/template1 (PostgreSQL 10.6)]
+13:52 LOG: DEBUG[Driver  : PostgreSQL JDBC Driver 42.2.5]
+13:52 LOG: DEBUG[DDL Transactions Supported: true]
+13:52 LOG: DEBUG[Schema: public]
+13:52 LOG: DEBUG[Scanning for classpath resources at 'classpath:db/migration' ...]
+13:52 LOG: DEBUG[Determining location urls for classpath:db/migration using ClassLoader jdk.internal.loader.ClassLoaders$AppClassLoader@6ed3ef1 ...]
+13:52 LOG: DEBUG[Scanning URL: file:/C:/Users/valik/IdeaProjects/java-lab-task-1/target/classes/db/migration]
+13:52 LOG: DEBUG[JBoss VFS v2 available: false]
+13:52 LOG: DEBUG[Scanning starting at classpath root in filesystem: C:\Users\valik\IdeaProjects\java-lab-task-1\target\classes\]
+13:52 LOG: DEBUG[Scanning for resources in path: C:\Users\valik\IdeaProjects\java-lab-task-1\target\classes\db\migration (db/migration)]
+13:52 LOG: DEBUG[Found resource: db/migration/V1_1__init_data.sql]
+13:52 LOG: DEBUG[Found resource: db/migration/V1__init_schema.sql]
+13:52 LOG: DEBUG[Scanning for classes at classpath:db/migration]
+13:52 LOG: DEBUG[Scanning for SQL callbacks ...]
+13:52 LOG: DEBUG[Spring Jdbc available: true]
+13:52 LOG: DEBUG[Validating migrations ...]
+13:52 LOG: DEBUG[Parsing V1_1__init_data.sql ...]
+13:52 LOG: DEBUG[Found statement at line 1: INSERT INTO "user" (login, password)
+VALUES ('user1', 'user1')]
+13:52 LOG: DEBUG[Found statement at line 3: INSERT INTO "user" (login, password)
+VALUES ('user2', 'user2')]
+13:52 LOG: DEBUG[Found statement at line 5: INSERT INTO "user" (login, password)
+VALUES ('user3', 'user3')]
+13:52 LOG: DEBUG[Found statement at line 7: INSERT INTO "user" (login, password)
+VALUES ('user4', 'user4')]
+13:52 LOG: DEBUG[Found statement at line 10: INSERT INTO "country" (name)
+VALUES ('testCountry')]
+13:52 LOG: DEBUG[Found statement at line 13: INSERT INTO "hotel" (name, stars, website, latitude, longitude, feature)
+VALUES ('test1', 4, 'test1', 1, 1, 'security')]
+13:52 LOG: DEBUG[Found statement at line 15: INSERT INTO "hotel" (name, stars, website, latitude, longitude, feature)
+VALUES ('test2', 4, 'test2', 1, 1, 'security')]
+13:52 LOG: DEBUG[Found statement at line 17: INSERT INTO "hotel" (name, stars, website, latitude, longitude, feature)
+VALUES ('test3', 4, 'test3', 1, 1, 'security')]
+13:52 LOG: DEBUG[Found statement at line 19: INSERT INTO "hotel" (name, stars, website, latitude, longitude, feature)
+VALUES ('test4', 4, 'test4', 1, 1, 'security')]
+13:52 LOG: DEBUG[Found statement at line 22: INSERT INTO "tour" (photo, date, duration, description, cost, tour_type, hotel_id, country_id)
+VALUES ('test1.jpg', '12-12-2012', 12, 'description1', 505, 'guided', 1, 1)]
+13:52 LOG: DEBUG[Found statement at line 24: INSERT INTO "tour" (photo, date, duration, description, cost, tour_type, hotel_id, country_id)
+VALUES ('test2.jpg', '12-12-2012', 12, 'description2', 505, 'guided', 2, 1)]
+13:52 LOG: DEBUG[Found statement at line 26: INSERT INTO "tour" (photo, date, duration, description, cost, tour_type, hotel_id, country_id)
+VALUES ('test3.jpg', '12-12-2012', 12, 'description3', 505, 'guided', 3, 1)]
+13:52 LOG: DEBUG[Found statement at line 28: INSERT INTO "tour" (photo, date, duration, description, cost, tour_type, hotel_id, country_id)
+VALUES ('test4.jpg', '12-12-2012', 12, 'description4', 505, 'guided', 4, 1)]
+13:52 LOG: DEBUG[Parsing V1__init_schema.sql ...]
+13:52 LOG: DEBUG[Found statement at line 1: CREATE TYPE TOUR_TYPE AS ENUM
+  (
+    'bus', 'sightseeing', 'shore_excursion',
+    'adventure', 'sporting', 'cruise',
+    'escorted', 'guided', 'rail', 'extreme'
+    )]
+13:52 LOG: DEBUG[Found statement at line 8: CREATE TYPE HOTEL_FEATURE AS ENUM
+  (
+    'cleanliness', 'security', 'wi-fi', 'breakfast', 'parking', 'air_conditioning',
+    'food_delivery', 'pool', 'conference_hall', 'safe'
+    )]
+13:52 LOG: DEBUG[Found statement at line 16: CREATE TABLE IF NOT EXISTS "user"
+(
+  id       SERIAL,
+  login    VARCHAR(255) UNIQUE NOT NULL,
+  password VARCHAR(255)        NOT NULL,
+  PRIMARY KEY (id)
+)]
+13:52 LOG: DEBUG[Found statement at line 24: CREATE TABLE IF NOT EXISTS "hotel"
+(
+  id        SERIAL,
+  name      VARCHAR(255)   NOT NULL,
+  stars     SMALLINT       NOT NULL,
+  website   VARCHAR(255)   NOT NULL,
+  latitude  DECIMAL(8, 6)  NOT NULL,
+  longitude DECIMAL(8, 6)  NOT NULL,
+  feature   HOTEL_FEATURE NOT NULL,
+  PRIMARY KEY (id)
+)]
+13:52 LOG: DEBUG[Found statement at line 36: CREATE TABLE IF NOT EXISTS "country"
+(
+  id   SERIAL,
+  name VARCHAR(255),
+  PRIMARY KEY (id)
+)]
+13:52 LOG: DEBUG[Found statement at line 43: CREATE TABLE IF NOT EXISTS "tour"
+(
+  id          SERIAL,
+  photo       VARCHAR(255),
+  date        DATE           NOT NULL,
+  duration    INT            NOT NULL,
+  description TEXT           NOT NULL,
+  cost        DECIMAL(19, 3) NOT NULL,
+  tour_type   TOUR_TYPE      NOT NULL,
+  hotel_id    INT            NOT NULL,
+  country_id  INT            NOT NULL,
+  PRIMARY KEY (id),
+  FOREIGN KEY (hotel_id) REFERENCES "hotel" (id),
+  FOREIGN KEY (country_id) REFERENCES "country" (id)
+)]
+13:52 LOG: DEBUG[Found statement at line 59: CREATE TABLE IF NOT EXISTS "usertour"
+(
+  user_id INT UNIQUE NOT NULL,
+  tour_id INT UNIQUE NOT NULL,
+  PRIMARY KEY (user_id, tour_id),
+  FOREIGN KEY (user_id) REFERENCES "user" (id),
+  FOREIGN KEY (tour_id) REFERENCES "tour" (id)
+)]
+13:52 LOG: DEBUG[Found statement at line 68: CREATE TABLE IF NOT EXISTS "review"
+(
+  id      SERIAL,
+  date    DATE NOT NULL,
+  text    TEXT NOT NULL,
+  user_id INT  NOT NULL,
+  tour_id INT  NOT NULL,
+  PRIMARY KEY (id),
+  FOREIGN KEY (user_id) REFERENCES "user" (id),
+  FOREIGN KEY (tour_id) REFERENCES "tour" (id)
+)]
+13:52 LOG: DEBUG[Filtering out resource: db/migration/V1_1__init_data.sql (filename: V1_1__init_data.sql)]
+13:52 LOG: DEBUG[Filtering out resource: db/migration/V1__init_schema.sql (filename: V1__init_schema.sql)]
+13:52 LOG: INFO [Successfully validated 2 migrations (execution time 00:00.042s)]
+13:52 LOG: DEBUG[Schema "public" already exists. Skipping schema creation.]
+13:52 LOG: INFO [Creating Schema History table: "public"."flyway_schema_history"]
+13:52 LOG: DEBUG[Parsing createMetaDataTable.sql ...]
+13:52 LOG: DEBUG[Found statement at line 17: CREATE TABLE "public"."flyway_schema_history" (
+    "installed_rank" INT NOT NULL,
+    "version" VARCHAR(50),
+    "description" VARCHAR(200) NOT NULL,
+    "type" VARCHAR(20) NOT NULL,
+    "script" VARCHAR(1000) NOT NULL,
+    "checksum" INTEGER,
+    "installed_by" VARCHAR(100) NOT NULL,
+    "installed_on" TIMESTAMP NOT NULL DEFAULT now(),
+    "execution_time" INTEGER NOT NULL,
+    "success" BOOLEAN NOT NULL
+)]
+13:52 LOG: DEBUG[Found statement at line 29: ALTER TABLE "public"."flyway_schema_history" ADD CONSTRAINT "flyway_schema_history_pk" PRIMARY KEY ("installed_rank")]
+13:52 LOG: DEBUG[Found statement at line 31: CREATE INDEX "flyway_schema_history_s_idx" ON "public"."flyway_schema_history" ("success")]
+13:52 LOG: DEBUG[Executing SQL: CREATE TABLE "public"."flyway_schema_history" (
+    "installed_rank" INT NOT NULL,
+    "version" VARCHAR(50),
+    "description" VARCHAR(200) NOT NULL,
+    "type" VARCHAR(20) NOT NULL,
+    "script" VARCHAR(1000) NOT NULL,
+    "checksum" INTEGER,
+    "installed_by" VARCHAR(100) NOT NULL,
+    "installed_on" TIMESTAMP NOT NULL DEFAULT now(),
+    "execution_time" INTEGER NOT NULL,
+    "success" BOOLEAN NOT NULL
+)]
+13:52 LOG: DEBUG[Update Count: 0]
+13:52 LOG: DEBUG[Executing SQL: ALTER TABLE "public"."flyway_schema_history" ADD CONSTRAINT "flyway_schema_history_pk" PRIMARY KEY ("installed_rank")]
+13:52 LOG: DEBUG[Update Count: 0]
+13:52 LOG: DEBUG[Executing SQL: CREATE INDEX "flyway_schema_history_s_idx" ON "public"."flyway_schema_history" ("success")]
+13:52 LOG: DEBUG[Update Count: 0]
+13:52 LOG: DEBUG[Created Schema History table: "public"."flyway_schema_history"]
+13:52 LOG: INFO [Current version of schema "public": << Empty Schema >>]
+13:52 LOG: INFO [Migrating schema "public" to version 1 - init schema]
+13:52 LOG: DEBUG[Executing SQL: CREATE TYPE TOUR_TYPE AS ENUM
+  (
+    'bus', 'sightseeing', 'shore_excursion',
+    'adventure', 'sporting', 'cruise',
+    'escorted', 'guided', 'rail', 'extreme'
+    )]
+13:52 LOG: DEBUG[Update Count: 0]
+13:52 LOG: DEBUG[Executing SQL: CREATE TYPE HOTEL_FEATURE AS ENUM
+  (
+    'cleanliness', 'security', 'wi-fi', 'breakfast', 'parking', 'air_conditioning',
+    'food_delivery', 'pool', 'conference_hall', 'safe'
+    )]
+13:52 LOG: DEBUG[Update Count: 0]
+13:52 LOG: DEBUG[Executing SQL: CREATE TABLE IF NOT EXISTS "user"
+(
+  id       SERIAL,
+  login    VARCHAR(255) UNIQUE NOT NULL,
+  password VARCHAR(255)        NOT NULL,
+  PRIMARY KEY (id)
+)]
+13:52 LOG: DEBUG[Update Count: 0]
+13:52 LOG: DEBUG[Executing SQL: CREATE TABLE IF NOT EXISTS "hotel"
+(
+  id        SERIAL,
+  name      VARCHAR(255)   NOT NULL,
+  stars     SMALLINT       NOT NULL,
+  website   VARCHAR(255)   NOT NULL,
+  latitude  DECIMAL(8, 6)  NOT NULL,
+  longitude DECIMAL(8, 6)  NOT NULL,
+  feature   HOTEL_FEATURE NOT NULL,
+  PRIMARY KEY (id)
+)]
+13:52 LOG: DEBUG[Update Count: 0]
+13:52 LOG: DEBUG[Executing SQL: CREATE TABLE IF NOT EXISTS "country"
+(
+  id   SERIAL,
+  name VARCHAR(255),
+  PRIMARY KEY (id)
+)]
+13:52 LOG: DEBUG[Update Count: 0]
+13:52 LOG: DEBUG[Executing SQL: CREATE TABLE IF NOT EXISTS "tour"
+(
+  id          SERIAL,
+  photo       VARCHAR(255),
+  date        DATE           NOT NULL,
+  duration    INT            NOT NULL,
+  description TEXT           NOT NULL,
+  cost        DECIMAL(19, 3) NOT NULL,
+  tour_type   TOUR_TYPE      NOT NULL,
+  hotel_id    INT            NOT NULL,
+  country_id  INT            NOT NULL,
+  PRIMARY KEY (id),
+  FOREIGN KEY (hotel_id) REFERENCES "hotel" (id),
+  FOREIGN KEY (country_id) REFERENCES "country" (id)
+)]
+13:52 LOG: DEBUG[Update Count: 0]
+13:52 LOG: DEBUG[Executing SQL: CREATE TABLE IF NOT EXISTS "usertour"
+(
+  user_id INT UNIQUE NOT NULL,
+  tour_id INT UNIQUE NOT NULL,
+  PRIMARY KEY (user_id, tour_id),
+  FOREIGN KEY (user_id) REFERENCES "user" (id),
+  FOREIGN KEY (tour_id) REFERENCES "tour" (id)
+)]
+13:52 LOG: DEBUG[Update Count: 0]
+13:52 LOG: DEBUG[Executing SQL: CREATE TABLE IF NOT EXISTS "review"
+(
+  id      SERIAL,
+  date    DATE NOT NULL,
+  text    TEXT NOT NULL,
+  user_id INT  NOT NULL,
+  tour_id INT  NOT NULL,
+  PRIMARY KEY (id),
+  FOREIGN KEY (user_id) REFERENCES "user" (id),
+  FOREIGN KEY (tour_id) REFERENCES "tour" (id)
+)]
+13:52 LOG: DEBUG[Update Count: 0]
+13:52 LOG: DEBUG[Successfully completed migration of schema "public" to version 1 - init schema]
+13:52 LOG: DEBUG[Schema History table "public"."flyway_schema_history" successfully updated to reflect changes]
+13:52 LOG: INFO [Migrating schema "public" to version 1.1 - init data]
+13:52 LOG: DEBUG[Executing SQL: INSERT INTO "user" (login, password)
+VALUES ('user1', 'user1')]
+13:52 LOG: DEBUG[Update Count: 1]
+13:52 LOG: DEBUG[Executing SQL: INSERT INTO "user" (login, password)
+VALUES ('user2', 'user2')]
+13:52 LOG: DEBUG[Update Count: 1]
+13:52 LOG: DEBUG[Executing SQL: INSERT INTO "user" (login, password)
+VALUES ('user3', 'user3')]
+13:52 LOG: DEBUG[Update Count: 1]
+13:52 LOG: DEBUG[Executing SQL: INSERT INTO "user" (login, password)
+VALUES ('user4', 'user4')]
+13:52 LOG: DEBUG[Update Count: 1]
+13:52 LOG: DEBUG[Executing SQL: INSERT INTO "country" (name)
+VALUES ('testCountry')]
+13:52 LOG: DEBUG[Update Count: 1]
+13:52 LOG: DEBUG[Executing SQL: INSERT INTO "hotel" (name, stars, website, latitude, longitude, feature)
+VALUES ('test1', 4, 'test1', 1, 1, 'security')]
+13:52 LOG: DEBUG[Update Count: 1]
+13:52 LOG: DEBUG[Executing SQL: INSERT INTO "hotel" (name, stars, website, latitude, longitude, feature)
+VALUES ('test2', 4, 'test2', 1, 1, 'security')]
+13:52 LOG: DEBUG[Update Count: 1]
+13:52 LOG: DEBUG[Executing SQL: INSERT INTO "hotel" (name, stars, website, latitude, longitude, feature)
+VALUES ('test3', 4, 'test3', 1, 1, 'security')]
+13:52 LOG: DEBUG[Update Count: 1]
+13:52 LOG: DEBUG[Executing SQL: INSERT INTO "hotel" (name, stars, website, latitude, longitude, feature)
+VALUES ('test4', 4, 'test4', 1, 1, 'security')]
+13:52 LOG: DEBUG[Update Count: 1]
+13:52 LOG: DEBUG[Executing SQL: INSERT INTO "tour" (photo, date, duration, description, cost, tour_type, hotel_id, country_id)
+VALUES ('test1.jpg', '12-12-2012', 12, 'description1', 505, 'guided', 1, 1)]
+13:52 LOG: DEBUG[Update Count: 1]
+13:52 LOG: DEBUG[Executing SQL: INSERT INTO "tour" (photo, date, duration, description, cost, tour_type, hotel_id, country_id)
+VALUES ('test2.jpg', '12-12-2012', 12, 'description2', 505, 'guided', 2, 1)]
+13:52 LOG: DEBUG[Update Count: 1]
+13:52 LOG: DEBUG[Executing SQL: INSERT INTO "tour" (photo, date, duration, description, cost, tour_type, hotel_id, country_id)
+VALUES ('test3.jpg', '12-12-2012', 12, 'description3', 505, 'guided', 3, 1)]
+13:52 LOG: DEBUG[Update Count: 1]
+13:52 LOG: DEBUG[Executing SQL: INSERT INTO "tour" (photo, date, duration, description, cost, tour_type, hotel_id, country_id)
+VALUES ('test4.jpg', '12-12-2012', 12, 'description4', 505, 'guided', 4, 1)]
+13:52 LOG: DEBUG[Update Count: 1]
+13:52 LOG: DEBUG[Successfully completed migration of schema "public" to version 1.1 - init data]
+13:52 LOG: DEBUG[Schema History table "public"."flyway_schema_history" successfully updated to reflect changes]
+13:52 LOG: INFO [Successfully applied 2 migrations to schema "public" (execution time 00:00.232s)]
+13:52 LOG: DEBUG[Memory usage: 12 of 126M]
+13:53 LOG: DEBUG[Executing prepared SQL query]
+13:53 LOG: DEBUG[Executing prepared SQL statement [SELECT id, photo, date, duration, description, cost, tour_type, hotel_id, country_id FROM tour WHERE id=?]]
+13:53 LOG: DEBUG[Fetching JDBC Connection from DataSource]
+13:53 LOG: TRACE[Setting SQL statement parameter value: column index 1, parameter value [1], value class [java.lang.Integer], SQL type unknown]
+13:53 LOG: TRACE[Loading XML bean definitions from class path resource [org/springframework/jdbc/support/sql-error-codes.xml]]
+13:53 LOG: TRACE[Using JAXP provider [com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderFactoryImpl]]
+13:53 LOG: TRACE[Trying to resolve XML entity with public ID [-//SPRING//DTD BEAN 2.0//EN] and system ID [http://www.springframework.org/dtd/spring-beans-2.0.dtd]]
+13:53 LOG: TRACE[Trying to locate [spring-beans.dtd] in Spring jar on classpath]
+13:53 LOG: TRACE[Found beans DTD [http://www.springframework.org/dtd/spring-beans-2.0.dtd] in classpath: spring-beans.dtd]
+13:53 LOG: TRACE[Alias definition 'Db2' registered for name 'DB2']
+13:53 LOG: TRACE[Alias definition 'Hana' registered for name 'HDB']
+13:53 LOG: TRACE[Alias definition 'Hsql' registered for name 'HSQL']
+13:53 LOG: TRACE[Alias definition 'SqlServer' registered for name 'MS-SQL']
+13:53 LOG: TRACE[Alias definition 'Postgres' registered for name 'PostgreSQL']
+13:53 LOG: DEBUG[Loaded 11 bean definitions from class path resource [org/springframework/jdbc/support/sql-error-codes.xml]]
+13:53 LOG: DEBUG[Creating shared instance of singleton bean 'DB2']
+13:53 LOG: TRACE[Creating instance of bean 'DB2']
+13:53 LOG: TRACE[Eagerly caching bean 'DB2' to allow for resolving potential circular references]
+13:53 LOG: TRACE[Loaded [org.springframework.beans.BeanInfoFactory] names: [org.springframework.beans.ExtendedBeanInfoFactory]]
+13:53 LOG: TRACE[Getting BeanInfo for class [org.springframework.jdbc.support.SQLErrorCodes]]
+13:53 LOG: TRACE[Caching PropertyDescriptors for class [org.springframework.jdbc.support.SQLErrorCodes]]
+13:53 LOG: TRACE[Found bean property 'badSqlGrammarCodes' of type [[Ljava.lang.String;]]
+13:53 LOG: TRACE[Found bean property 'cannotAcquireLockCodes' of type [[Ljava.lang.String;]]
+13:53 LOG: TRACE[Found bean property 'cannotSerializeTransactionCodes' of type [[Ljava.lang.String;]]
+13:53 LOG: TRACE[Found bean property 'class' of type [java.lang.Class]]
+13:53 LOG: TRACE[Found bean property 'customSqlExceptionTranslator' of type [org.springframework.jdbc.support.SQLExceptionTranslator]]
+13:53 LOG: TRACE[Found bean property 'customSqlExceptionTranslatorClass' of type [java.lang.Class]]
+13:53 LOG: TRACE[Found bean property 'customTranslations' of type [[Lorg.springframework.jdbc.support.CustomSQLErrorCodesTranslation;]]
+13:53 LOG: TRACE[Found bean property 'dataAccessResourceFailureCodes' of type [[Ljava.lang.String;]]
+13:53 LOG: TRACE[Found bean property 'dataIntegrityViolationCodes' of type [[Ljava.lang.String;]]
+13:53 LOG: TRACE[Found bean property 'databaseProductName' of type [java.lang.String]]
+13:53 LOG: TRACE[Found bean property 'databaseProductNames' of type [[Ljava.lang.String;]]
+13:53 LOG: TRACE[Found bean property 'deadlockLoserCodes' of type [[Ljava.lang.String;]]
+13:53 LOG: TRACE[Found bean property 'duplicateKeyCodes' of type [[Ljava.lang.String;]]
+13:53 LOG: TRACE[Found bean property 'invalidResultSetAccessCodes' of type [[Ljava.lang.String;]]
+13:53 LOG: TRACE[Found bean property 'permissionDeniedCodes' of type [[Ljava.lang.String;]]
+13:53 LOG: TRACE[Found bean property 'transientDataAccessResourceCodes' of type [[Ljava.lang.String;]]
+13:53 LOG: TRACE[Found bean property 'useSqlStateForTranslation' of type [boolean]]
+13:53 LOG: TRACE[Converting String to [class [Ljava.lang.String;] using property editor [org.springframework.beans.propertyeditors.StringArrayPropertyEditor@42deb43a]]
+13:53 LOG: TRACE[Converting String to [class [Ljava.lang.String;] using property editor [org.springframework.beans.propertyeditors.StringArrayPropertyEditor@42deb43a]]
+13:53 LOG: TRACE[Converting String to [class [Ljava.lang.String;] using property editor [org.springframework.beans.propertyeditors.StringArrayPropertyEditor@42deb43a]]
+13:53 LOG: TRACE[Converting String to [class [Ljava.lang.String;] using property editor [org.springframework.beans.propertyeditors.StringArrayPropertyEditor@42deb43a]]
+13:53 LOG: TRACE[Converting String to [class [Ljava.lang.String;] using property editor [org.springframework.beans.propertyeditors.StringArrayPropertyEditor@42deb43a]]
+13:53 LOG: TRACE[Converting String to [class [Ljava.lang.String;] using property editor [org.springframework.beans.propertyeditors.StringArrayPropertyEditor@42deb43a]]
+13:53 LOG: TRACE[Finished creating instance of bean 'DB2']
+13:53 LOG: DEBUG[Creating shared instance of singleton bean 'Derby']
+13:53 LOG: TRACE[Creating instance of bean 'Derby']
+13:53 LOG: TRACE[Eagerly caching bean 'Derby' to allow for resolving potential circular references]
+13:53 LOG: TRACE[Converting String to [boolean] using property editor [org.springframework.beans.propertyeditors.CustomBooleanEditor@6ca320ab]]
+13:53 LOG: TRACE[Converting String to [class [Ljava.lang.String;] using property editor [org.springframework.beans.propertyeditors.StringArrayPropertyEditor@50d68830]]
+13:53 LOG: TRACE[Converting String to [class [Ljava.lang.String;] using property editor [org.springframework.beans.propertyeditors.StringArrayPropertyEditor@50d68830]]
+13:53 LOG: TRACE[Converting String to [class [Ljava.lang.String;] using property editor [org.springframework.beans.propertyeditors.StringArrayPropertyEditor@50d68830]]
+13:53 LOG: TRACE[Converting String to [class [Ljava.lang.String;] using property editor [org.springframework.beans.propertyeditors.StringArrayPropertyEditor@50d68830]]
+13:53 LOG: TRACE[Converting String to [class [Ljava.lang.String;] using property editor [org.springframework.beans.propertyeditors.StringArrayPropertyEditor@50d68830]]
+13:53 LOG: TRACE[Converting String to [class [Ljava.lang.String;] using property editor [org.springframework.beans.propertyeditors.StringArrayPropertyEditor@50d68830]]
+13:53 LOG: TRACE[Finished creating instance of bean 'Derby']
+13:53 LOG: DEBUG[Creating shared instance of singleton bean 'H2']
+13:53 LOG: TRACE[Creating instance of bean 'H2']
+13:53 LOG: TRACE[Eagerly caching bean 'H2' to allow for resolving potential circular references]
+13:53 LOG: TRACE[Converting String to [class [Ljava.lang.String;] using property editor [org.springframework.beans.propertyeditors.StringArrayPropertyEditor@1e53135d]]
+13:53 LOG: TRACE[Converting String to [class [Ljava.lang.String;] using property editor [org.springframework.beans.propertyeditors.StringArrayPropertyEditor@1e53135d]]
+13:53 LOG: TRACE[Converting String to [class [Ljava.lang.String;] using property editor [org.springframework.beans.propertyeditors.StringArrayPropertyEditor@1e53135d]]
+13:53 LOG: TRACE[Converting String to [class [Ljava.lang.String;] using property editor [org.springframework.beans.propertyeditors.StringArrayPropertyEditor@1e53135d]]
+13:53 LOG: TRACE[Converting String to [class [Ljava.lang.String;] using property editor [org.springframework.beans.propertyeditors.StringArrayPropertyEditor@1e53135d]]
+13:53 LOG: TRACE[Finished creating instance of bean 'H2']
+13:53 LOG: DEBUG[Creating shared instance of singleton bean 'HDB']
+13:53 LOG: TRACE[Creating instance of bean 'HDB']
+13:53 LOG: TRACE[Eagerly caching bean 'HDB' to allow for resolving potential circular references]
+13:53 LOG: TRACE[Converting String to [class [Ljava.lang.String;] using property editor [org.springframework.beans.propertyeditors.StringArrayPropertyEditor@619bd14c]]
+13:53 LOG: TRACE[Converting String to [class [Ljava.lang.String;] using property editor [org.springframework.beans.propertyeditors.StringArrayPropertyEditor@619bd14c]]
+13:53 LOG: TRACE[Converting String to [class [Ljava.lang.String;] using property editor [org.springframework.beans.propertyeditors.StringArrayPropertyEditor@619bd14c]]
+13:53 LOG: TRACE[Converting String to [class [Ljava.lang.String;] using property editor [org.springframework.beans.propertyeditors.StringArrayPropertyEditor@619bd14c]]
+13:53 LOG: TRACE[Converting String to [class [Ljava.lang.String;] using property editor [org.springframework.beans.propertyeditors.StringArrayPropertyEditor@619bd14c]]
+13:53 LOG: TRACE[Converting String to [class [Ljava.lang.String;] using property editor [org.springframework.beans.propertyeditors.StringArrayPropertyEditor@619bd14c]]
+13:53 LOG: TRACE[Converting String to [class [Ljava.lang.String;] using property editor [org.springframework.beans.propertyeditors.StringArrayPropertyEditor@619bd14c]]
+13:53 LOG: TRACE[Converting String to [class [Ljava.lang.String;] using property editor [org.springframework.beans.propertyeditors.StringArrayPropertyEditor@619bd14c]]
+13:53 LOG: TRACE[Converting String to [class [Ljava.lang.String;] using property editor [org.springframework.beans.propertyeditors.StringArrayPropertyEditor@619bd14c]]
+13:53 LOG: TRACE[Finished creating instance of bean 'HDB']
+13:53 LOG: DEBUG[Creating shared instance of singleton bean 'HSQL']
+13:53 LOG: TRACE[Creating instance of bean 'HSQL']
+13:53 LOG: TRACE[Eagerly caching bean 'HSQL' to allow for resolving potential circular references]
+13:53 LOG: TRACE[Converting String to [class [Ljava.lang.String;] using property editor [org.springframework.beans.propertyeditors.StringArrayPropertyEditor@323e8306]]
+13:53 LOG: TRACE[Converting String to [class [Ljava.lang.String;] using property editor [org.springframework.beans.propertyeditors.StringArrayPropertyEditor@323e8306]]
+13:53 LOG: TRACE[Converting String to [class [Ljava.lang.String;] using property editor [org.springframework.beans.propertyeditors.StringArrayPropertyEditor@323e8306]]
+13:53 LOG: TRACE[Converting String to [class [Ljava.lang.String;] using property editor [org.springframework.beans.propertyeditors.StringArrayPropertyEditor@323e8306]]
+13:53 LOG: TRACE[Finished creating instance of bean 'HSQL']
+13:53 LOG: DEBUG[Creating shared instance of singleton bean 'Informix']
+13:53 LOG: TRACE[Creating instance of bean 'Informix']
+13:53 LOG: TRACE[Eagerly caching bean 'Informix' to allow for resolving potential circular references]
+13:53 LOG: TRACE[Converting String to [class [Ljava.lang.String;] using property editor [org.springframework.beans.propertyeditors.StringArrayPropertyEditor@a23a01d]]
+13:53 LOG: TRACE[Converting String to [class [Ljava.lang.String;] using property editor [org.springframework.beans.propertyeditors.StringArrayPropertyEditor@a23a01d]]
+13:53 LOG: TRACE[Converting String to [class [Ljava.lang.String;] using property editor [org.springframework.beans.propertyeditors.StringArrayPropertyEditor@a23a01d]]
+13:53 LOG: TRACE[Finished creating instance of bean 'Informix']
+13:53 LOG: DEBUG[Creating shared instance of singleton bean 'MS-SQL']
+13:53 LOG: TRACE[Creating instance of bean 'MS-SQL']
+13:53 LOG: TRACE[Eagerly caching bean 'MS-SQL' to allow for resolving potential circular references]
+13:53 LOG: TRACE[Converting String to [class [Ljava.lang.String;] using property editor [org.springframework.beans.propertyeditors.StringArrayPropertyEditor@4acf72b6]]
+13:53 LOG: TRACE[Converting String to [class [Ljava.lang.String;] using property editor [org.springframework.beans.propertyeditors.StringArrayPropertyEditor@4acf72b6]]
+13:53 LOG: TRACE[Converting String to [class [Ljava.lang.String;] using property editor [org.springframework.beans.propertyeditors.StringArrayPropertyEditor@4acf72b6]]
+13:53 LOG: TRACE[Converting String to [class [Ljava.lang.String;] using property editor [org.springframework.beans.propertyeditors.StringArrayPropertyEditor@4acf72b6]]
+13:53 LOG: TRACE[Converting String to [class [Ljava.lang.String;] using property editor [org.springframework.beans.propertyeditors.StringArrayPropertyEditor@4acf72b6]]
+13:53 LOG: TRACE[Converting String to [class [Ljava.lang.String;] using property editor [org.springframework.beans.propertyeditors.StringArrayPropertyEditor@4acf72b6]]
+13:53 LOG: TRACE[Converting String to [class [Ljava.lang.String;] using property editor [org.springframework.beans.propertyeditors.StringArrayPropertyEditor@4acf72b6]]
+13:53 LOG: TRACE[Finished creating instance of bean 'MS-SQL']
+13:53 LOG: DEBUG[Creating shared instance of singleton bean 'MySQL']
+13:53 LOG: TRACE[Creating instance of bean 'MySQL']
+13:53 LOG: TRACE[Eagerly caching bean 'MySQL' to allow for resolving potential circular references]
+13:53 LOG: TRACE[Converting String to [class [Ljava.lang.String;] using property editor [org.springframework.beans.propertyeditors.StringArrayPropertyEditor@7561db12]]
+13:53 LOG: TRACE[Converting String to [class [Ljava.lang.String;] using property editor [org.springframework.beans.propertyeditors.StringArrayPropertyEditor@7561db12]]
+13:53 LOG: TRACE[Converting String to [class [Ljava.lang.String;] using property editor [org.springframework.beans.propertyeditors.StringArrayPropertyEditor@7561db12]]
+13:53 LOG: TRACE[Converting String to [class [Ljava.lang.String;] using property editor [org.springframework.beans.propertyeditors.StringArrayPropertyEditor@7561db12]]
+13:53 LOG: TRACE[Converting String to [class [Ljava.lang.String;] using property editor [org.springframework.beans.propertyeditors.StringArrayPropertyEditor@7561db12]]
+13:53 LOG: TRACE[Converting String to [class [Ljava.lang.String;] using property editor [org.springframework.beans.propertyeditors.StringArrayPropertyEditor@7561db12]]
+13:53 LOG: TRACE[Finished creating instance of bean 'MySQL']
+13:53 LOG: DEBUG[Creating shared instance of singleton bean 'Oracle']
+13:53 LOG: TRACE[Creating instance of bean 'Oracle']
+13:53 LOG: TRACE[Eagerly caching bean 'Oracle' to allow for resolving potential circular references]
+13:53 LOG: TRACE[Converting String to [class [Ljava.lang.String;] using property editor [org.springframework.beans.propertyeditors.StringArrayPropertyEditor@3301500b]]
+13:53 LOG: TRACE[Converting String to [class [Ljava.lang.String;] using property editor [org.springframework.beans.propertyeditors.StringArrayPropertyEditor@3301500b]]
+13:53 LOG: TRACE[Converting String to [class [Ljava.lang.String;] using property editor [org.springframework.beans.propertyeditors.StringArrayPropertyEditor@3301500b]]
+13:53 LOG: TRACE[Converting String to [class [Ljava.lang.String;] using property editor [org.springframework.beans.propertyeditors.StringArrayPropertyEditor@3301500b]]
+13:53 LOG: TRACE[Converting String to [class [Ljava.lang.String;] using property editor [org.springframework.beans.propertyeditors.StringArrayPropertyEditor@3301500b]]
+13:53 LOG: TRACE[Converting String to [class [Ljava.lang.String;] using property editor [org.springframework.beans.propertyeditors.StringArrayPropertyEditor@3301500b]]
+13:53 LOG: TRACE[Converting String to [class [Ljava.lang.String;] using property editor [org.springframework.beans.propertyeditors.StringArrayPropertyEditor@3301500b]]
+13:53 LOG: TRACE[Converting String to [class [Ljava.lang.String;] using property editor [org.springframework.beans.propertyeditors.StringArrayPropertyEditor@3301500b]]
+13:53 LOG: TRACE[Finished creating instance of bean 'Oracle']
+13:53 LOG: DEBUG[Creating shared instance of singleton bean 'PostgreSQL']
+13:53 LOG: TRACE[Creating instance of bean 'PostgreSQL']
+13:53 LOG: TRACE[Eagerly caching bean 'PostgreSQL' to allow for resolving potential circular references]
+13:53 LOG: TRACE[Converting String to [boolean] using property editor [org.springframework.beans.propertyeditors.CustomBooleanEditor@24b52d3e]]
+13:53 LOG: TRACE[Converting String to [class [Ljava.lang.String;] using property editor [org.springframework.beans.propertyeditors.StringArrayPropertyEditor@15deb1dc]]
+13:53 LOG: TRACE[Converting String to [class [Ljava.lang.String;] using property editor [org.springframework.beans.propertyeditors.StringArrayPropertyEditor@15deb1dc]]
+13:53 LOG: TRACE[Converting String to [class [Ljava.lang.String;] using property editor [org.springframework.beans.propertyeditors.StringArrayPropertyEditor@15deb1dc]]
+13:53 LOG: TRACE[Converting String to [class [Ljava.lang.String;] using property editor [org.springframework.beans.propertyeditors.StringArrayPropertyEditor@15deb1dc]]
+13:53 LOG: TRACE[Converting String to [class [Ljava.lang.String;] using property editor [org.springframework.beans.propertyeditors.StringArrayPropertyEditor@15deb1dc]]
+13:53 LOG: TRACE[Converting String to [class [Ljava.lang.String;] using property editor [org.springframework.beans.propertyeditors.StringArrayPropertyEditor@15deb1dc]]
+13:53 LOG: TRACE[Converting String to [class [Ljava.lang.String;] using property editor [org.springframework.beans.propertyeditors.StringArrayPropertyEditor@15deb1dc]]
+13:53 LOG: TRACE[Finished creating instance of bean 'PostgreSQL']
+13:53 LOG: DEBUG[Creating shared instance of singleton bean 'Sybase']
+13:53 LOG: TRACE[Creating instance of bean 'Sybase']
+13:53 LOG: TRACE[Eagerly caching bean 'Sybase' to allow for resolving potential circular references]
+13:53 LOG: TRACE[Converting String to [class [Ljava.lang.String;] using property editor [org.springframework.beans.propertyeditors.StringArrayPropertyEditor@6e9c413e]]
+13:53 LOG: TRACE[Converting String to [class [Ljava.lang.String;] using property editor [org.springframework.beans.propertyeditors.StringArrayPropertyEditor@6e9c413e]]
+13:53 LOG: TRACE[Converting String to [class [Ljava.lang.String;] using property editor [org.springframework.beans.propertyeditors.StringArrayPropertyEditor@6e9c413e]]
+13:53 LOG: TRACE[Converting String to [class [Ljava.lang.String;] using property editor [org.springframework.beans.propertyeditors.StringArrayPropertyEditor@6e9c413e]]
+13:53 LOG: TRACE[Converting String to [class [Ljava.lang.String;] using property editor [org.springframework.beans.propertyeditors.StringArrayPropertyEditor@6e9c413e]]
+13:53 LOG: TRACE[Converting String to [class [Ljava.lang.String;] using property editor [org.springframework.beans.propertyeditors.StringArrayPropertyEditor@6e9c413e]]
+13:53 LOG: TRACE[Finished creating instance of bean 'Sybase']
+13:53 LOG: TRACE[SQLErrorCodes loaded: [DB2, Derby, H2, HDB, HSQL, Informix, MS-SQL, MySQL, Oracle, PostgreSQL, Sybase]]
+13:53 LOG: DEBUG[Looking up default SQLErrorCodes for DataSource [org.postgresql.ds.PGSimpleDataSource@57a4d5ee]]
+13:53 LOG: DEBUG[Fetching JDBC Connection from DataSource]
+13:53 LOG: DEBUG[SQL error codes for 'PostgreSQL' found]
+13:53 LOG: DEBUG[Caching SQL error codes for DataSource [org.postgresql.ds.PGSimpleDataSource@57a4d5ee]: database product name is 'PostgreSQL']
+13:53 LOG: DEBUG[Unable to translate SQLException with SQL state '42703', error code '0, will now try the fallback translator]
+13:53 LOG: DEBUG[Extracted SQL state class '42' from value '42703']
+13:53 LOG: DEBUG[Executing SQL query [SELECT id, photo, date, duration, description, cost, tour_type, hotel_id, country_id FROM tour]]
+13:53 LOG: DEBUG[Fetching JDBC Connection from DataSource]
+13:53 LOG: DEBUG[Unable to translate SQLException with SQL state '42703', error code '0, will now try the fallback translator]
+13:53 LOG: DEBUG[Extracted SQL state class '42' from value '42703']
+13:53 LOG: DEBUG[Executing prepared SQL query]
+13:53 LOG: DEBUG[Executing prepared SQL statement [SELECT id, photo, date, duration, description, cost, tour_type, hotel_id, country_id FROM tour WHERE id=?]]
+13:53 LOG: DEBUG[Fetching JDBC Connection from DataSource]
+13:53 LOG: TRACE[Setting SQL statement parameter value: column index 1, parameter value [1], value class [java.lang.Integer], SQL type unknown]
+13:53 LOG: DEBUG[Unable to translate SQLException with SQL state '42703', error code '0, will now try the fallback translator]
+13:53 LOG: DEBUG[Extracted SQL state class '42' from value '42703']
+13:53 LOG: DEBUG[Executing prepared SQL update]
+13:53 LOG: DEBUG[Executing prepared SQL statement [DELETE FROM tour WHERE id=?]]
+13:53 LOG: DEBUG[Fetching JDBC Connection from DataSource]
+13:53 LOG: TRACE[Setting SQL statement parameter value: column index 1, parameter value [1], value class [java.lang.Integer], SQL type unknown]
+13:53 LOG: TRACE[SQL update affected 1 rows]
+13:53 LOG: DEBUG[Executing prepared SQL query]
+13:53 LOG: DEBUG[Executing prepared SQL statement [SELECT id, photo, date, duration, description, cost, tour_type, hotel_id, country_id FROM tour WHERE id=?]]
+13:53 LOG: DEBUG[Fetching JDBC Connection from DataSource]
+13:53 LOG: TRACE[Setting SQL statement parameter value: column index 1, parameter value [1], value class [java.lang.Integer], SQL type unknown]
+13:53 LOG: WARN [Direct configuration of the Flyway object has been deprecated and will be removed in Flyway 6.0. Use Flyway.configure() instead.]
+13:53 LOG: INFO [Detected a Windows x86_64 system]
+13:53 LOG: INFO [Postgres binaries at C:\Users\valik\AppData\Local\Temp\embedded-pg\PG-91c1fa33789b0c913345bf0253da6836]
+13:53 LOG: TRACE[db3b405b-cb2e-437b-bc5a-1664749e3109 postgres data directory is C:\Users\valik\AppData\Local\Temp\epg1398251010160462061]
+13:53 LOG: INFO [The files belonging to this database system will be owned by user "valik".]
+13:53 LOG: INFO [This user must also own the server process.]
+13:53 LOG: INFO []
+13:53 LOG: INFO [The database cluster will be initialized with locale "Russian_Belarus.1251".]
+13:53 LOG: INFO [The default text search configuration will be set to "russian".]
+13:53 LOG: INFO []
+13:53 LOG: INFO [Data page checksums are disabled.]
+13:53 LOG: INFO []
+13:53 LOG: INFO [fixing permissions on existing directory C:/Users/valik/AppData/Local/Temp/epg1398251010160462061 ... ok]
+13:53 LOG: INFO [creating subdirectories ... ok]
+13:53 LOG: INFO [selecting default max_connections ... 100]
+13:53 LOG: INFO [selecting default shared_buffers ... 128MB]
+13:53 LOG: INFO [selecting dynamic shared memory implementation ... windows]
+13:53 LOG: INFO [creating configuration files ... ok]
+13:53 LOG: INFO [running bootstrap script ... ok]
+13:53 LOG: INFO [performing post-bootstrap initialization ... ok]
+13:53 LOG: INFO [syncing data to disk ... ok]
+13:53 LOG: INFO []
+13:53 LOG: INFO [Success. You can now start the database server using:]
+13:53 LOG: INFO []
+13:53 LOG: INFO [    C:/Users/valik/AppData/Local/Temp/embedded-pg/PG-91c1fa33789b0c913345bf0253da6836/bin/pg_ctl -D ^"C^:^\Users^\valik^\AppData^\Local^\Temp^\epg1398251010160462061^" -l logfile start]
+13:53 LOG: INFO []
+13:53 LOG: INFO [db3b405b-cb2e-437b-bc5a-1664749e3109 initdb completed in 00:00:12.946]
+13:53 LOG: INFO [db3b405b-cb2e-437b-bc5a-1664749e3109 postmaster started as Process[pid=2492, exitValue="not exited"] on port 61110.  Waiting up to PT10S for server startup to finish.]
+13:53 LOG: INFO [waiting for server to start....2019-02-21 13:53:58.506 +03 [14548] ���������:  ��� ����� ����������� �� ������ IPv6 "::1" ������ ���� 61110]
+13:53 LOG: INFO [2019-02-21 13:53:58.507 +03 [14548] ���������:  ��� ����� ����������� �� ������ IPv4 "127.0.0.1" ������ ���� 61110]
+13:53 LOG: INFO [2019-02-21 13:53:58.666 +03 [16448] ���������:  ������� �� ���� ���������: 2019-02-21 13:53:56 +03]
+13:53 LOG: TRACE[While waiting for server startup]
+java.sql.SQLException: connect failed
+	at com.opentable.db.postgres.embedded.EmbeddedPostgres.verifyReady(EmbeddedPostgres.java:341) ~[otj-pg-embedded-0.13.1.jar:0.13.1]
+	at com.opentable.db.postgres.embedded.EmbeddedPostgres.waitForServerStartup(EmbeddedPostgres.java:315) [otj-pg-embedded-0.13.1.jar:0.13.1]
+	at com.opentable.db.postgres.embedded.EmbeddedPostgres.startPostmaster(EmbeddedPostgres.java:275) [otj-pg-embedded-0.13.1.jar:0.13.1]
+	at com.opentable.db.postgres.embedded.EmbeddedPostgres.<init>(EmbeddedPostgres.java:162) [otj-pg-embedded-0.13.1.jar:0.13.1]
+	at com.opentable.db.postgres.embedded.EmbeddedPostgres$Builder.start(EmbeddedPostgres.java:580) [otj-pg-embedded-0.13.1.jar:0.13.1]
+	at com.opentable.db.postgres.embedded.PreparedDbProvider.createOrFindPreparer(PreparedDbProvider.java:82) [otj-pg-embedded-0.13.1.jar:0.13.1]
+	at com.opentable.db.postgres.embedded.PreparedDbProvider.<init>(PreparedDbProvider.java:62) [otj-pg-embedded-0.13.1.jar:0.13.1]
+	at com.opentable.db.postgres.embedded.PreparedDbProvider.forPreparer(PreparedDbProvider.java:57) [otj-pg-embedded-0.13.1.jar:0.13.1]
+	at com.opentable.db.postgres.junit.PreparedDbRule.before(PreparedDbRule.java:55) [otj-pg-embedded-0.13.1.jar:0.13.1]
+	at org.junit.rules.ExternalResource$1.evaluate(ExternalResource.java:46) [junit-4.12.jar:4.12]
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit-4.12.jar:4.12]
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137) [junit-4.12.jar:4.12]
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68) [junit-rt.jar:?]
+	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:47) [junit-rt.jar:?]
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242) [junit-rt.jar:?]
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70) [junit-rt.jar:?]
+Caused by: java.net.SocketTimeoutException: connect timed out
+	at java.net.PlainSocketImpl.waitForConnect(Native Method) ~[?:?]
+	at java.net.PlainSocketImpl.socketConnect(PlainSocketImpl.java:107) ~[?:?]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:399) ~[?:?]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:242) ~[?:?]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:224) ~[?:?]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:403) ~[?:?]
+	at java.net.Socket.connect(Socket.java:591) ~[?:?]
+	at com.opentable.db.postgres.embedded.EmbeddedPostgres.verifyReady(EmbeddedPostgres.java:339) ~[otj-pg-embedded-0.13.1.jar:0.13.1]
+	... 16 more
+13:53 LOG: INFO [2019-02-21 13:53:58.749 +03 [14548] ���������:  ������� �� ������ ��������� �����������]
+13:53 LOG: INFO [ done]
+13:53 LOG: INFO [server started]
+13:53 LOG: INFO [2019-02-21 13:53:58.870 +03 [8780] ���������:  �������� ��������� �����]
+13:53 LOG: INFO [db3b405b-cb2e-437b-bc5a-1664749e3109 postmaster startup finished in 00:00:00.795]
+13:53 LOG: WARN [Direct configuration of the Flyway object has been deprecated and will be removed in Flyway 6.0. Use Flyway.configure() instead.]
+13:53 LOG: INFO [Flyway Community Edition 5.2.4 by Boxfuse]
+13:53 LOG: INFO [Database: jdbc:postgresql://localhost:61110/template1 (PostgreSQL 10.6)]
+13:53 LOG: DEBUG[Driver  : PostgreSQL JDBC Driver 42.2.5]
+13:53 LOG: DEBUG[DDL Transactions Supported: true]
+13:53 LOG: DEBUG[Schema: public]
+13:53 LOG: DEBUG[Scanning for classpath resources at 'classpath:db/migration' ...]
+13:53 LOG: DEBUG[Determining location urls for classpath:db/migration using ClassLoader jdk.internal.loader.ClassLoaders$AppClassLoader@6ed3ef1 ...]
+13:53 LOG: DEBUG[Scanning URL: file:/C:/Users/valik/IdeaProjects/java-lab-task-1/target/classes/db/migration]
+13:53 LOG: DEBUG[JBoss VFS v2 available: false]
+13:53 LOG: DEBUG[Scanning starting at classpath root in filesystem: C:\Users\valik\IdeaProjects\java-lab-task-1\target\classes\]
+13:53 LOG: DEBUG[Scanning for resources in path: C:\Users\valik\IdeaProjects\java-lab-task-1\target\classes\db\migration (db/migration)]
+13:53 LOG: DEBUG[Found resource: db/migration/V1_1__init_data.sql]
+13:53 LOG: DEBUG[Found resource: db/migration/V1__init_schema.sql]
+13:53 LOG: DEBUG[Scanning for classes at classpath:db/migration]
+13:53 LOG: DEBUG[Scanning for SQL callbacks ...]
+13:53 LOG: DEBUG[Spring Jdbc available: true]
+13:53 LOG: DEBUG[Validating migrations ...]
+13:53 LOG: DEBUG[Parsing V1_1__init_data.sql ...]
+13:53 LOG: DEBUG[Found statement at line 1: INSERT INTO "user" (login, password)
+VALUES ('user1', 'user1')]
+13:53 LOG: DEBUG[Found statement at line 3: INSERT INTO "user" (login, password)
+VALUES ('user2', 'user2')]
+13:53 LOG: DEBUG[Found statement at line 5: INSERT INTO "user" (login, password)
+VALUES ('user3', 'user3')]
+13:53 LOG: DEBUG[Found statement at line 7: INSERT INTO "user" (login, password)
+VALUES ('user4', 'user4')]
+13:53 LOG: DEBUG[Found statement at line 10: INSERT INTO "country" (name)
+VALUES ('testCountry')]
+13:53 LOG: DEBUG[Found statement at line 13: INSERT INTO "hotel" (name, stars, website, latitude, longitude, feature)
+VALUES ('test1', 4, 'test1', 1, 1, 'security')]
+13:53 LOG: DEBUG[Found statement at line 15: INSERT INTO "hotel" (name, stars, website, latitude, longitude, feature)
+VALUES ('test2', 4, 'test2', 1, 1, 'security')]
+13:53 LOG: DEBUG[Found statement at line 17: INSERT INTO "hotel" (name, stars, website, latitude, longitude, feature)
+VALUES ('test3', 4, 'test3', 1, 1, 'security')]
+13:53 LOG: DEBUG[Found statement at line 19: INSERT INTO "hotel" (name, stars, website, latitude, longitude, feature)
+VALUES ('test4', 4, 'test4', 1, 1, 'security')]
+13:53 LOG: DEBUG[Found statement at line 22: INSERT INTO "tour" (photo, date, duration, description, cost, tour_type, hotel_id, country_id)
+VALUES ('test1.jpg', '12-12-2012', 12, 'description1', 505, 'guided', 1, 1)]
+13:53 LOG: DEBUG[Found statement at line 24: INSERT INTO "tour" (photo, date, duration, description, cost, tour_type, hotel_id, country_id)
+VALUES ('test2.jpg', '12-12-2012', 12, 'description2', 505, 'guided', 2, 1)]
+13:53 LOG: DEBUG[Found statement at line 26: INSERT INTO "tour" (photo, date, duration, description, cost, tour_type, hotel_id, country_id)
+VALUES ('test3.jpg', '12-12-2012', 12, 'description3', 505, 'guided', 3, 1)]
+13:53 LOG: DEBUG[Found statement at line 28: INSERT INTO "tour" (photo, date, duration, description, cost, tour_type, hotel_id, country_id)
+VALUES ('test4.jpg', '12-12-2012', 12, 'description4', 505, 'guided', 4, 1)]
+13:53 LOG: DEBUG[Parsing V1__init_schema.sql ...]
+13:53 LOG: DEBUG[Found statement at line 1: CREATE TYPE TOUR_TYPE AS ENUM
+  (
+    'bus', 'sightseeing', 'shore_excursion',
+    'adventure', 'sporting', 'cruise',
+    'escorted', 'guided', 'rail', 'extreme'
+    )]
+13:53 LOG: DEBUG[Found statement at line 8: CREATE TYPE HOTEL_FEATURE AS ENUM
+  (
+    'cleanliness', 'security', 'wi-fi', 'breakfast', 'parking', 'air_conditioning',
+    'food_delivery', 'pool', 'conference_hall', 'safe'
+    )]
+13:53 LOG: DEBUG[Found statement at line 16: CREATE TABLE IF NOT EXISTS "user"
+(
+  id       SERIAL,
+  login    VARCHAR(255) UNIQUE NOT NULL,
+  password VARCHAR(255)        NOT NULL,
+  PRIMARY KEY (id)
+)]
+13:53 LOG: DEBUG[Found statement at line 24: CREATE TABLE IF NOT EXISTS "hotel"
+(
+  id        SERIAL,
+  name      VARCHAR(255)   NOT NULL,
+  stars     SMALLINT       NOT NULL,
+  website   VARCHAR(255)   NOT NULL,
+  latitude  DECIMAL(8, 6)  NOT NULL,
+  longitude DECIMAL(8, 6)  NOT NULL,
+  feature   HOTEL_FEATURE NOT NULL,
+  PRIMARY KEY (id)
+)]
+13:53 LOG: DEBUG[Found statement at line 36: CREATE TABLE IF NOT EXISTS "country"
+(
+  id   SERIAL,
+  name VARCHAR(255),
+  PRIMARY KEY (id)
+)]
+13:53 LOG: DEBUG[Found statement at line 43: CREATE TABLE IF NOT EXISTS "tour"
+(
+  id          SERIAL,
+  photo       VARCHAR(255),
+  date        DATE           NOT NULL,
+  duration    INT            NOT NULL,
+  description TEXT           NOT NULL,
+  cost        DECIMAL(19, 3) NOT NULL,
+  tour_type   TOUR_TYPE      NOT NULL,
+  hotel_id    INT            NOT NULL,
+  country_id  INT            NOT NULL,
+  PRIMARY KEY (id),
+  FOREIGN KEY (hotel_id) REFERENCES "hotel" (id),
+  FOREIGN KEY (country_id) REFERENCES "country" (id)
+)]
+13:53 LOG: DEBUG[Found statement at line 59: CREATE TABLE IF NOT EXISTS "usertour"
+(
+  user_id INT UNIQUE NOT NULL,
+  tour_id INT UNIQUE NOT NULL,
+  PRIMARY KEY (user_id, tour_id),
+  FOREIGN KEY (user_id) REFERENCES "user" (id),
+  FOREIGN KEY (tour_id) REFERENCES "tour" (id)
+)]
+13:53 LOG: DEBUG[Found statement at line 68: CREATE TABLE IF NOT EXISTS "review"
+(
+  id      SERIAL,
+  date    DATE NOT NULL,
+  text    TEXT NOT NULL,
+  user_id INT  NOT NULL,
+  tour_id INT  NOT NULL,
+  PRIMARY KEY (id),
+  FOREIGN KEY (user_id) REFERENCES "user" (id),
+  FOREIGN KEY (tour_id) REFERENCES "tour" (id)
+)]
+13:53 LOG: DEBUG[Filtering out resource: db/migration/V1_1__init_data.sql (filename: V1_1__init_data.sql)]
+13:53 LOG: DEBUG[Filtering out resource: db/migration/V1__init_schema.sql (filename: V1__init_schema.sql)]
+13:53 LOG: INFO [Successfully validated 2 migrations (execution time 00:00.034s)]
+13:53 LOG: DEBUG[Schema "public" already exists. Skipping schema creation.]
+13:53 LOG: INFO [Creating Schema History table: "public"."flyway_schema_history"]
+13:53 LOG: DEBUG[Parsing createMetaDataTable.sql ...]
+13:53 LOG: DEBUG[Found statement at line 17: CREATE TABLE "public"."flyway_schema_history" (
+    "installed_rank" INT NOT NULL,
+    "version" VARCHAR(50),
+    "description" VARCHAR(200) NOT NULL,
+    "type" VARCHAR(20) NOT NULL,
+    "script" VARCHAR(1000) NOT NULL,
+    "checksum" INTEGER,
+    "installed_by" VARCHAR(100) NOT NULL,
+    "installed_on" TIMESTAMP NOT NULL DEFAULT now(),
+    "execution_time" INTEGER NOT NULL,
+    "success" BOOLEAN NOT NULL
+)]
+13:53 LOG: DEBUG[Found statement at line 29: ALTER TABLE "public"."flyway_schema_history" ADD CONSTRAINT "flyway_schema_history_pk" PRIMARY KEY ("installed_rank")]
+13:53 LOG: DEBUG[Found statement at line 31: CREATE INDEX "flyway_schema_history_s_idx" ON "public"."flyway_schema_history" ("success")]
+13:53 LOG: DEBUG[Executing SQL: CREATE TABLE "public"."flyway_schema_history" (
+    "installed_rank" INT NOT NULL,
+    "version" VARCHAR(50),
+    "description" VARCHAR(200) NOT NULL,
+    "type" VARCHAR(20) NOT NULL,
+    "script" VARCHAR(1000) NOT NULL,
+    "checksum" INTEGER,
+    "installed_by" VARCHAR(100) NOT NULL,
+    "installed_on" TIMESTAMP NOT NULL DEFAULT now(),
+    "execution_time" INTEGER NOT NULL,
+    "success" BOOLEAN NOT NULL
+)]
+13:53 LOG: DEBUG[Update Count: 0]
+13:53 LOG: DEBUG[Executing SQL: ALTER TABLE "public"."flyway_schema_history" ADD CONSTRAINT "flyway_schema_history_pk" PRIMARY KEY ("installed_rank")]
+13:53 LOG: DEBUG[Update Count: 0]
+13:53 LOG: DEBUG[Executing SQL: CREATE INDEX "flyway_schema_history_s_idx" ON "public"."flyway_schema_history" ("success")]
+13:53 LOG: DEBUG[Update Count: 0]
+13:53 LOG: DEBUG[Created Schema History table: "public"."flyway_schema_history"]
+13:53 LOG: INFO [Current version of schema "public": << Empty Schema >>]
+13:53 LOG: INFO [Migrating schema "public" to version 1 - init schema]
+13:53 LOG: DEBUG[Executing SQL: CREATE TYPE TOUR_TYPE AS ENUM
+  (
+    'bus', 'sightseeing', 'shore_excursion',
+    'adventure', 'sporting', 'cruise',
+    'escorted', 'guided', 'rail', 'extreme'
+    )]
+13:53 LOG: DEBUG[Update Count: 0]
+13:53 LOG: DEBUG[Executing SQL: CREATE TYPE HOTEL_FEATURE AS ENUM
+  (
+    'cleanliness', 'security', 'wi-fi', 'breakfast', 'parking', 'air_conditioning',
+    'food_delivery', 'pool', 'conference_hall', 'safe'
+    )]
+13:53 LOG: DEBUG[Update Count: 0]
+13:53 LOG: DEBUG[Executing SQL: CREATE TABLE IF NOT EXISTS "user"
+(
+  id       SERIAL,
+  login    VARCHAR(255) UNIQUE NOT NULL,
+  password VARCHAR(255)        NOT NULL,
+  PRIMARY KEY (id)
+)]
+13:53 LOG: DEBUG[Update Count: 0]
+13:53 LOG: DEBUG[Executing SQL: CREATE TABLE IF NOT EXISTS "hotel"
+(
+  id        SERIAL,
+  name      VARCHAR(255)   NOT NULL,
+  stars     SMALLINT       NOT NULL,
+  website   VARCHAR(255)   NOT NULL,
+  latitude  DECIMAL(8, 6)  NOT NULL,
+  longitude DECIMAL(8, 6)  NOT NULL,
+  feature   HOTEL_FEATURE NOT NULL,
+  PRIMARY KEY (id)
+)]
+13:53 LOG: DEBUG[Update Count: 0]
+13:53 LOG: DEBUG[Executing SQL: CREATE TABLE IF NOT EXISTS "country"
+(
+  id   SERIAL,
+  name VARCHAR(255),
+  PRIMARY KEY (id)
+)]
+13:53 LOG: DEBUG[Update Count: 0]
+13:53 LOG: DEBUG[Executing SQL: CREATE TABLE IF NOT EXISTS "tour"
+(
+  id          SERIAL,
+  photo       VARCHAR(255),
+  date        DATE           NOT NULL,
+  duration    INT            NOT NULL,
+  description TEXT           NOT NULL,
+  cost        DECIMAL(19, 3) NOT NULL,
+  tour_type   TOUR_TYPE      NOT NULL,
+  hotel_id    INT            NOT NULL,
+  country_id  INT            NOT NULL,
+  PRIMARY KEY (id),
+  FOREIGN KEY (hotel_id) REFERENCES "hotel" (id),
+  FOREIGN KEY (country_id) REFERENCES "country" (id)
+)]
+13:53 LOG: DEBUG[Update Count: 0]
+13:53 LOG: DEBUG[Executing SQL: CREATE TABLE IF NOT EXISTS "usertour"
+(
+  user_id INT UNIQUE NOT NULL,
+  tour_id INT UNIQUE NOT NULL,
+  PRIMARY KEY (user_id, tour_id),
+  FOREIGN KEY (user_id) REFERENCES "user" (id),
+  FOREIGN KEY (tour_id) REFERENCES "tour" (id)
+)]
+13:53 LOG: DEBUG[Update Count: 0]
+13:53 LOG: DEBUG[Executing SQL: CREATE TABLE IF NOT EXISTS "review"
+(
+  id      SERIAL,
+  date    DATE NOT NULL,
+  text    TEXT NOT NULL,
+  user_id INT  NOT NULL,
+  tour_id INT  NOT NULL,
+  PRIMARY KEY (id),
+  FOREIGN KEY (user_id) REFERENCES "user" (id),
+  FOREIGN KEY (tour_id) REFERENCES "tour" (id)
+)]
+13:53 LOG: DEBUG[Update Count: 0]
+13:53 LOG: DEBUG[Successfully completed migration of schema "public" to version 1 - init schema]
+13:53 LOG: DEBUG[Schema History table "public"."flyway_schema_history" successfully updated to reflect changes]
+13:53 LOG: INFO [Migrating schema "public" to version 1.1 - init data]
+13:53 LOG: DEBUG[Executing SQL: INSERT INTO "user" (login, password)
+VALUES ('user1', 'user1')]
+13:53 LOG: DEBUG[Update Count: 1]
+13:53 LOG: DEBUG[Executing SQL: INSERT INTO "user" (login, password)
+VALUES ('user2', 'user2')]
+13:53 LOG: DEBUG[Update Count: 1]
+13:53 LOG: DEBUG[Executing SQL: INSERT INTO "user" (login, password)
+VALUES ('user3', 'user3')]
+13:53 LOG: DEBUG[Update Count: 1]
+13:53 LOG: DEBUG[Executing SQL: INSERT INTO "user" (login, password)
+VALUES ('user4', 'user4')]
+13:53 LOG: DEBUG[Update Count: 1]
+13:53 LOG: DEBUG[Executing SQL: INSERT INTO "country" (name)
+VALUES ('testCountry')]
+13:53 LOG: DEBUG[Update Count: 1]
+13:53 LOG: DEBUG[Executing SQL: INSERT INTO "hotel" (name, stars, website, latitude, longitude, feature)
+VALUES ('test1', 4, 'test1', 1, 1, 'security')]
+13:53 LOG: DEBUG[Update Count: 1]
+13:53 LOG: DEBUG[Executing SQL: INSERT INTO "hotel" (name, stars, website, latitude, longitude, feature)
+VALUES ('test2', 4, 'test2', 1, 1, 'security')]
+13:53 LOG: DEBUG[Update Count: 1]
+13:53 LOG: DEBUG[Executing SQL: INSERT INTO "hotel" (name, stars, website, latitude, longitude, feature)
+VALUES ('test3', 4, 'test3', 1, 1, 'security')]
+13:53 LOG: DEBUG[Update Count: 1]
+13:53 LOG: DEBUG[Executing SQL: INSERT INTO "hotel" (name, stars, website, latitude, longitude, feature)
+VALUES ('test4', 4, 'test4', 1, 1, 'security')]
+13:53 LOG: DEBUG[Update Count: 1]
+13:53 LOG: DEBUG[Executing SQL: INSERT INTO "tour" (photo, date, duration, description, cost, tour_type, hotel_id, country_id)
+VALUES ('test1.jpg', '12-12-2012', 12, 'description1', 505, 'guided', 1, 1)]
+13:53 LOG: DEBUG[Update Count: 1]
+13:53 LOG: DEBUG[Executing SQL: INSERT INTO "tour" (photo, date, duration, description, cost, tour_type, hotel_id, country_id)
+VALUES ('test2.jpg', '12-12-2012', 12, 'description2', 505, 'guided', 2, 1)]
+13:53 LOG: DEBUG[Update Count: 1]
+13:53 LOG: DEBUG[Executing SQL: INSERT INTO "tour" (photo, date, duration, description, cost, tour_type, hotel_id, country_id)
+VALUES ('test3.jpg', '12-12-2012', 12, 'description3', 505, 'guided', 3, 1)]
+13:53 LOG: DEBUG[Update Count: 1]
+13:53 LOG: DEBUG[Executing SQL: INSERT INTO "tour" (photo, date, duration, description, cost, tour_type, hotel_id, country_id)
+VALUES ('test4.jpg', '12-12-2012', 12, 'description4', 505, 'guided', 4, 1)]
+13:53 LOG: DEBUG[Update Count: 1]
+13:53 LOG: DEBUG[Successfully completed migration of schema "public" to version 1.1 - init data]
+13:53 LOG: DEBUG[Schema History table "public"."flyway_schema_history" successfully updated to reflect changes]
+13:53 LOG: INFO [Successfully applied 2 migrations to schema "public" (execution time 00:00.195s)]
+13:53 LOG: DEBUG[Memory usage: 12 of 126M]
+13:54 LOG: DEBUG[Executing prepared SQL query]
+13:54 LOG: DEBUG[Executing prepared SQL statement [SELECT id, photo, date, duration, description, cost, tour_type, hotel_id, country_id FROM tour WHERE id=?]]
+13:54 LOG: DEBUG[Fetching JDBC Connection from DataSource]
+13:54 LOG: TRACE[Setting SQL statement parameter value: column index 1, parameter value [1], value class [java.lang.Integer], SQL type unknown]
+13:54 LOG: DEBUG[Executing SQL query [SELECT id, photo, date, duration, description, cost, tour_type, hotel_id, country_id FROM tour]]
+13:54 LOG: DEBUG[Fetching JDBC Connection from DataSource]
+13:54 LOG: DEBUG[Executing prepared SQL query]
+13:54 LOG: DEBUG[Executing prepared SQL statement [SELECT id, photo, date, duration, description, cost, tour_type, hotel_id, country_id FROM tour WHERE id=?]]
+13:54 LOG: DEBUG[Fetching JDBC Connection from DataSource]
+13:54 LOG: TRACE[Setting SQL statement parameter value: column index 1, parameter value [1], value class [java.lang.Integer], SQL type unknown]
+13:54 LOG: DEBUG[Executing prepared SQL update]
+13:54 LOG: DEBUG[Executing prepared SQL statement [DELETE FROM tour WHERE id=?]]
+13:54 LOG: DEBUG[Fetching JDBC Connection from DataSource]
+13:54 LOG: TRACE[Setting SQL statement parameter value: column index 1, parameter value [1], value class [java.lang.Integer], SQL type unknown]
+13:54 LOG: TRACE[SQL update affected 1 rows]
+13:54 LOG: DEBUG[Executing prepared SQL query]
+13:54 LOG: DEBUG[Executing prepared SQL statement [SELECT id, photo, date, duration, description, cost, tour_type, hotel_id, country_id FROM tour WHERE id=?]]
+13:54 LOG: DEBUG[Fetching JDBC Connection from DataSource]
+13:54 LOG: TRACE[Setting SQL statement parameter value: column index 1, parameter value [1], value class [java.lang.Integer], SQL type unknown]

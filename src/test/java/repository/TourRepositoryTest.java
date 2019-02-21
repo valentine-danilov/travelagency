@@ -43,25 +43,6 @@ public class TourRepositoryTest {
         repository = new TourRepository();
         repository.setDataContext(dataContext);
 
-        //Test country init
-        Country testCountry = new Country();
-        testCountry.setId(1);
-        testCountry.setName("testCountry");
-
-        //Test hotel init
-        Hotel testHotel = new Hotel();
-        testHotel.setId(1);
-        testHotel.setName("test1");
-        testHotel.setStars((byte) 4);
-        testHotel.setWebsite("test1");
-        BigDecimal latitude = new BigDecimal(1)
-                .setScale(6, RoundingMode.HALF_UP);
-        BigDecimal longitude = new BigDecimal(1)
-                .setScale(6, RoundingMode.HALF_UP);
-        testHotel.setLatitude(latitude);
-        testHotel.setLongitude(longitude);
-        testHotel.setFeatures(HotelFeature.SECURITY);
-
         //Test tour init
         testTour = new Tour();
         testTour.setId(1);
@@ -76,8 +57,8 @@ public class TourRepositoryTest {
         testTour.setDescription("description1");
         testTour.setCost(new BigDecimal(505).setScale(3, RoundingMode.HALF_UP));
         testTour.setTourType(TourType.GUIDED);
-        testTour.setCountry(testCountry);
-        testTour.setHotel(testHotel);
+        testTour.setCountryId(1);
+        testTour.setHotelId(1);
     }
 
     @Test
@@ -89,8 +70,8 @@ public class TourRepositoryTest {
         Assert.assertEquals(testTour.getDescription(), actual.getDescription());
         Assert.assertEquals(testTour.getCost(), actual.getCost());
         Assert.assertEquals(testTour.getTourType(), actual.getTourType());
-        Assert.assertEquals(testTour.getCountry(), actual.getCountry());
-        Assert.assertEquals(testTour.getHotel(), actual.getHotel());
+        Assert.assertEquals(testTour.getCountryId(), actual.getCountryId());
+        Assert.assertEquals(testTour.getHotelId(), actual.getHotelId());
     }
 
     @Test

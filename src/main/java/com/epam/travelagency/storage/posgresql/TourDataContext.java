@@ -12,14 +12,8 @@ import java.util.List;
 public class TourDataContext implements DataContext<Tour> {
 
     private static final String SELECT_FROM_TOUR =
-            "SELECT t.id as tour_id, photo, date, duration, description," +
-                    " cost, tour_type, hotel_id, country_id," +
-                    " c.name as country_name," +
-                    " h.name as hotel_name, h.stars, h.website," +
-                    " h.latitude, h.longitude, h.feature " +
-                    " FROM tour t" +
-                    " JOIN country c on t.country_id = c.id" +
-                    " JOIN hotel h on t.hotel_id = h.id";
+            "SELECT id, photo, date, duration, description," +
+                    " cost, tour_type, hotel_id, country_id FROM tour";
 
     private JdbcTemplate jdbcTemplate;
 
@@ -41,15 +35,15 @@ public class TourDataContext implements DataContext<Tour> {
                     preparedStatement.setString(4, entity.getDescription());
                     preparedStatement.setBigDecimal(5, entity.getCost());
                     preparedStatement.setString(6, entity.getTourType().name().toLowerCase());
-                    preparedStatement.setInt(7, entity.getHotel().getId());
-                    preparedStatement.setInt(8, entity.getCountry().getId());
+                    preparedStatement.setInt(7, entity.getHotelId());
+                    preparedStatement.setInt(8, entity.getCountryId());
                 });
     }
 
     @Override
     public Tour read(Integer id) {
         return jdbcTemplate.queryForObject(
-                SELECT_FROM_TOUR + " WHERE t.id=?",
+                SELECT_FROM_TOUR + " WHERE id=?",
                 new TourRowMapper(), id);
     }
 

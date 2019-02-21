@@ -7,6 +7,9 @@ import com.epam.travelagency.storage.posgresql.UserDataContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
+@org.springframework.stereotype.Repository
 public abstract class Repository<T extends AbstractEntity> {
 
     protected DataContext<T> storage;
@@ -23,4 +26,6 @@ public abstract class Repository<T extends AbstractEntity> {
     public abstract void update(T entity);
 
     public abstract void delete(Integer id);
+
+    public abstract List<T> read();
 }

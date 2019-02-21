@@ -5,6 +5,7 @@ import com.epam.travelagency.repository.Repository;
 
 import java.util.List;
 
+@org.springframework.stereotype.Repository
 public class HotelRepository extends Repository<Hotel> {
     @Override
     public void create(Hotel entity) {

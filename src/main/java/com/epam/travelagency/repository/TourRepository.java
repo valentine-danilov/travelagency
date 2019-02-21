@@ -4,6 +4,7 @@ import com.epam.travelagency.bean.Tour;
 
 import java.util.List;
 
+@org.springframework.stereotype.Repository
 public class TourRepository extends Repository<Tour> {
     @Override
     public void create(Tour entity) {

@@ -4,6 +4,7 @@ import com.epam.travelagency.bean.User;
 
 import java.util.List;
 
+@org.springframework.stereotype.Repository
 public class UserRepository extends Repository<User> {
 
     public void create(User entity) {

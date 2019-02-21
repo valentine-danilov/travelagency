@@ -2,6 +2,7 @@ package config;
 
 import com.epam.travelagency.repository.HotelRepository;
 import com.epam.travelagency.repository.UserRepository;
+import com.epam.travelagency.service.UserService;
 import com.epam.travelagency.storage.posgresql.HotelDataContext;
 import com.epam.travelagency.storage.posgresql.UserDataContext;
 import org.junit.BeforeClass;
@@ -18,10 +19,7 @@ import javax.sql.DataSource;
 @Configuration
 public class TestConfig {
 
-
-
-    @Bean
-    @FlywayDataSource
+    /*@Bean
     public DataSource getDataSource() {
         EmbeddedDatabaseBuilder builder = new EmbeddedDatabaseBuilder();
         return builder
@@ -29,12 +27,12 @@ public class TestConfig {
                 .addScript("classpath:db/migration/V1__init_schema.sql")
                 .addScript("classpath:db/migration/V1_1__init_data.sql")
                 .build();
-    }
+    }*/
 
-    @Bean
+    /*@Bean
     public JdbcTemplate getJdbcTemplate() {
         return new JdbcTemplate(getDataSource());
-    }
+    }*/
 
     @Bean
     public UserRepository userRepository(){
@@ -46,14 +44,10 @@ public class TestConfig {
         return new HotelRepository();
     }
 
-    @Bean
-    public UserDataContext userDataContext(){
-        return new UserDataContext(getJdbcTemplate());
-    }
 
     @Bean
-    public HotelDataContext hotelDataContext(){
-        return new HotelDataContext(getJdbcTemplate());
+    public UserService userService(){
+        return new UserService(userRepository());
     }
 
 }

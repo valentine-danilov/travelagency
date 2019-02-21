@@ -23,19 +23,8 @@ public class TourRowMapper implements RowMapper<Tour> {
         tour.setTourType(TourType.valueOf(
                 resultSet.getString("tour_type")
                         .toUpperCase()));
-        Country country = new Country();
-        country.setId(resultSet.getInt("country_id"));
-        country.setName(resultSet.getString("country_name"));
-        Hotel hotel = new Hotel();
-        hotel.setId(resultSet.getInt("hotel_id"));
-        hotel.setName(resultSet.getString("hotel_name"));
-        hotel.setStars(resultSet.getByte("stars"));
-        hotel.setWebsite(resultSet.getString("website"));
-        hotel.setLatitude(resultSet.getBigDecimal("latitude"));
-        hotel.setLongitude(resultSet.getBigDecimal("longitude"));
-        hotel.setFeatures(HotelFeature.valueOf(resultSet.getString("feature").toUpperCase()));
-        tour.setCountry(country);
-        tour.setHotel(hotel);
+        tour.setCountryId(resultSet.getInt("country_id"));
+        tour.setHotelId(resultSet.getInt("hotel_id"));
         return tour;
     }
 }

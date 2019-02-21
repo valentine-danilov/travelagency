@@ -9,47 +9,45 @@ import java.util.Date;
 
 @Component
 public class Review extends AbstractEntity {
-    private Date date;
-    private String[] text;
-    private User user;
-    private Tour tour;
+    private String date;
+    private String text;
+    private Integer userId;
+    private Integer tourId;
 
     public Review() {
-        date = new Date();
-        text = new String[1];
+        date = "";
+        text = "";
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
-    public String[] getText() {
+    public String getText() {
         return text;
     }
 
-    public void setText(String[] text) {
+    public void setText(String text) {
         this.text = text;
     }
 
-    public User getUser() {
-        return user;
+    public Integer getUserId() {
+        return userId;
     }
 
-    @Autowired
-    public void setUser(User user) {
-        this.user = user;
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 
-    public Tour getTour() {
-        return tour;
+    public Integer getTourId() {
+        return tourId;
     }
 
-    @Autowired
-    public void setTour(Tour tour) {
-        this.tour = tour;
+    public void setTourId(Integer tourId) {
+        this.tourId = tourId;
     }
 }

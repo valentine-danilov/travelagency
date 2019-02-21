@@ -1,22 +1,22 @@
 package com.epam.travelagency.repository;
 
-import com.epam.travelagency.bean.Country;
+import com.epam.travelagency.bean.Review;
 
 import java.util.List;
 
-public class CountryRepository extends Repository<Country> {
+public class ReviewRepository extends Repository<Review> {
     @Override
-    public void create(Country entity) {
+    public void create(Review entity) {
         storage.create(entity);
     }
 
     @Override
-    public Country read(Integer id) {
+    public Review read(Integer id) {
         return storage.read(id);
     }
 
     @Override
-    public void update(Country entity) {
+    public void update(Review entity) {
         storage.update(entity);
     }
 
@@ -26,7 +26,7 @@ public class CountryRepository extends Repository<Country> {
     }
 
     @Override
-    public List<Country> read() {
+    public List<Review> read() {
         return storage.read();
     }
 }

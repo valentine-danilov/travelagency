@@ -7,12 +7,10 @@ import com.opentable.db.postgres.embedded.FlywayPreparer;
 import com.opentable.db.postgres.junit.EmbeddedPostgresRules;
 import com.opentable.db.postgres.junit.PreparedDbRule;
 import config.TestConfig;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Rule;
-import org.junit.Test;
+import org.junit.*;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
@@ -20,11 +18,11 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 @ContextConfiguration(classes = TestConfig.class)
 public class UserRepositoryTest {
 
+    @ClassRule
+    public static PreparedDbRule db =
+            EmbeddedPostgresRules.preparedDatabase(
+                    FlywayPreparer.forClasspathLocation("db/migration"));
 
-
-    @Autowired
-    private UserDataContext dataContext;
-    @Autowired
     private UserRepository userRepository;
 
     private static final Integer EXPECTED_SIZE = 4;
@@ -33,7 +31,8 @@ public class UserRepositoryTest {
 
     @Before
     public void init() {
-
+        JdbcTemplate template = new JdbcTemplate(db.getTestDatabase());
+        UserDataContext dataContext = new UserDataContext(template);
         userRepository.setDataContext(dataContext);
         testUser.setId(1);
         testUser.setLogin("testLogin");

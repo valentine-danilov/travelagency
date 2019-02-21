@@ -17,8 +17,8 @@ public class Tour extends AbstractEntity {
     private String description;
     private BigDecimal cost;
     private TourType tourType;
-    private Hotel hotel;
-    private Country country;
+    private Integer countryId;
+    private Integer hotelId;
 
     public Tour() {
         photo = "";
@@ -76,36 +76,34 @@ public class Tour extends AbstractEntity {
         this.tourType = tourType;
     }
 
-    public Hotel getHotel() {
-        return hotel;
+    public Integer getCountryId() {
+        return countryId;
     }
 
-    @Autowired
-    public void setHotel(Hotel hotel) {
-        this.hotel = hotel;
+    public void setCountryId(Integer countryId) {
+        this.countryId = countryId;
     }
 
-    public Country getCountry() {
-        return country;
+    public Integer getHotelId() {
+        return hotelId;
     }
 
-    @Autowired
-    public void setCountry(Country country) {
-        this.country = country;
+    public void setHotelId(Integer hotelId) {
+        this.hotelId = hotelId;
     }
 
     @Override
     public String toString() {
         return "Tour{" +
-                "id=" + id +
-                ", photo='" + photo + '\'' +
-                ", date=" + date +
+                "photo='" + photo + '\'' +
+                ", date='" + date + '\'' +
                 ", duration=" + duration +
-                ", description=" + description +
+                ", description='" + description + '\'' +
                 ", cost=" + cost +
                 ", tourType=" + tourType +
-                ", hotel=" + hotel +
-                ", country=" + country +
+                ", countryId=" + countryId +
+                ", hotelId=" + hotelId +
+                ", id=" + id +
                 '}';
     }
 
@@ -120,12 +118,12 @@ public class Tour extends AbstractEntity {
                 Objects.equals(description, tour.description) &&
                 Objects.equals(cost, tour.cost) &&
                 tourType == tour.tourType &&
-                Objects.equals(hotel, tour.hotel) &&
-                Objects.equals(country, tour.country);
+                Objects.equals(countryId, tour.countryId) &&
+                Objects.equals(hotelId, tour.hotelId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(photo, date, duration, description, cost, tourType, hotel, country);
+        return Objects.hash(photo, date, duration, description, cost, tourType, countryId, hotelId);
     }
 }

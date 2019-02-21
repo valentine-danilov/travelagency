@@ -1,11 +1,8 @@
 package com.epam.travelagency.repository;
 
 import com.epam.travelagency.bean.AbstractEntity;
-import com.epam.travelagency.bean.User;
 import com.epam.travelagency.storage.DataContext;
-import com.epam.travelagency.storage.posgresql.UserDataContext;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 
 import java.util.List;
 

@@ -1,11 +1,7 @@
 package com.epam.travelagency.bean;
 
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.stereotype.Component;
-
 import java.util.Objects;
 
-@Component
 public class Country extends AbstractEntity {
     private String name;
 

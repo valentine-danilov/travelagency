@@ -1,10 +1,7 @@
 package com.epam.travelagency.bean;
 
-import org.springframework.stereotype.Component;
-
 import java.util.Objects;
 
-@Component
 public class User extends AbstractEntity {
     private String login;
     private String password;

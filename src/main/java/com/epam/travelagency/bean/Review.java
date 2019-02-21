@@ -1,13 +1,5 @@
 package com.epam.travelagency.bean;
 
-import com.epam.travelagency.bean.Tour;
-import com.epam.travelagency.bean.User;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-
-import java.util.Date;
-
-@Component
 public class Review extends AbstractEntity {
     private String date;
     private String text;

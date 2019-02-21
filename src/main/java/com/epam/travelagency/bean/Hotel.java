@@ -1,12 +1,10 @@
 package com.epam.travelagency.bean;
 
 import com.epam.travelagency.bean.enumeration.HotelFeature;
-import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
 import java.util.Objects;
 
-@Component
 public class Hotel extends AbstractEntity{
     private String name;
     private Byte stars;

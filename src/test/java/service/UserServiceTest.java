@@ -1,27 +1,20 @@
 package service;
 
-import com.epam.travelagency.bean.AppConfig;
 import com.epam.travelagency.bean.User;
 import com.epam.travelagency.repository.UserRepository;
 import com.epam.travelagency.service.UserService;
-import config.TestConfig;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.*;
-import org.mockito.junit.MockitoRule;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.mockito.junit.MockitoJUnitRunner;
 
 import java.util.List;
 
-@RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = TestConfig.class)
+@RunWith(MockitoJUnitRunner.class)
 public class UserServiceTest {
 
-    @Autowired
     @InjectMocks
     private UserService userService;
 
@@ -45,6 +38,4 @@ public class UserServiceTest {
         User actual = userService.readById(1);
         Assert.assertEquals(testUser, actual);
     }
-
-
 }

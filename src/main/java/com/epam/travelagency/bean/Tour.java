@@ -1,15 +1,10 @@
 package com.epam.travelagency.bean;
 
 import com.epam.travelagency.bean.enumeration.TourType;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
-import java.util.Arrays;
-import java.util.Date;
 import java.util.Objects;
 
-@Component
 public class Tour extends AbstractEntity {
     private String photo;
     private String date;

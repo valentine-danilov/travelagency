@@ -9,6 +9,7 @@ import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
 
 import java.sql.PreparedStatement;
+import java.sql.Statement;
 import java.util.List;
 import java.util.Objects;
 
@@ -26,7 +27,7 @@ public class CountryDataContext implements DataContext<Country> {
         KeyHolder generatedIdHolder = new GeneratedKeyHolder();
         String sql = "INSERT INTO country (name) VALUES (?)";
         jdbcTemplate.update(connection -> {
-            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            PreparedStatement preparedStatement = connection.prepareStatement(sql, new String[]{"id"});
             preparedStatement.setString(1, entity.getName());
             return preparedStatement;
         }, generatedIdHolder);

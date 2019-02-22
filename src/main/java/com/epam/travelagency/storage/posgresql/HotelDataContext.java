@@ -9,6 +9,7 @@ import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
 
 import java.sql.PreparedStatement;
+import java.sql.Statement;
 import java.util.List;
 import java.util.Objects;
 
@@ -27,7 +28,7 @@ public class HotelDataContext implements DataContext<Hotel> {
         final String sql = "INSERT INTO \"hotel\" (name, stars, website, latitude, longitude, feature)" +
                 " VALUES (?,?,?,?,?,?::hotel_feature)";
         jdbcTemplate.update(connection -> {
-            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            PreparedStatement preparedStatement = connection.prepareStatement(sql, new String[]{"id"});
             preparedStatement.setString(1, entity.getName());
             preparedStatement.setByte(2, entity.getStars());
             preparedStatement.setString(3, entity.getWebsite());

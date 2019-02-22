@@ -10,6 +10,7 @@ import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Repository;
 
 import java.sql.PreparedStatement;
+import java.sql.Statement;
 import java.util.List;
 import java.util.Objects;
 
@@ -28,7 +29,7 @@ public class ReviewDataContext implements DataContext<Review> {
         KeyHolder generatedIdHolder = new GeneratedKeyHolder();
         final String sql = "INSERT INTO review (date, text, user_id, tour_id) VALUES (?::DATE,?,?,?)";
         jdbcTemplate.update(connection -> {
-            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            PreparedStatement preparedStatement = connection.prepareStatement(sql, new String[]{"id"});
             preparedStatement.setString(1, entity.getDate());
             preparedStatement.setString(2, entity.getText());
             preparedStatement.setInt(3, entity.getUserId());

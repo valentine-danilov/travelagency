@@ -24,7 +24,7 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 
 public class TourRepositoryTest {
-    private static final Integer INITIAL_NUMBER_OF_ENTRIES = 4;
+    private static final Integer INITIAL_NUMBER_OF_ENTRIES = 5;
     private static final Integer FIRST_ENTRY_ID = 1;
     @ClassRule
     public static PreparedDbRule db =
@@ -82,8 +82,8 @@ public class TourRepositoryTest {
 
     @Test
     public void shouldCreate() {
-        Tour actual = repository.read(testTour.getId());
-        Assert.assertEquals(testTour, actual);
+        Integer generatedId = repository.create(testTour);
+        Assert.assertEquals(testTour, repository.read(generatedId));
     }
 
     @Test(expected = Exception.class)

@@ -2,41 +2,53 @@ package com.epam.travelagency.service;
 
 import com.epam.travelagency.bean.User;
 import com.epam.travelagency.repository.Repository;
+import com.epam.travelagency.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class UserService extends AbstractService<User> {
+public class UserService {
+
+    private final UserRepository repository;
 
     @Autowired
-    public UserService(Repository<User> repository) {
-        super.repository = repository;
+    public UserService(UserRepository repository) {
+        this.repository = repository;
     }
 
-    @Override
     public List<User> readAll() {
         return repository.read();
     }
 
-    @Override
     public User readById(Integer id) {
         return repository.read(id);
     }
 
-    @Override
-    public void update(User user) {
+    public void update(Integer id, String login, String password) {
+        User user = constructUser(id, login, password);
         repository.update(user);
     }
 
-    @Override
     public void deleteById(Integer id) {
         repository.delete(id);
     }
 
-    @Override
-    public void add(User user) {
+    public void add(String login, String password) {
+        User user = constructUser(null, login, password);
         repository.create(user);
+    }
+
+    private User constructUser(Integer id,
+                               String login,
+                               String password) {
+        User user = new User();
+        if (id != null) {
+            user.setId(id);
+        }
+        user.setLogin(login);
+        user.setPassword(password);
+        return user;
     }
 }

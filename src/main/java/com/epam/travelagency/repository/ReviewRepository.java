@@ -4,6 +4,7 @@ import com.epam.travelagency.bean.Review;
 
 import java.util.List;
 
+@org.springframework.stereotype.Repository
 public class ReviewRepository extends Repository<Review> {
     @Override
     public Integer create(Review entity) {

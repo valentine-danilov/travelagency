@@ -11,7 +11,9 @@ import org.junit.runner.RunWith;
 import org.mockito.ArgumentMatchers;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
+
 import static org.mockito.Mockito.*;
+
 import org.mockito.junit.MockitoJUnitRunner;
 
 import java.util.List;
@@ -30,7 +32,7 @@ public class UserServiceTest {
     private User testUser;
 
     @Before
-    public void init(){
+    public void init() {
         testUser = new User();
         testUser.setId(1);
         testUser.setLogin("test");
@@ -40,14 +42,14 @@ public class UserServiceTest {
     }
 
     @Test
-    public void shouldReadByIdCorrectly(){
+    public void shouldReadByIdCorrectly() {
         User actual = userService.readById(1);
         verify(userRepository).read(1);
         Assert.assertEquals(testUser, actual);
     }
 
     @Test
-    public void shouldReadAllData(){
+    public void shouldReadAllData() {
         List<User> actualUsers = userService.readAll();
         Integer actual = actualUsers.size();
         verify(userRepository).read();
@@ -55,8 +57,24 @@ public class UserServiceTest {
     }
 
     @Test
-    public void deleteShouldBeInvoked(){
+    public void deleteShouldBeInvoked() {
         userService.deleteById(1);
         verify(userRepository).delete(1);
+    }
+
+    @Test
+    public void createShouldBeInvoked() {
+        userService.add(testUser.getLogin(), testUser.getPassword());
+        verify(userRepository).create(ArgumentMatchers.any(User.class));
+    }
+
+    @Test
+    public void updateShouldBeInvoked() {
+        userService.update(
+                testUser.getId(),
+                testUser.getLogin(),
+                testUser.getPassword()
+        );
+        verify(userRepository).update(ArgumentMatchers.any(User.class));
     }
 }

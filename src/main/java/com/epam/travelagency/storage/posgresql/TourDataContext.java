@@ -9,6 +9,7 @@ import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
 
 import java.sql.PreparedStatement;
+import java.sql.Statement;
 import java.sql.Types;
 import java.util.List;
 import java.util.Objects;
@@ -33,7 +34,7 @@ public class TourDataContext implements DataContext<Tour> {
                 " description, cost, tour_type, hotel_id, country_id)" +
                 " VALUES (?,?::DATE,?,?,?,?::tour_type,?,?)";
         jdbcTemplate.update(connection -> {
-                    PreparedStatement preparedStatement = connection.prepareStatement(sql);
+                    PreparedStatement preparedStatement = connection.prepareStatement(sql, new String[]{"id"});
                     preparedStatement.setString(1, entity.getPhoto());
                     preparedStatement.setString(2, entity.getDate());
                     preparedStatement.setInt(3, entity.getDuration());

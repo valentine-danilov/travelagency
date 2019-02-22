@@ -1,42 +1,80 @@
 package com.epam.travelagency.service;
 
 import com.epam.travelagency.bean.Hotel;
+import com.epam.travelagency.bean.enumeration.HotelFeature;
 import com.epam.travelagency.repository.HotelRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 @Service
-public class HotelService extends AbstractService<Hotel> {
+public class HotelService {
+
+    private final HotelRepository repository;
 
     @Autowired
     public HotelService(HotelRepository repository) {
-        super.repository = repository;
+        this.repository = repository;
     }
 
-    @Override
     public List<Hotel> readAll() {
         return repository.read();
     }
 
-    @Override
     public Hotel readById(Integer id) {
         return repository.read(id);
     }
 
-    @Override
-    public void update(Hotel user) {
-        repository.update(user);
+    public void update(Integer id,
+                       String name,
+                       Byte stars,
+                       String website,
+                       BigDecimal latitude,
+                       BigDecimal longitude,
+                       HotelFeature feature) {
+        Hotel hotel = constructHotel(
+                id, name, stars, website,
+                latitude, longitude, feature
+        );
+        repository.update(hotel);
     }
 
-    @Override
     public void deleteById(Integer id) {
         repository.delete(id);
     }
 
-    @Override
-    public void add(Hotel user) {
-        repository.create(user);
+    public void add(String name,
+                    Byte stars,
+                    String website,
+                    BigDecimal latitude,
+                    BigDecimal longitude,
+                    HotelFeature feature) {
+        Hotel hotel = constructHotel(
+                null, name, stars, website,
+                latitude, longitude, feature
+        );
+        repository.create(hotel);
+    }
+
+    private Hotel constructHotel(Integer id,
+                                 String name,
+                                 Byte stars,
+                                 String website,
+                                 BigDecimal latitude,
+                                 BigDecimal longitude,
+                                 HotelFeature feature) {
+        Hotel hotel = new Hotel();
+        if (id != null) {
+            hotel.setId(id);
+        }
+        hotel.setName(name);
+        hotel.setStars(stars);
+        hotel.setWebsite(website);
+        hotel.setLatitude(latitude);
+        hotel.setLongitude(longitude);
+        hotel.setFeatures(feature);
+        return hotel;
     }
 }

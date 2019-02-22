@@ -10,14 +10,10 @@ import com.opentable.db.postgres.junit.EmbeddedPostgresRules;
 import com.opentable.db.postgres.junit.PreparedDbRule;
 import config.TestConfig;
 import org.junit.*;
-import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.math.BigDecimal;
-import java.math.MathContext;
 import java.math.RoundingMode;
 
 @ContextConfiguration(classes = TestConfig.class)
@@ -80,8 +76,8 @@ public class HotelRepositoryTest {
 
     @Test
     public void shouldBeCreated() {
-        hotelRepository.create(testHotel);
-        Hotel actual = hotelRepository.read(testHotel.getId());
+        Integer generatedId = hotelRepository.create(testHotel);
+        Hotel actual = hotelRepository.read(generatedId);
         Assert.assertEquals(testHotel, actual);
     }
 

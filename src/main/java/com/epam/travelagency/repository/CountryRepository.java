@@ -4,6 +4,7 @@ import com.epam.travelagency.bean.Country;
 
 import java.util.List;
 
+@org.springframework.stereotype.Repository
 public class CountryRepository extends Repository<Country> {
     @Override
     public Integer create(Country entity) {

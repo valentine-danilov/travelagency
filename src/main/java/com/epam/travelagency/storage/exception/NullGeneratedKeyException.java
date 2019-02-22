@@ -1,7 +1,7 @@
 package com.epam.travelagency.storage.exception;
 
-public class NullGeneratedKeyException extends Exception {
-    public NullGeneratedKeyException() {
-        super("Key was not generated!");
+public class NullGeneratedKeyException extends RuntimeException {
+    public NullGeneratedKeyException(Exception e) {
+        super("Key was not generated.", e);
     }
 }

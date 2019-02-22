@@ -2,18 +2,21 @@ package com.epam.travelagency.storage.posgresql;
 
 import com.epam.travelagency.bean.Hotel;
 import com.epam.travelagency.storage.DataContext;
+import com.epam.travelagency.storage.exception.NullGeneratedKeyException;
 import com.epam.travelagency.storage.mapper.HotelRowMapper;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
 
 import java.sql.PreparedStatement;
-import java.sql.Statement;
 import java.util.List;
-import java.util.Objects;
 
 public class HotelDataContext implements DataContext<Hotel> {
+
+    private static Logger LOG = LoggerFactory.getLogger(HotelDataContext.class);
 
     private JdbcTemplate jdbcTemplate;
 
@@ -37,7 +40,12 @@ public class HotelDataContext implements DataContext<Hotel> {
             preparedStatement.setString(6, entity.getFeatures().name().toLowerCase());
             return preparedStatement;
         }, generatedIdHolder);
-        return Objects.requireNonNull(generatedIdHolder.getKey()).intValue();
+        LOG.info(String.format("Hotel '%s' was created in database", entity.getName()));
+        try {
+            return generatedIdHolder.getKey().intValue();
+        } catch (NullPointerException e) {
+            throw new NullGeneratedKeyException(e);
+        }
     }
 
     @Override
@@ -45,6 +53,7 @@ public class HotelDataContext implements DataContext<Hotel> {
         return jdbcTemplate.queryForObject("SELECT id, name, stars, website," +
                         " latitude, longitude, feature FROM hotel WHERE id=?",
                 new HotelRowMapper(), id);
+
     }
 
     @Override
@@ -57,11 +66,15 @@ public class HotelDataContext implements DataContext<Hotel> {
                 entity.getLatitude(),
                 entity.getLatitude(),
                 entity.getFeatures().name().toLowerCase());
+        LOG.info(String.format("Hotel '%s' was updated in database", entity.getName()));
+
     }
 
     @Override
     public void delete(Integer id) {
         jdbcTemplate.update("DELETE FROM hotel where id=?", id);
+        LOG.info(String.format("Hotel with id '%d' was deleted from database", id));
+
     }
 
     @Override

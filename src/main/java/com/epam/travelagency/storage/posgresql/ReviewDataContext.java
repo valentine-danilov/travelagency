@@ -2,7 +2,10 @@ package com.epam.travelagency.storage.posgresql;
 
 import com.epam.travelagency.bean.Review;
 import com.epam.travelagency.storage.DataContext;
+import com.epam.travelagency.storage.exception.NullGeneratedKeyException;
 import com.epam.travelagency.storage.mapper.ReviewRowMapper;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
@@ -16,6 +19,8 @@ import java.util.Objects;
 
 @Repository
 public class ReviewDataContext implements DataContext<Review> {
+
+    private static Logger LOG = LoggerFactory.getLogger(ReviewDataContext.class);
 
     private JdbcTemplate jdbcTemplate;
 
@@ -36,7 +41,13 @@ public class ReviewDataContext implements DataContext<Review> {
             preparedStatement.setInt(4, entity.getTourId());
             return preparedStatement;
         }, generatedIdHolder);
-        return Objects.requireNonNull(generatedIdHolder.getKey()).intValue();
+        LOG.info(String.format("Review from user 'id=%d' for tour 'id=%d' was created in database",
+                entity.getUserId(), entity.getTourId()));
+        try {
+            return generatedIdHolder.getKey().intValue();
+        } catch (NullPointerException e) {
+            throw new NullGeneratedKeyException(e);
+        }
     }
 
     @Override
@@ -58,11 +69,14 @@ public class ReviewDataContext implements DataContext<Review> {
                     preparedStatement.setInt(4, entity.getTourId());
                     preparedStatement.setInt(5, entity.getId());
                 });
+        LOG.info(String.format("Review from user 'id=%d' for tour 'id=%d' was updated in database",
+                entity.getUserId(), entity.getTourId()));
     }
 
     @Override
     public void delete(Integer id) {
         jdbcTemplate.update("DELETE FROM review where id=?", id);
+        LOG.info(String.format("Review with id '%d' was deleted from database", id));
     }
 
     @Override

@@ -15,7 +15,7 @@ import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
 
 import javax.sql.DataSource;
 
-
+/*Actually, I did not use Spring Framework in tests*/
 @Configuration
 public class TestConfig {
 

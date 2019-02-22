@@ -24,6 +24,7 @@ public class CountryRepository extends Repository<Country> {
     @Override
     public void delete(Integer id) {
         storage.delete(id);
+
     }
 
     @Override

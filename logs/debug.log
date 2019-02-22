@@ -1,0 +1,348 @@
+2019-02-22 12:00:30,719 WARN  [main] org.flywaydb.core.Flyway - Direct configuration of the Flyway object has been deprecated and will be removed in Flyway 6.0. Use Flyway.configure() instead.
+2019-02-22 12:00:30,935 INFO  [main] com.opentable.db.postgres.embedded.EmbeddedPostgres - Detected a Windows x86_64 system
+2019-02-22 12:00:31,107 INFO  [main] com.opentable.db.postgres.embedded.EmbeddedPostgres - Postgres binaries at C:\Users\VALIAN~1\AppData\Local\Temp\embedded-pg\PG-91c1fa33789b0c913345bf0253da6836
+2019-02-22 12:00:31,411 INFO  [log:pid(6036)] init-232f9911-8fad-4b29-8af8-9c09239eade0:initdb.exe - The files belonging to this database system will be owned by user "Valiantsin_Danilau".
+2019-02-22 12:00:31,412 INFO  [log:pid(6036)] init-232f9911-8fad-4b29-8af8-9c09239eade0:initdb.exe - This user must also own the server process.
+2019-02-22 12:00:31,412 INFO  [log:pid(6036)] init-232f9911-8fad-4b29-8af8-9c09239eade0:initdb.exe - 
+2019-02-22 12:00:31,413 INFO  [log:pid(6036)] init-232f9911-8fad-4b29-8af8-9c09239eade0:initdb.exe - The database cluster will be initialized with locale "English_United States.1252".
+2019-02-22 12:00:31,413 INFO  [log:pid(6036)] init-232f9911-8fad-4b29-8af8-9c09239eade0:initdb.exe - The default text search configuration will be set to "english".
+2019-02-22 12:00:31,413 INFO  [log:pid(6036)] init-232f9911-8fad-4b29-8af8-9c09239eade0:initdb.exe - 
+2019-02-22 12:00:31,413 INFO  [log:pid(6036)] init-232f9911-8fad-4b29-8af8-9c09239eade0:initdb.exe - Data page checksums are disabled.
+2019-02-22 12:00:31,413 INFO  [log:pid(6036)] init-232f9911-8fad-4b29-8af8-9c09239eade0:initdb.exe - 
+2019-02-22 12:00:31,416 INFO  [log:pid(6036)] init-232f9911-8fad-4b29-8af8-9c09239eade0:initdb.exe - fixing permissions on existing directory C:/Users/VALIAN~1/AppData/Local/Temp/epg19990330193657787 ... ok
+2019-02-22 12:00:31,438 INFO  [log:pid(6036)] init-232f9911-8fad-4b29-8af8-9c09239eade0:initdb.exe - creating subdirectories ... ok
+2019-02-22 12:00:31,582 INFO  [log:pid(6036)] init-232f9911-8fad-4b29-8af8-9c09239eade0:initdb.exe - selecting default max_connections ... 100
+2019-02-22 12:00:31,703 INFO  [log:pid(6036)] init-232f9911-8fad-4b29-8af8-9c09239eade0:initdb.exe - selecting default shared_buffers ... 128MB
+2019-02-22 12:00:31,703 INFO  [log:pid(6036)] init-232f9911-8fad-4b29-8af8-9c09239eade0:initdb.exe - selecting dynamic shared memory implementation ... windows
+2019-02-22 12:00:31,712 INFO  [log:pid(6036)] init-232f9911-8fad-4b29-8af8-9c09239eade0:initdb.exe - creating configuration files ... ok
+2019-02-22 12:00:32,880 INFO  [log:pid(6036)] init-232f9911-8fad-4b29-8af8-9c09239eade0:initdb.exe - running bootstrap script ... ok
+2019-02-22 12:00:35,049 INFO  [log:pid(6036)] init-232f9911-8fad-4b29-8af8-9c09239eade0:initdb.exe - performing post-bootstrap initialization ... ok
+2019-02-22 12:00:46,573 INFO  [log:pid(6036)] init-232f9911-8fad-4b29-8af8-9c09239eade0:initdb.exe - syncing data to disk ... ok
+2019-02-22 12:00:46,573 INFO  [log:pid(6036)] init-232f9911-8fad-4b29-8af8-9c09239eade0:initdb.exe - 
+2019-02-22 12:00:46,574 INFO  [log:pid(6036)] init-232f9911-8fad-4b29-8af8-9c09239eade0:initdb.exe - Success. You can now start the database server using:
+2019-02-22 12:00:46,574 INFO  [log:pid(6036)] init-232f9911-8fad-4b29-8af8-9c09239eade0:initdb.exe - 
+2019-02-22 12:00:46,574 INFO  [log:pid(6036)] init-232f9911-8fad-4b29-8af8-9c09239eade0:initdb.exe -     ^"C^:^/Users^/VALIAN^~1^/AppData^/Local^/Temp^/embedded^-pg^/PG^-91c1fa33789b0c913345bf0253da6836^/bin^/pg^_ctl^" -D ^"C^:^\Users^\VALIAN^~1^\AppData^\Local^\Temp^\epg19990330193657787^" -l logfile start
+2019-02-22 12:00:46,575 INFO  [log:pid(6036)] init-232f9911-8fad-4b29-8af8-9c09239eade0:initdb.exe - 
+2019-02-22 12:00:46,618 INFO  [main] com.opentable.db.postgres.embedded.EmbeddedPostgres - 232f9911-8fad-4b29-8af8-9c09239eade0 initdb completed in 00:00:15.492
+2019-02-22 12:00:46,651 INFO  [main] com.opentable.db.postgres.embedded.EmbeddedPostgres - 232f9911-8fad-4b29-8af8-9c09239eade0 postmaster started as Process[pid=9416, exitValue="not exited"] on port 55286.  Waiting up to PT10S for server startup to finish.
+2019-02-22 12:00:46,938 INFO  [log:pid(9416)] pg-232f9911-8fad-4b29-8af8-9c09239eade0 - waiting for server to start....2019-02-22 12:00:46.938 +03 [7008] LOG:  listening on IPv6 address "::1", port 55286
+2019-02-22 12:00:46,939 INFO  [log:pid(9416)] pg-232f9911-8fad-4b29-8af8-9c09239eade0 - 2019-02-22 12:00:46.938 +03 [7008] LOG:  listening on IPv4 address "127.0.0.1", port 55286
+2019-02-22 12:00:47,012 INFO  [log:pid(9416)] pg-232f9911-8fad-4b29-8af8-9c09239eade0 - 2019-02-22 12:00:47.012 +03 [4456] LOG:  database system was shut down at 2019-02-22 12:00:35 +03
+2019-02-22 12:00:47,130 INFO  [log:pid(9416)] pg-232f9911-8fad-4b29-8af8-9c09239eade0 - 2019-02-22 12:00:47.131 +03 [7008] LOG:  database system is ready to accept connections
+2019-02-22 12:00:47,179 INFO  [log:pid(9416)] pg-232f9911-8fad-4b29-8af8-9c09239eade0 -  done
+2019-02-22 12:00:47,446 INFO  [main] com.opentable.db.postgres.embedded.EmbeddedPostgres - 232f9911-8fad-4b29-8af8-9c09239eade0 postmaster startup finished in 00:00:00.819
+2019-02-22 12:00:47,446 WARN  [main] org.flywaydb.core.Flyway - Direct configuration of the Flyway object has been deprecated and will be removed in Flyway 6.0. Use Flyway.configure() instead.
+2019-02-22 12:00:47,453 INFO  [main] org.flywaydb.core.internal.license.VersionPrinter - Flyway Community Edition 5.2.4 by Boxfuse
+2019-02-22 12:00:47,536 INFO  [main] org.flywaydb.core.internal.database.DatabaseFactory - Database: jdbc:postgresql://localhost:55286/template1 (PostgreSQL 10.6)
+2019-02-22 12:00:47,536 DEBUG [main] org.flywaydb.core.internal.database.DatabaseFactory - Driver  : PostgreSQL JDBC Driver 42.2.5
+2019-02-22 12:00:47,543 DEBUG [main] org.flywaydb.core.Flyway - DDL Transactions Supported: true
+2019-02-22 12:00:47,548 DEBUG [main] org.flywaydb.core.Flyway - Schema: public
+2019-02-22 12:00:47,553 DEBUG [main] org.flywaydb.core.internal.scanner.classpath.ClassPathScanner - Scanning for classpath resources at 'classpath:db/migration' ...
+2019-02-22 12:00:47,553 DEBUG [main] org.flywaydb.core.internal.scanner.classpath.ClassPathScanner - Determining location urls for classpath:db/migration using ClassLoader jdk.internal.loader.ClassLoaders$AppClassLoader@6ed3ef1 ...
+2019-02-22 12:00:47,553 DEBUG [main] org.flywaydb.core.internal.scanner.classpath.ClassPathScanner - Scanning URL: file:/C:/Users/Valiantsin_Danilau/IdeaProjects/Task1/target/classes/db/migration
+2019-02-22 12:00:47,554 DEBUG [main] org.flywaydb.core.internal.util.FeatureDetector - JBoss VFS v2 available: false
+2019-02-22 12:00:47,556 DEBUG [main] org.flywaydb.core.internal.scanner.classpath.FileSystemClassPathLocationScanner - Scanning starting at classpath root in filesystem: C:\Users\Valiantsin_Danilau\IdeaProjects\Task1\target\classes\
+2019-02-22 12:00:47,556 DEBUG [main] org.flywaydb.core.internal.scanner.classpath.FileSystemClassPathLocationScanner - Scanning for resources in path: C:\Users\Valiantsin_Danilau\IdeaProjects\Task1\target\classes\db\migration (db/migration)
+2019-02-22 12:00:47,557 DEBUG [main] org.flywaydb.core.internal.scanner.classpath.ClassPathScanner - Found resource: db/migration/V1_1__init_data.sql
+2019-02-22 12:00:47,557 DEBUG [main] org.flywaydb.core.internal.scanner.classpath.ClassPathScanner - Found resource: db/migration/V1__init_schema.sql
+2019-02-22 12:00:47,557 DEBUG [main] org.flywaydb.core.internal.scanner.classpath.ClassPathScanner - Scanning for classes at classpath:db/migration
+2019-02-22 12:00:47,561 DEBUG [main] org.flywaydb.core.internal.callback.SqlScriptCallbackFactory - Scanning for SQL callbacks ...
+2019-02-22 12:00:47,567 DEBUG [main] org.flywaydb.core.internal.util.FeatureDetector - Spring Jdbc available: true
+2019-02-22 12:00:47,582 DEBUG [main] org.flywaydb.core.internal.command.DbValidate - Validating migrations ...
+2019-02-22 12:00:47,587 DEBUG [main] org.flywaydb.core.internal.sqlscript.SqlScript - Parsing V1_1__init_data.sql ...
+2019-02-22 12:00:47,590 DEBUG [main] org.flywaydb.core.internal.sqlscript.SqlScript - Found statement at line 1: INSERT INTO "user" (login, password)
+VALUES ('user1', 'user1')
+2019-02-22 12:00:47,591 DEBUG [main] org.flywaydb.core.internal.sqlscript.SqlScript - Found statement at line 3: INSERT INTO "user" (login, password)
+VALUES ('user2', 'user2')
+2019-02-22 12:00:47,591 DEBUG [main] org.flywaydb.core.internal.sqlscript.SqlScript - Found statement at line 5: INSERT INTO "user" (login, password)
+VALUES ('user3', 'user3')
+2019-02-22 12:00:47,592 DEBUG [main] org.flywaydb.core.internal.sqlscript.SqlScript - Found statement at line 7: INSERT INTO "user" (login, password)
+VALUES ('user4', 'user4')
+2019-02-22 12:00:47,592 DEBUG [main] org.flywaydb.core.internal.sqlscript.SqlScript - Found statement at line 10: INSERT INTO "country" (name)
+VALUES ('testCountry')
+2019-02-22 12:00:47,593 DEBUG [main] org.flywaydb.core.internal.sqlscript.SqlScript - Found statement at line 13: INSERT INTO "hotel" (name, stars, website, latitude, longitude, feature)
+VALUES ('test1', 4, 'test1', 1, 1, 'security')
+2019-02-22 12:00:47,593 DEBUG [main] org.flywaydb.core.internal.sqlscript.SqlScript - Found statement at line 15: INSERT INTO "hotel" (name, stars, website, latitude, longitude, feature)
+VALUES ('test2', 4, 'test2', 1, 1, 'security')
+2019-02-22 12:00:47,593 DEBUG [main] org.flywaydb.core.internal.sqlscript.SqlScript - Found statement at line 17: INSERT INTO "hotel" (name, stars, website, latitude, longitude, feature)
+VALUES ('test3', 4, 'test3', 1, 1, 'security')
+2019-02-22 12:00:47,594 DEBUG [main] org.flywaydb.core.internal.sqlscript.SqlScript - Found statement at line 19: INSERT INTO "hotel" (name, stars, website, latitude, longitude, feature)
+VALUES ('test4', 4, 'test4', 1, 1, 'security')
+2019-02-22 12:00:47,594 DEBUG [main] org.flywaydb.core.internal.sqlscript.SqlScript - Found statement at line 22: INSERT INTO "tour" (photo, date, duration, description, cost, tour_type, hotel_id, country_id)
+VALUES ('test1.jpg', '12-12-2012', 12, 'description1', 505, 'guided', 1, 1)
+2019-02-22 12:00:47,595 DEBUG [main] org.flywaydb.core.internal.sqlscript.SqlScript - Found statement at line 24: INSERT INTO "tour" (photo, date, duration, description, cost, tour_type, hotel_id, country_id)
+VALUES ('test2.jpg', '12-12-2012', 12, 'description2', 505, 'guided', 2, 1)
+2019-02-22 12:00:47,595 DEBUG [main] org.flywaydb.core.internal.sqlscript.SqlScript - Found statement at line 26: INSERT INTO "tour" (photo, date, duration, description, cost, tour_type, hotel_id, country_id)
+VALUES ('test3.jpg', '12-12-2012', 12, 'description3', 505, 'guided', 3, 1)
+2019-02-22 12:00:47,596 DEBUG [main] org.flywaydb.core.internal.sqlscript.SqlScript - Found statement at line 28: INSERT INTO "tour" (photo, date, duration, description, cost, tour_type, hotel_id, country_id)
+VALUES ('test4.jpg', '12-12-2012', 12, 'description4', 505, 'guided', 4, 1)
+2019-02-22 12:00:47,597 DEBUG [main] org.flywaydb.core.internal.sqlscript.SqlScript - Parsing V1__init_schema.sql ...
+2019-02-22 12:00:47,599 DEBUG [main] org.flywaydb.core.internal.sqlscript.SqlScript - Found statement at line 1: CREATE TYPE TOUR_TYPE AS ENUM
+  (
+    'bus', 'sightseeing', 'shore_excursion',
+    'adventure', 'sporting', 'cruise',
+    'escorted', 'guided', 'rail', 'extreme'
+    )
+2019-02-22 12:00:47,599 DEBUG [main] org.flywaydb.core.internal.sqlscript.SqlScript - Found statement at line 8: CREATE TYPE HOTEL_FEATURE AS ENUM
+  (
+    'cleanliness', 'security', 'wi-fi', 'breakfast', 'parking', 'air_conditioning',
+    'food_delivery', 'pool', 'conference_hall', 'safe'
+    )
+2019-02-22 12:00:47,600 DEBUG [main] org.flywaydb.core.internal.sqlscript.SqlScript - Found statement at line 16: CREATE TABLE IF NOT EXISTS "user"
+(
+  id       SERIAL,
+  login    VARCHAR(255) UNIQUE NOT NULL,
+  password VARCHAR(255)        NOT NULL,
+  PRIMARY KEY (id)
+)
+2019-02-22 12:00:47,601 DEBUG [main] org.flywaydb.core.internal.sqlscript.SqlScript - Found statement at line 24: CREATE TABLE IF NOT EXISTS "hotel"
+(
+  id        SERIAL,
+  name      VARCHAR(255)   NOT NULL,
+  stars     SMALLINT       NOT NULL,
+  website   VARCHAR(255)   NOT NULL,
+  latitude  DECIMAL(8, 6)  NOT NULL,
+  longitude DECIMAL(8, 6)  NOT NULL,
+  feature   HOTEL_FEATURE NOT NULL,
+  PRIMARY KEY (id)
+)
+2019-02-22 12:00:47,601 DEBUG [main] org.flywaydb.core.internal.sqlscript.SqlScript - Found statement at line 36: CREATE TABLE IF NOT EXISTS "country"
+(
+  id   SERIAL,
+  name VARCHAR(255),
+  PRIMARY KEY (id)
+)
+2019-02-22 12:00:47,602 DEBUG [main] org.flywaydb.core.internal.sqlscript.SqlScript - Found statement at line 43: CREATE TABLE IF NOT EXISTS "tour"
+(
+  id          SERIAL,
+  photo       VARCHAR(255),
+  date        DATE           NOT NULL,
+  duration    INT            NOT NULL,
+  description TEXT           NOT NULL,
+  cost        DECIMAL(19, 3) NOT NULL,
+  tour_type   TOUR_TYPE      NOT NULL,
+  hotel_id    INT            NOT NULL,
+  country_id  INT            NOT NULL,
+  PRIMARY KEY (id),
+  FOREIGN KEY (hotel_id) REFERENCES "hotel" (id),
+  FOREIGN KEY (country_id) REFERENCES "country" (id)
+)
+2019-02-22 12:00:47,603 DEBUG [main] org.flywaydb.core.internal.sqlscript.SqlScript - Found statement at line 59: CREATE TABLE IF NOT EXISTS "usertour"
+(
+  user_id INT UNIQUE NOT NULL,
+  tour_id INT UNIQUE NOT NULL,
+  PRIMARY KEY (user_id, tour_id),
+  FOREIGN KEY (user_id) REFERENCES "user" (id),
+  FOREIGN KEY (tour_id) REFERENCES "tour" (id)
+)
+2019-02-22 12:00:47,604 DEBUG [main] org.flywaydb.core.internal.sqlscript.SqlScript - Found statement at line 68: CREATE TABLE IF NOT EXISTS "review"
+(
+  id      SERIAL,
+  date    DATE NOT NULL,
+  text    TEXT NOT NULL,
+  user_id INT  NOT NULL,
+  tour_id INT  NOT NULL,
+  PRIMARY KEY (id),
+  FOREIGN KEY (user_id) REFERENCES "user" (id),
+  FOREIGN KEY (tour_id) REFERENCES "tour" (id)
+)
+2019-02-22 12:00:47,605 DEBUG [main] org.flywaydb.core.internal.scanner.Scanner - Filtering out resource: db/migration/V1_1__init_data.sql (filename: V1_1__init_data.sql)
+2019-02-22 12:00:47,605 DEBUG [main] org.flywaydb.core.internal.scanner.Scanner - Filtering out resource: db/migration/V1__init_schema.sql (filename: V1__init_schema.sql)
+2019-02-22 12:00:47,612 INFO  [main] org.flywaydb.core.internal.command.DbValidate - Successfully validated 2 migrations (execution time 00:00.029s)
+2019-02-22 12:00:47,614 DEBUG [main] org.flywaydb.core.internal.command.DbSchemas - Schema "public" already exists. Skipping schema creation.
+2019-02-22 12:00:47,625 INFO  [main] org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory - Creating Schema History table: "public"."flyway_schema_history"
+2019-02-22 12:00:47,627 DEBUG [main] org.flywaydb.core.internal.sqlscript.SqlScript - Parsing createMetaDataTable.sql ...
+2019-02-22 12:00:47,629 DEBUG [main] org.flywaydb.core.internal.sqlscript.SqlScript - Found statement at line 17: CREATE TABLE "public"."flyway_schema_history" (
+    "installed_rank" INT NOT NULL,
+    "version" VARCHAR(50),
+    "description" VARCHAR(200) NOT NULL,
+    "type" VARCHAR(20) NOT NULL,
+    "script" VARCHAR(1000) NOT NULL,
+    "checksum" INTEGER,
+    "installed_by" VARCHAR(100) NOT NULL,
+    "installed_on" TIMESTAMP NOT NULL DEFAULT now(),
+    "execution_time" INTEGER NOT NULL,
+    "success" BOOLEAN NOT NULL
+)
+2019-02-22 12:00:47,629 DEBUG [main] org.flywaydb.core.internal.sqlscript.SqlScript - Found statement at line 29: ALTER TABLE "public"."flyway_schema_history" ADD CONSTRAINT "flyway_schema_history_pk" PRIMARY KEY ("installed_rank")
+2019-02-22 12:00:47,630 DEBUG [main] org.flywaydb.core.internal.sqlscript.SqlScript - Found statement at line 31: CREATE INDEX "flyway_schema_history_s_idx" ON "public"."flyway_schema_history" ("success")
+2019-02-22 12:00:47,630 DEBUG [main] org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor - Executing SQL: CREATE TABLE "public"."flyway_schema_history" (
+    "installed_rank" INT NOT NULL,
+    "version" VARCHAR(50),
+    "description" VARCHAR(200) NOT NULL,
+    "type" VARCHAR(20) NOT NULL,
+    "script" VARCHAR(1000) NOT NULL,
+    "checksum" INTEGER,
+    "installed_by" VARCHAR(100) NOT NULL,
+    "installed_on" TIMESTAMP NOT NULL DEFAULT now(),
+    "execution_time" INTEGER NOT NULL,
+    "success" BOOLEAN NOT NULL
+)
+2019-02-22 12:00:47,644 DEBUG [main] org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor - Update Count: 0
+2019-02-22 12:00:47,644 DEBUG [main] org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor - Executing SQL: ALTER TABLE "public"."flyway_schema_history" ADD CONSTRAINT "flyway_schema_history_pk" PRIMARY KEY ("installed_rank")
+2019-02-22 12:00:47,652 DEBUG [main] org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor - Update Count: 0
+2019-02-22 12:00:47,652 DEBUG [main] org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor - Executing SQL: CREATE INDEX "flyway_schema_history_s_idx" ON "public"."flyway_schema_history" ("success")
+2019-02-22 12:00:47,656 DEBUG [main] org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor - Update Count: 0
+2019-02-22 12:00:47,656 DEBUG [main] org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory - Created Schema History table: "public"."flyway_schema_history"
+2019-02-22 12:00:47,664 INFO  [main] org.flywaydb.core.internal.command.DbMigrate - Current version of schema "public": << Empty Schema >>
+2019-02-22 12:00:47,665 INFO  [main] org.flywaydb.core.internal.command.DbMigrate - Migrating schema "public" to version 1 - init schema
+2019-02-22 12:00:47,668 DEBUG [main] org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor - Executing SQL: CREATE TYPE TOUR_TYPE AS ENUM
+  (
+    'bus', 'sightseeing', 'shore_excursion',
+    'adventure', 'sporting', 'cruise',
+    'escorted', 'guided', 'rail', 'extreme'
+    )
+2019-02-22 12:00:47,672 DEBUG [main] org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor - Update Count: 0
+2019-02-22 12:00:47,672 DEBUG [main] org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor - Executing SQL: CREATE TYPE HOTEL_FEATURE AS ENUM
+  (
+    'cleanliness', 'security', 'wi-fi', 'breakfast', 'parking', 'air_conditioning',
+    'food_delivery', 'pool', 'conference_hall', 'safe'
+    )
+2019-02-22 12:00:47,672 DEBUG [main] org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor - Update Count: 0
+2019-02-22 12:00:47,673 DEBUG [main] org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor - Executing SQL: CREATE TABLE IF NOT EXISTS "user"
+(
+  id       SERIAL,
+  login    VARCHAR(255) UNIQUE NOT NULL,
+  password VARCHAR(255)        NOT NULL,
+  PRIMARY KEY (id)
+)
+2019-02-22 12:00:47,687 DEBUG [main] org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor - Update Count: 0
+2019-02-22 12:00:47,688 DEBUG [main] org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor - Executing SQL: CREATE TABLE IF NOT EXISTS "hotel"
+(
+  id        SERIAL,
+  name      VARCHAR(255)   NOT NULL,
+  stars     SMALLINT       NOT NULL,
+  website   VARCHAR(255)   NOT NULL,
+  latitude  DECIMAL(8, 6)  NOT NULL,
+  longitude DECIMAL(8, 6)  NOT NULL,
+  feature   HOTEL_FEATURE NOT NULL,
+  PRIMARY KEY (id)
+)
+2019-02-22 12:00:47,698 DEBUG [main] org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor - Update Count: 0
+2019-02-22 12:00:47,699 DEBUG [main] org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor - Executing SQL: CREATE TABLE IF NOT EXISTS "country"
+(
+  id   SERIAL,
+  name VARCHAR(255),
+  PRIMARY KEY (id)
+)
+2019-02-22 12:00:47,706 DEBUG [main] org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor - Update Count: 0
+2019-02-22 12:00:47,706 DEBUG [main] org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor - Executing SQL: CREATE TABLE IF NOT EXISTS "tour"
+(
+  id          SERIAL,
+  photo       VARCHAR(255),
+  date        DATE           NOT NULL,
+  duration    INT            NOT NULL,
+  description TEXT           NOT NULL,
+  cost        DECIMAL(19, 3) NOT NULL,
+  tour_type   TOUR_TYPE      NOT NULL,
+  hotel_id    INT            NOT NULL,
+  country_id  INT            NOT NULL,
+  PRIMARY KEY (id),
+  FOREIGN KEY (hotel_id) REFERENCES "hotel" (id),
+  FOREIGN KEY (country_id) REFERENCES "country" (id)
+)
+2019-02-22 12:00:47,721 DEBUG [main] org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor - Update Count: 0
+2019-02-22 12:00:47,722 DEBUG [main] org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor - Executing SQL: CREATE TABLE IF NOT EXISTS "usertour"
+(
+  user_id INT UNIQUE NOT NULL,
+  tour_id INT UNIQUE NOT NULL,
+  PRIMARY KEY (user_id, tour_id),
+  FOREIGN KEY (user_id) REFERENCES "user" (id),
+  FOREIGN KEY (tour_id) REFERENCES "tour" (id)
+)
+2019-02-22 12:00:47,735 DEBUG [main] org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor - Update Count: 0
+2019-02-22 12:00:47,735 DEBUG [main] org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor - Executing SQL: CREATE TABLE IF NOT EXISTS "review"
+(
+  id      SERIAL,
+  date    DATE NOT NULL,
+  text    TEXT NOT NULL,
+  user_id INT  NOT NULL,
+  tour_id INT  NOT NULL,
+  PRIMARY KEY (id),
+  FOREIGN KEY (user_id) REFERENCES "user" (id),
+  FOREIGN KEY (tour_id) REFERENCES "tour" (id)
+)
+2019-02-22 12:00:47,747 DEBUG [main] org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor - Update Count: 0
+2019-02-22 12:00:47,747 DEBUG [main] org.flywaydb.core.internal.command.DbMigrate - Successfully completed migration of schema "public" to version 1 - init schema
+2019-02-22 12:00:47,752 DEBUG [main] org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory - Schema History table "public"."flyway_schema_history" successfully updated to reflect changes
+2019-02-22 12:00:47,759 INFO  [main] org.flywaydb.core.internal.command.DbMigrate - Migrating schema "public" to version 1.1 - init data
+2019-02-22 12:00:47,761 DEBUG [main] org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor - Executing SQL: INSERT INTO "user" (login, password)
+VALUES ('user1', 'user1')
+2019-02-22 12:00:47,763 DEBUG [main] org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor - Update Count: 1
+2019-02-22 12:00:47,763 DEBUG [main] org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor - Executing SQL: INSERT INTO "user" (login, password)
+VALUES ('user2', 'user2')
+2019-02-22 12:00:47,764 DEBUG [main] org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor - Update Count: 1
+2019-02-22 12:00:47,764 DEBUG [main] org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor - Executing SQL: INSERT INTO "user" (login, password)
+VALUES ('user3', 'user3')
+2019-02-22 12:00:47,764 DEBUG [main] org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor - Update Count: 1
+2019-02-22 12:00:47,764 DEBUG [main] org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor - Executing SQL: INSERT INTO "user" (login, password)
+VALUES ('user4', 'user4')
+2019-02-22 12:00:47,765 DEBUG [main] org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor - Update Count: 1
+2019-02-22 12:00:47,765 DEBUG [main] org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor - Executing SQL: INSERT INTO "country" (name)
+VALUES ('testCountry')
+2019-02-22 12:00:47,767 DEBUG [main] org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor - Update Count: 1
+2019-02-22 12:00:47,767 DEBUG [main] org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor - Executing SQL: INSERT INTO "hotel" (name, stars, website, latitude, longitude, feature)
+VALUES ('test1', 4, 'test1', 1, 1, 'security')
+2019-02-22 12:00:47,769 DEBUG [main] org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor - Update Count: 1
+2019-02-22 12:00:47,769 DEBUG [main] org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor - Executing SQL: INSERT INTO "hotel" (name, stars, website, latitude, longitude, feature)
+VALUES ('test2', 4, 'test2', 1, 1, 'security')
+2019-02-22 12:00:47,769 DEBUG [main] org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor - Update Count: 1
+2019-02-22 12:00:47,770 DEBUG [main] org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor - Executing SQL: INSERT INTO "hotel" (name, stars, website, latitude, longitude, feature)
+VALUES ('test3', 4, 'test3', 1, 1, 'security')
+2019-02-22 12:00:47,770 DEBUG [main] org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor - Update Count: 1
+2019-02-22 12:00:47,770 DEBUG [main] org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor - Executing SQL: INSERT INTO "hotel" (name, stars, website, latitude, longitude, feature)
+VALUES ('test4', 4, 'test4', 1, 1, 'security')
+2019-02-22 12:00:47,770 DEBUG [main] org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor - Update Count: 1
+2019-02-22 12:00:47,770 DEBUG [main] org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor - Executing SQL: INSERT INTO "tour" (photo, date, duration, description, cost, tour_type, hotel_id, country_id)
+VALUES ('test1.jpg', '12-12-2012', 12, 'description1', 505, 'guided', 1, 1)
+2019-02-22 12:00:47,773 DEBUG [main] org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor - Update Count: 1
+2019-02-22 12:00:47,773 DEBUG [main] org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor - Executing SQL: INSERT INTO "tour" (photo, date, duration, description, cost, tour_type, hotel_id, country_id)
+VALUES ('test2.jpg', '12-12-2012', 12, 'description2', 505, 'guided', 2, 1)
+2019-02-22 12:00:47,773 DEBUG [main] org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor - Update Count: 1
+2019-02-22 12:00:47,773 DEBUG [main] org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor - Executing SQL: INSERT INTO "tour" (photo, date, duration, description, cost, tour_type, hotel_id, country_id)
+VALUES ('test3.jpg', '12-12-2012', 12, 'description3', 505, 'guided', 3, 1)
+2019-02-22 12:00:47,774 DEBUG [main] org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor - Update Count: 1
+2019-02-22 12:00:47,774 DEBUG [main] org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor - Executing SQL: INSERT INTO "tour" (photo, date, duration, description, cost, tour_type, hotel_id, country_id)
+VALUES ('test4.jpg', '12-12-2012', 12, 'description4', 505, 'guided', 4, 1)
+2019-02-22 12:00:47,774 DEBUG [main] org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor - Update Count: 1
+2019-02-22 12:00:47,774 DEBUG [main] org.flywaydb.core.internal.command.DbMigrate - Successfully completed migration of schema "public" to version 1.1 - init data
+2019-02-22 12:00:47,776 DEBUG [main] org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory - Schema History table "public"."flyway_schema_history" successfully updated to reflect changes
+2019-02-22 12:00:47,778 INFO  [main] org.flywaydb.core.internal.command.DbMigrate - Successfully applied 2 migrations to schema "public" (execution time 00:00.153s)
+2019-02-22 12:00:47,780 DEBUG [main] org.flywaydb.core.Flyway - Memory usage: 13 of 256M
+2019-02-22 12:00:48,628 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL update
+2019-02-22 12:00:48,629 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [UPDATE "user" SET login=?, password=? WHERE "user".id=?]
+2019-02-22 12:00:48,636 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-22 12:00:48,790 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL query
+2019-02-22 12:00:48,790 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [SELECT id, login, password FROM "user" WHERE "user".id=?]
+2019-02-22 12:00:48,790 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-22 12:00:48,873 DEBUG [main] org.springframework.jdbc.core.BeanPropertyRowMapper - Mapping column 'id' to property 'id' of type 'java.lang.Integer'
+2019-02-22 12:00:48,877 DEBUG [main] org.springframework.jdbc.core.BeanPropertyRowMapper - Mapping column 'login' to property 'login' of type 'java.lang.String'
+2019-02-22 12:00:48,878 DEBUG [main] org.springframework.jdbc.core.BeanPropertyRowMapper - Mapping column 'password' to property 'password' of type 'java.lang.String'
+2019-02-22 12:00:48,881 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT id, login, password FROM "user"]
+2019-02-22 12:00:48,881 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-22 12:00:48,931 DEBUG [main] org.springframework.jdbc.core.BeanPropertyRowMapper - Mapping column 'id' to property 'id' of type 'java.lang.Integer'
+2019-02-22 12:00:48,931 DEBUG [main] org.springframework.jdbc.core.BeanPropertyRowMapper - Mapping column 'login' to property 'login' of type 'java.lang.String'
+2019-02-22 12:00:48,931 DEBUG [main] org.springframework.jdbc.core.BeanPropertyRowMapper - Mapping column 'password' to property 'password' of type 'java.lang.String'
+2019-02-22 12:00:48,934 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing SQL update and returning generated keys
+2019-02-22 12:00:48,934 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement
+2019-02-22 12:00:48,934 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-22 12:00:48,997 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL query
+2019-02-22 12:00:48,998 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [SELECT id, login, password FROM "user" WHERE "user".id=?]
+2019-02-22 12:00:48,998 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-22 12:00:49,054 DEBUG [main] org.springframework.jdbc.core.BeanPropertyRowMapper - Mapping column 'id' to property 'id' of type 'java.lang.Integer'
+2019-02-22 12:00:49,054 DEBUG [main] org.springframework.jdbc.core.BeanPropertyRowMapper - Mapping column 'login' to property 'login' of type 'java.lang.String'
+2019-02-22 12:00:49,054 DEBUG [main] org.springframework.jdbc.core.BeanPropertyRowMapper - Mapping column 'password' to property 'password' of type 'java.lang.String'
+2019-02-22 12:00:49,055 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL update
+2019-02-22 12:00:49,055 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [DELETE FROM "user" WHERE "user".id=?]
+2019-02-22 12:00:49,055 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-22 12:00:49,110 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT id, login, password FROM "user"]
+2019-02-22 12:00:49,111 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-22 12:00:49,166 DEBUG [main] org.springframework.jdbc.core.BeanPropertyRowMapper - Mapping column 'id' to property 'id' of type 'java.lang.Integer'
+2019-02-22 12:00:49,166 DEBUG [main] org.springframework.jdbc.core.BeanPropertyRowMapper - Mapping column 'login' to property 'login' of type 'java.lang.String'
+2019-02-22 12:00:49,167 DEBUG [main] org.springframework.jdbc.core.BeanPropertyRowMapper - Mapping column 'password' to property 'password' of type 'java.lang.String'
+2019-02-22 12:00:49,168 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL query
+2019-02-22 12:00:49,168 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [SELECT id, login, password FROM "user" WHERE "user".id=?]
+2019-02-22 12:00:49,169 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-22 12:00:49,228 DEBUG [main] org.springframework.jdbc.core.BeanPropertyRowMapper - Mapping column 'id' to property 'id' of type 'java.lang.Integer'
+2019-02-22 12:00:49,228 DEBUG [main] org.springframework.jdbc.core.BeanPropertyRowMapper - Mapping column 'login' to property 'login' of type 'java.lang.String'
+2019-02-22 12:00:49,228 DEBUG [main] org.springframework.jdbc.core.BeanPropertyRowMapper - Mapping column 'password' to property 'password' of type 'java.lang.String'

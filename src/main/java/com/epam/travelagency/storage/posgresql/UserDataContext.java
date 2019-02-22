@@ -2,6 +2,9 @@ package com.epam.travelagency.storage.posgresql;
 
 import com.epam.travelagency.bean.User;
 import com.epam.travelagency.storage.DataContext;
+import com.epam.travelagency.storage.exception.NullGeneratedKeyException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -9,11 +12,11 @@ import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
 
 import java.sql.PreparedStatement;
-import java.sql.Statement;
 import java.util.List;
-import java.util.Objects;
 
 public class UserDataContext implements DataContext<User> {
+
+    private static Logger LOG = LoggerFactory.getLogger(UserDataContext.class);
 
     private JdbcTemplate jdbcTemplate;
 
@@ -31,8 +34,13 @@ public class UserDataContext implements DataContext<User> {
             preparedStatement.setString(2, entity.getPassword());
             return preparedStatement;
         }, generatedIdHolder);
+        LOG.info(String.format("User '%s' was created in database", entity.getLogin()));
 
-        return Objects.requireNonNull(generatedIdHolder.getKey()).intValue();
+        try {
+            return generatedIdHolder.getKey().intValue();
+        } catch (NullPointerException e) {
+            throw new NullGeneratedKeyException(e);
+        }
     }
 
     public User read(Integer id) {
@@ -45,10 +53,12 @@ public class UserDataContext implements DataContext<User> {
                 entity.getLogin(),
                 entity.getPassword(),
                 entity.getId());
+        LOG.info(String.format("User '%s' was updated in database", entity.getLogin()));
     }
 
     public void delete(Integer id) {
         jdbcTemplate.update("DELETE FROM \"user\" WHERE \"user\".id=?", id);
+        LOG.info(String.format("User with id '%d' was deleted from database", id));
     }
 
     public List<User> read() {

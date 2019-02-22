@@ -1,21 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Configuration>
     <Appenders>
-        <File name="LogFile" fileName="logs/test.log">
+        <File name="LogDebugFile" fileName="logs/debug.log">
             <PatternLayout>
-                <Pattern>%d{HH:mm} LOG: %-5level[%msg]%n</Pattern>
+                <Pattern>%d %-5p [%t] %c{10} - %m%n</Pattern>
             </PatternLayout>
         </File>
-        <Console name="Console" target="SYSTEM_OUT">
+        <File name="LogInfoFile" fileName="logs/info.log">
             <PatternLayout>
-                <Pattern>LOG: %-5level[%msg]%n</Pattern>
+                <Pattern>%d %-5p [%t] %c{10} - %m%n</Pattern>
+            </PatternLayout>
+        </File>
+        <File name="FlywayDebug" fileName="logs/flyway-debug.log">
+            <PatternLayout>
+                <Pattern>%d %-5p [%t] %c{10} - %m%n</Pattern>
+            </PatternLayout>
+        </File>
+        <File name="SpringDebug" fileName="logs/spring-debug.log">
+            <PatternLayout>
+                <Pattern>%d %-5p [%t] %c{10} - %m%n</Pattern>
+            </PatternLayout>
+        </File>
+        <File name="SpringInfo" fileName="logs/spring-info.log">
+            <PatternLayout>
+                <Pattern>%d %-5p [%t] %c{10} - %m%n</Pattern>
+            </PatternLayout>
+        </File>
+        <Console name="ConsoleDebug" target="SYSTEM_OUT">
+            <PatternLayout>
+                <Pattern>%d %-5p [%t] %c{10} - %m%n</Pattern>
             </PatternLayout>
         </Console>
     </Appenders>
     <Loggers>
-        <Root level="all">
-            <AppenderRef ref="LogFile"/>
-            <AppenderRef ref="Console"/>
+        <Root additivity="false">
+            <AppenderRef ref="LogDebugFile"/>
+            <AppenderRef ref="ConsoleDebug"/>
         </Root>
+
+        <Logger name="com.epam.travelagency.storage" level="info" additivity="false">
+            <AppenderRef ref="LogInfoFile"/>
+        </Logger>
+
+        <Logger name="org.springframework" level="info" additivity="false">
+            <AppenderRef ref="SpringInfo"/>
+        </Logger>
+
+        <Logger name="org.springframework" level="debug" additivity="false">
+            <AppenderRef ref="SpringDebug"/>
+        </Logger>
+
+        <Logger name="org.flywaydb" level="debug" additivity="false">
+            <AppenderRef ref="FlywayDebug"/>
+        </Logger>
     </Loggers>
 </Configuration>

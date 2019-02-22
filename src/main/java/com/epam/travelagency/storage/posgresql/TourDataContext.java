@@ -2,7 +2,10 @@ package com.epam.travelagency.storage.posgresql;
 
 import com.epam.travelagency.bean.Tour;
 import com.epam.travelagency.storage.DataContext;
+import com.epam.travelagency.storage.exception.NullGeneratedKeyException;
 import com.epam.travelagency.storage.mapper.TourRowMapper;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
@@ -15,6 +18,8 @@ import java.util.List;
 import java.util.Objects;
 
 public class TourDataContext implements DataContext<Tour> {
+
+    private static Logger LOG = LoggerFactory.getLogger(TourDataContext.class);
 
     private static final String SELECT_FROM_TOUR =
             "SELECT id, photo, date, duration, description," +
@@ -46,7 +51,14 @@ public class TourDataContext implements DataContext<Tour> {
                     return preparedStatement;
                 },
                 generatedIdHolder);
-        return Objects.requireNonNull(generatedIdHolder.getKey()).intValue();
+        LOG.info(String.format("Tour [%s] to country {id=%d} and with hotel {id=%d} was created in database",
+                entity.getTourType(), entity.getCountryId(), entity.getHotelId()));
+
+        try {
+            return generatedIdHolder.getKey().intValue();
+        } catch (NullPointerException e) {
+            throw new NullGeneratedKeyException(e);
+        }
     }
 
     @Override
@@ -71,11 +83,14 @@ public class TourDataContext implements DataContext<Tour> {
                     preparedStatement.setString(6, entity.getTourType().name().toLowerCase());
                 }
         );
+        LOG.info(String.format("Tour [%s] to country {id=%d} and with hotel {id=%d} was updated in database",
+                entity.getTourType(), entity.getCountryId(), entity.getHotelId()));
     }
 
     @Override
     public void delete(Integer id) {
         jdbcTemplate.update("DELETE FROM tour WHERE id=?", id);
+        LOG.info(String.format("Tour with id '%d' was deleted from database", id));
     }
 
     @Override

@@ -1,0 +1,15 @@
+2019-02-22 12:00:48,715 INFO  [main] com.epam.travelagency.storage.posgresql.UserDataContext - User 'testLogin' was updated in database
+2019-02-22 12:00:48,997 INFO  [main] com.epam.travelagency.storage.posgresql.UserDataContext - User 'test' was created in database
+2019-02-22 12:00:49,110 INFO  [main] com.epam.travelagency.storage.posgresql.UserDataContext - User with id '2' was deleted from database
+2019-02-22 12:06:15,567 INFO  [main] com.epam.travelagency.storage.posgresql.HotelDataContext - Hotel 'TestHotel' was created in database
+2019-02-22 12:06:16,084 INFO  [main] com.epam.travelagency.storage.posgresql.TourDataContext - Tour [GUIDED] to country {id=1} and with hotel {id=1} was created in database
+2019-02-22 12:06:16,322 INFO  [main] com.epam.travelagency.storage.posgresql.TourDataContext - Tour with id '1' was deleted from database
+2019-02-22 12:06:16,783 INFO  [main] com.epam.travelagency.storage.posgresql.UserDataContext - User 'testLogin' was updated in database
+2019-02-22 12:06:16,991 INFO  [main] com.epam.travelagency.storage.posgresql.UserDataContext - User 'test' was created in database
+2019-02-22 12:06:17,127 INFO  [main] com.epam.travelagency.storage.posgresql.UserDataContext - User with id '2' was deleted from database
+2019-02-22 12:09:16,046 INFO  [main] com.epam.travelagency.storage.posgresql.HotelDataContext - Hotel 'TestHotel' was created in database
+2019-02-22 12:09:16,680 INFO  [main] com.epam.travelagency.storage.posgresql.TourDataContext - Tour [GUIDED] to country {id=1} and with hotel {id=1} was created in database
+2019-02-22 12:09:16,913 INFO  [main] com.epam.travelagency.storage.posgresql.TourDataContext - Tour with id '1' was deleted from database
+2019-02-22 12:09:17,361 INFO  [main] com.epam.travelagency.storage.posgresql.UserDataContext - User 'testLogin' was updated in database
+2019-02-22 12:09:17,669 INFO  [main] com.epam.travelagency.storage.posgresql.UserDataContext - User 'test' was created in database
+2019-02-22 12:09:17,791 INFO  [main] com.epam.travelagency.storage.posgresql.UserDataContext - User with id '2' was deleted from database

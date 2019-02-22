@@ -13,3 +13,34 @@
 2019-02-22 12:09:17,361 INFO  [main] com.epam.travelagency.storage.posgresql.UserDataContext - User 'testLogin' was updated in database
 2019-02-22 12:09:17,669 INFO  [main] com.epam.travelagency.storage.posgresql.UserDataContext - User 'test' was created in database
 2019-02-22 12:09:17,791 INFO  [main] com.epam.travelagency.storage.posgresql.UserDataContext - User with id '2' was deleted from database
+2019-02-22 12:39:17,353 INFO  [main] com.epam.travelagency.storage.posgresql.ReviewDataContext - Review from user 'id=1' for tour 'id=1' was created in database
+2019-02-22 12:39:17,723 INFO  [main] com.epam.travelagency.storage.posgresql.ReviewDataContext - Review with id '1' was deleted from database
+2019-02-22 12:39:17,855 INFO  [main] com.epam.travelagency.storage.posgresql.ReviewDataContext - Review from user 'id=2' for tour 'id=2' was updated in database
+2019-02-22 12:41:22,258 INFO  [main] com.epam.travelagency.storage.posgresql.ReviewDataContext - Review from user 'id=1' for tour 'id=1' was created in database
+2019-02-22 12:41:22,504 INFO  [main] com.epam.travelagency.storage.posgresql.ReviewDataContext - Review with id '1' was deleted from database
+2019-02-22 12:41:22,617 INFO  [main] com.epam.travelagency.storage.posgresql.ReviewDataContext - Review from user 'id=2' for tour 'id=2' was updated in database
+2019-02-22 12:43:41,717 INFO  [main] com.epam.travelagency.storage.posgresql.ReviewDataContext - Review from user 'id=1' for tour 'id=1' was created in database
+2019-02-22 12:43:41,862 INFO  [main] com.epam.travelagency.storage.posgresql.ReviewDataContext - Review with id '1' was deleted from database
+2019-02-22 12:43:41,993 INFO  [main] com.epam.travelagency.storage.posgresql.ReviewDataContext - Review from user 'id=2' for tour 'id=2' was updated in database
+2019-02-22 12:50:06,585 INFO  [main] com.epam.travelagency.storage.posgresql.ReviewDataContext - Review from user 'id=1' for tour 'id=1' was created in database
+2019-02-22 12:50:06,718 INFO  [main] com.epam.travelagency.storage.posgresql.ReviewDataContext - Review with id '1' was deleted from database
+2019-02-22 12:50:06,837 INFO  [main] com.epam.travelagency.storage.posgresql.ReviewDataContext - Review from user 'id=2' for tour 'id=2' was updated in database
+2019-02-22 12:51:15,196 INFO  [main] com.epam.travelagency.storage.posgresql.ReviewDataContext - Review from user 'id=2' for tour 'id=2' was updated in database
+2019-02-22 13:02:01,311 INFO  [main] com.epam.travelagency.storage.posgresql.ReviewDataContext - Review from user 'id=1' for tour 'id=1' was created in database
+2019-02-22 13:02:01,432 INFO  [main] com.epam.travelagency.storage.posgresql.ReviewDataContext - Review with id '1' was deleted from database
+2019-02-22 13:02:01,549 INFO  [main] com.epam.travelagency.storage.posgresql.ReviewDataContext - Review from user 'id=2' for tour 'id=2' was updated in database
+2019-02-22 13:04:36,599 INFO  [main] com.epam.travelagency.storage.posgresql.ReviewDataContext - Review from user 'id=1' for tour 'id=1' was created in database
+2019-02-22 13:04:36,717 INFO  [main] com.epam.travelagency.storage.posgresql.ReviewDataContext - Review with id '1' was deleted from database
+2019-02-22 13:04:36,827 INFO  [main] com.epam.travelagency.storage.posgresql.ReviewDataContext - Review from user 'id=2' for tour 'id=2' was updated in database
+2019-02-22 13:09:22,936 INFO  [main] com.epam.travelagency.storage.posgresql.ReviewDataContext - Review from user 'id=1' for tour 'id=1' was created in database
+2019-02-22 13:09:23,172 INFO  [main] com.epam.travelagency.storage.posgresql.ReviewDataContext - Review with id '1' was deleted from database
+2019-02-22 13:09:23,300 INFO  [main] com.epam.travelagency.storage.posgresql.ReviewDataContext - Review from user 'id=2' for tour 'id=2' was updated in database
+2019-02-22 13:10:02,224 INFO  [main] com.epam.travelagency.storage.posgresql.ReviewDataContext - Review from user 'id=1' for tour 'id=1' was created in database
+2019-02-22 13:10:02,340 INFO  [main] com.epam.travelagency.storage.posgresql.ReviewDataContext - Review with id '1' was deleted from database
+2019-02-22 13:10:02,471 INFO  [main] com.epam.travelagency.storage.posgresql.ReviewDataContext - Review from user 'id=2' for tour 'id=2' was updated in database
+2019-02-22 13:11:06,853 INFO  [main] com.epam.travelagency.storage.posgresql.ReviewDataContext - Review from user 'id=1' for tour 'id=1' was created in database
+2019-02-22 13:11:07,092 INFO  [main] com.epam.travelagency.storage.posgresql.ReviewDataContext - Review with id '1' was deleted from database
+2019-02-22 13:11:07,224 INFO  [main] com.epam.travelagency.storage.posgresql.ReviewDataContext - Review from user 'id=2' for tour 'id=2' was updated in database
+2019-02-22 13:12:24,630 INFO  [main] com.epam.travelagency.storage.posgresql.ReviewDataContext - Review from user 'id=1' for tour 'id=1' was created in database
+2019-02-22 13:12:24,771 INFO  [main] com.epam.travelagency.storage.posgresql.ReviewDataContext - Review with id '1' was deleted from database
+2019-02-22 13:12:24,884 INFO  [main] com.epam.travelagency.storage.posgresql.ReviewDataContext - Review from user 'id=2' for tour 'id=2' was updated in database

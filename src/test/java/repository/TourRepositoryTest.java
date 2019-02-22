@@ -1,9 +1,6 @@
 package repository;
 
-import com.epam.travelagency.bean.Country;
-import com.epam.travelagency.bean.Hotel;
 import com.epam.travelagency.bean.Tour;
-import com.epam.travelagency.bean.enumeration.HotelFeature;
 import com.epam.travelagency.bean.enumeration.TourType;
 import com.epam.travelagency.repository.TourRepository;
 import com.epam.travelagency.storage.posgresql.TourDataContext;

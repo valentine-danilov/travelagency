@@ -1,6 +1,5 @@
 package com.epam.travelagency.bean.enumeration;
 
-
 public enum HotelFeature {
     CLEANLINESS,
     SECURITY,

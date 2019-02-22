@@ -6,7 +6,11 @@ import com.epam.travelagency.storage.posgresql.UserDataContext;
 import com.opentable.db.postgres.embedded.FlywayPreparer;
 import com.opentable.db.postgres.junit.EmbeddedPostgresRules;
 import com.opentable.db.postgres.junit.PreparedDbRule;
-import org.junit.*;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.ClassRule;
+
+import org.junit.Test;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 public class UserRepositoryTest {
@@ -43,7 +47,7 @@ public class UserRepositoryTest {
     public void shouldBeCreated() {
         testUser.setId(5);
         testUser.setLogin("test");
-        Integer generatedId = userRepository.create(testUser);
+            Integer generatedId = userRepository.create(testUser);
         Assert.assertEquals(userRepository.read(generatedId), testUser);
     }
 

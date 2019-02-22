@@ -1,5 +1,7 @@
 package com.epam.travelagency.bean;
 
+import java.util.Objects;
+
 public class Review extends AbstractEntity {
     private String date;
     private String text;
@@ -41,5 +43,31 @@ public class Review extends AbstractEntity {
 
     public void setTourId(Integer tourId) {
         this.tourId = tourId;
+    }
+
+    @Override
+    public String toString() {
+        return "Review{" +
+                "date='" + date + '\'' +
+                ", text='" + text + '\'' +
+                ", userId=" + userId +
+                ", tourId=" + tourId +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Review review = (Review) o;
+        return Objects.equals(date, review.date) &&
+                Objects.equals(text, review.text) &&
+                Objects.equals(userId, review.userId) &&
+                Objects.equals(tourId, review.tourId);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(date, text, userId, tourId);
     }
 }

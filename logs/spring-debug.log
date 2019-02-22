@@ -84,3 +84,267 @@
 2019-02-22 12:09:17,907 DEBUG [main] org.springframework.jdbc.core.BeanPropertyRowMapper - Mapping column 'id' to property 'id' of type 'java.lang.Integer'
 2019-02-22 12:09:17,907 DEBUG [main] org.springframework.jdbc.core.BeanPropertyRowMapper - Mapping column 'login' to property 'login' of type 'java.lang.String'
 2019-02-22 12:09:17,907 DEBUG [main] org.springframework.jdbc.core.BeanPropertyRowMapper - Mapping column 'password' to property 'password' of type 'java.lang.String'
+2019-02-22 12:39:17,248 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing SQL update and returning generated keys
+2019-02-22 12:39:17,250 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement
+2019-02-22 12:39:17,259 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-22 12:39:17,356 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL query
+2019-02-22 12:39:17,356 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [SELECT id, date, text, user_id, tour_id FROM review WHERE id=?]
+2019-02-22 12:39:17,356 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-22 12:39:17,524 DEBUG [main] org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loaded 11 bean definitions from class path resource [org/springframework/jdbc/support/sql-error-codes.xml]
+2019-02-22 12:39:17,531 DEBUG [main] org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'DB2'
+2019-02-22 12:39:17,587 DEBUG [main] org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'Derby'
+2019-02-22 12:39:17,588 DEBUG [main] org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'H2'
+2019-02-22 12:39:17,588 DEBUG [main] org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'HDB'
+2019-02-22 12:39:17,590 DEBUG [main] org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'HSQL'
+2019-02-22 12:39:17,590 DEBUG [main] org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'Informix'
+2019-02-22 12:39:17,591 DEBUG [main] org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'MS-SQL'
+2019-02-22 12:39:17,592 DEBUG [main] org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'MySQL'
+2019-02-22 12:39:17,592 DEBUG [main] org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'Oracle'
+2019-02-22 12:39:17,593 DEBUG [main] org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'PostgreSQL'
+2019-02-22 12:39:17,594 DEBUG [main] org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'Sybase'
+2019-02-22 12:39:17,595 DEBUG [main] org.springframework.jdbc.support.SQLErrorCodesFactory - Looking up default SQLErrorCodes for DataSource [org.postgresql.ds.PGSimpleDataSource@610db97e]
+2019-02-22 12:39:17,596 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-22 12:39:17,663 DEBUG [main] org.springframework.jdbc.support.SQLErrorCodesFactory - SQL error codes for 'PostgreSQL' found
+2019-02-22 12:39:17,663 DEBUG [main] org.springframework.jdbc.support.SQLErrorCodesFactory - Caching SQL error codes for DataSource [org.postgresql.ds.PGSimpleDataSource@610db97e]: database product name is 'PostgreSQL'
+2019-02-22 12:39:17,664 DEBUG [main] org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator - Unable to translate SQLException with SQL state '42703', error code '0, will now try the fallback translator
+2019-02-22 12:39:17,664 DEBUG [main] org.springframework.jdbc.support.SQLStateSQLExceptionTranslator - Extracted SQL state class '42' from value '42703'
+2019-02-22 12:39:17,671 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL update
+2019-02-22 12:39:17,671 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [DELETE FROM review where id=?]
+2019-02-22 12:39:17,671 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-22 12:39:17,724 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL query
+2019-02-22 12:39:17,724 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [SELECT id, date, text, user_id, tour_id FROM review WHERE id=?]
+2019-02-22 12:39:17,724 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-22 12:39:17,777 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL update
+2019-02-22 12:39:17,777 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [UPDATE review SET date=?::DATE, text=?, user_id=?, tour_id=? WHERE id=?]
+2019-02-22 12:39:17,777 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-22 12:39:17,855 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL query
+2019-02-22 12:39:17,856 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [SELECT id, date, text, user_id, tour_id FROM review WHERE id=?]
+2019-02-22 12:39:17,856 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-22 12:39:17,911 DEBUG [main] org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator - Unable to translate SQLException with SQL state '42703', error code '0, will now try the fallback translator
+2019-02-22 12:39:17,911 DEBUG [main] org.springframework.jdbc.support.SQLStateSQLExceptionTranslator - Extracted SQL state class '42' from value '42703'
+2019-02-22 12:39:17,913 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT id, date, text, user_id, tour_id FROM review]
+2019-02-22 12:39:17,914 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-22 12:39:17,964 DEBUG [main] org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator - Unable to translate SQLException with SQL state '42703', error code '0, will now try the fallback translator
+2019-02-22 12:39:17,964 DEBUG [main] org.springframework.jdbc.support.SQLStateSQLExceptionTranslator - Extracted SQL state class '42' from value '42703'
+2019-02-22 12:39:17,966 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL query
+2019-02-22 12:39:17,966 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [SELECT id, date, text, user_id, tour_id FROM review WHERE id=?]
+2019-02-22 12:39:17,966 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-22 12:41:22,169 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing SQL update and returning generated keys
+2019-02-22 12:41:22,170 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement
+2019-02-22 12:41:22,182 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-22 12:41:22,260 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL query
+2019-02-22 12:41:22,261 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [SELECT id, date, text, user_id, tour_id FROM review WHERE id=?]
+2019-02-22 12:41:22,261 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-22 12:41:22,429 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL update
+2019-02-22 12:41:22,430 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [DELETE FROM review where id=?]
+2019-02-22 12:41:22,431 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-22 12:41:22,504 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL query
+2019-02-22 12:41:22,504 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [SELECT id, date, text, user_id, tour_id FROM review WHERE id=?]
+2019-02-22 12:41:22,504 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-22 12:41:22,558 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL update
+2019-02-22 12:41:22,558 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [UPDATE review SET date=?::DATE, text=?, user_id=?, tour_id=? WHERE id=?]
+2019-02-22 12:41:22,558 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-22 12:41:22,618 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL query
+2019-02-22 12:41:22,618 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [SELECT id, date, text, user_id, tour_id FROM review WHERE id=?]
+2019-02-22 12:41:22,618 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-22 12:41:22,674 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT id, date, text, user_id, tour_id FROM review]
+2019-02-22 12:41:22,677 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-22 12:41:22,735 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL query
+2019-02-22 12:41:22,735 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [SELECT id, date, text, user_id, tour_id FROM review WHERE id=?]
+2019-02-22 12:41:22,735 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-22 12:43:41,613 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing SQL update and returning generated keys
+2019-02-22 12:43:41,614 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement
+2019-02-22 12:43:41,623 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-22 12:43:41,718 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL query
+2019-02-22 12:43:41,719 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [SELECT id, date, text, user_id, tour_id FROM review WHERE id=?]
+2019-02-22 12:43:41,719 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-22 12:43:41,794 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL update
+2019-02-22 12:43:41,795 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [DELETE FROM review where id=?]
+2019-02-22 12:43:41,795 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-22 12:43:41,863 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL query
+2019-02-22 12:43:41,863 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [SELECT id, date, text, user_id, tour_id FROM review WHERE id=?]
+2019-02-22 12:43:41,863 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-22 12:43:41,917 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL update
+2019-02-22 12:43:41,917 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [UPDATE review SET date=?::DATE, text=?, user_id=?, tour_id=? WHERE id=?]
+2019-02-22 12:43:41,917 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-22 12:43:41,993 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL query
+2019-02-22 12:43:41,993 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [SELECT id, date, text, user_id, tour_id FROM review WHERE id=?]
+2019-02-22 12:43:41,993 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-22 12:43:42,091 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT id, date, text, user_id, tour_id FROM review]
+2019-02-22 12:43:42,091 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-22 12:43:42,246 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL query
+2019-02-22 12:43:42,246 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [SELECT id, date, text, user_id, tour_id FROM review WHERE id=?]
+2019-02-22 12:43:42,246 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-22 12:48:27,827 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL query
+2019-02-22 12:48:27,828 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [SELECT id, date, text, user_id, tour_id FROM review WHERE id=?]
+2019-02-22 12:48:27,837 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-22 12:49:14,812 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL query
+2019-02-22 12:49:14,814 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [SELECT id, date, text, user_id, tour_id FROM review WHERE id=?]
+2019-02-22 12:49:14,825 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-22 12:50:06,494 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing SQL update and returning generated keys
+2019-02-22 12:50:06,496 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement
+2019-02-22 12:50:06,511 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-22 12:50:06,587 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL query
+2019-02-22 12:50:06,587 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [SELECT id, date, text, user_id, tour_id FROM review WHERE id=?]
+2019-02-22 12:50:06,587 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-22 12:50:06,661 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL update
+2019-02-22 12:50:06,662 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [DELETE FROM review where id=?]
+2019-02-22 12:50:06,662 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-22 12:50:06,718 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL query
+2019-02-22 12:50:06,718 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [SELECT id, date, text, user_id, tour_id FROM review WHERE id=?]
+2019-02-22 12:50:06,718 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-22 12:50:06,770 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL update
+2019-02-22 12:50:06,770 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [UPDATE review SET date=?::DATE, text=?, user_id=?, tour_id=? WHERE id=?]
+2019-02-22 12:50:06,770 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-22 12:50:06,837 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL query
+2019-02-22 12:50:06,837 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [SELECT id, date, text, user_id, tour_id FROM review WHERE id=?]
+2019-02-22 12:50:06,838 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-22 12:50:06,898 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT id, date, text, user_id, tour_id FROM review]
+2019-02-22 12:50:06,899 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-22 12:50:06,959 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL query
+2019-02-22 12:50:06,959 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [SELECT id, date, text, user_id, tour_id FROM review WHERE id=?]
+2019-02-22 12:50:06,959 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-22 12:51:15,090 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL update
+2019-02-22 12:51:15,091 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [UPDATE review SET date=?::DATE, text=?, user_id=?, tour_id=? WHERE id=?]
+2019-02-22 12:51:15,103 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-22 12:51:15,198 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL query
+2019-02-22 12:51:15,198 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [SELECT id, date, text, user_id, tour_id FROM review WHERE id=?]
+2019-02-22 12:51:15,198 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-22 13:02:01,221 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing SQL update and returning generated keys
+2019-02-22 13:02:01,222 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement
+2019-02-22 13:02:01,233 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-22 13:02:01,313 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL query
+2019-02-22 13:02:01,313 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [SELECT id, date, text, user_id, tour_id FROM review WHERE id=?]
+2019-02-22 13:02:01,313 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-22 13:02:01,373 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL update
+2019-02-22 13:02:01,374 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [DELETE FROM review where id=?]
+2019-02-22 13:02:01,374 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-22 13:02:01,433 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL query
+2019-02-22 13:02:01,433 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [SELECT id, date, text, user_id, tour_id FROM review WHERE id=?]
+2019-02-22 13:02:01,433 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-22 13:02:01,491 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL update
+2019-02-22 13:02:01,492 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [UPDATE review SET date=?::DATE, text=?, user_id=?, tour_id=? WHERE id=?]
+2019-02-22 13:02:01,492 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-22 13:02:01,549 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL query
+2019-02-22 13:02:01,549 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [SELECT id, date, text, user_id, tour_id FROM review WHERE id=?]
+2019-02-22 13:02:01,549 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-22 13:02:01,608 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT id, date, text, user_id, tour_id FROM review]
+2019-02-22 13:02:01,608 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-22 13:02:01,659 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL query
+2019-02-22 13:02:01,659 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [SELECT id, date, text, user_id, tour_id FROM review WHERE id=?]
+2019-02-22 13:02:01,659 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-22 13:04:36,410 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing SQL update and returning generated keys
+2019-02-22 13:04:36,412 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement
+2019-02-22 13:04:36,422 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-22 13:04:36,601 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL query
+2019-02-22 13:04:36,601 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [SELECT id, date, text, user_id, tour_id FROM review WHERE id=?]
+2019-02-22 13:04:36,601 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-22 13:04:36,661 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL update
+2019-02-22 13:04:36,662 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [DELETE FROM review where id=?]
+2019-02-22 13:04:36,662 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-22 13:04:36,717 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL query
+2019-02-22 13:04:36,717 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [SELECT id, date, text, user_id, tour_id FROM review WHERE id=?]
+2019-02-22 13:04:36,717 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-22 13:04:36,773 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL update
+2019-02-22 13:04:36,773 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [UPDATE review SET date=?::DATE, text=?, user_id=?, tour_id=? WHERE id=?]
+2019-02-22 13:04:36,773 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-22 13:04:36,827 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL query
+2019-02-22 13:04:36,827 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [SELECT id, date, text, user_id, tour_id FROM review WHERE id=?]
+2019-02-22 13:04:36,827 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-22 13:04:36,936 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT id, date, text, user_id, tour_id FROM review]
+2019-02-22 13:04:36,937 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-22 13:04:37,006 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL query
+2019-02-22 13:04:37,006 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [SELECT id, date, text, user_id, tour_id FROM review WHERE id=?]
+2019-02-22 13:04:37,006 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-22 13:09:22,847 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing SQL update and returning generated keys
+2019-02-22 13:09:22,851 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement
+2019-02-22 13:09:22,862 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-22 13:09:22,937 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL query
+2019-02-22 13:09:22,938 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [SELECT id, date, text, user_id, tour_id FROM review WHERE id=?]
+2019-02-22 13:09:22,938 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-22 13:09:23,100 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL update
+2019-02-22 13:09:23,101 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [DELETE FROM review where id=?]
+2019-02-22 13:09:23,101 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-22 13:09:23,172 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL query
+2019-02-22 13:09:23,172 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [SELECT id, date, text, user_id, tour_id FROM review WHERE id=?]
+2019-02-22 13:09:23,172 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-22 13:09:23,229 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL update
+2019-02-22 13:09:23,229 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [UPDATE review SET date=?::DATE, text=?, user_id=?, tour_id=? WHERE id=?]
+2019-02-22 13:09:23,229 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-22 13:09:23,300 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL query
+2019-02-22 13:09:23,300 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [SELECT id, date, text, user_id, tour_id FROM review WHERE id=?]
+2019-02-22 13:09:23,300 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-22 13:09:23,350 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT id, date, text, user_id, tour_id FROM review]
+2019-02-22 13:09:23,351 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-22 13:09:23,418 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL query
+2019-02-22 13:09:23,419 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [SELECT id, date, text, user_id, tour_id FROM review WHERE id=?]
+2019-02-22 13:09:23,419 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-22 13:10:02,119 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing SQL update and returning generated keys
+2019-02-22 13:10:02,121 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement
+2019-02-22 13:10:02,130 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-22 13:10:02,226 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL query
+2019-02-22 13:10:02,226 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [SELECT id, date, text, user_id, tour_id FROM review WHERE id=?]
+2019-02-22 13:10:02,226 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-22 13:10:02,288 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL update
+2019-02-22 13:10:02,288 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [DELETE FROM review where id=?]
+2019-02-22 13:10:02,289 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-22 13:10:02,340 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL query
+2019-02-22 13:10:02,340 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [SELECT id, date, text, user_id, tour_id FROM review WHERE id=?]
+2019-02-22 13:10:02,340 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-22 13:10:02,399 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL update
+2019-02-22 13:10:02,399 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [UPDATE review SET date=?::DATE, text=?, user_id=?, tour_id=? WHERE id=?]
+2019-02-22 13:10:02,399 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-22 13:10:02,472 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL query
+2019-02-22 13:10:02,472 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [SELECT id, date, text, user_id, tour_id FROM review WHERE id=?]
+2019-02-22 13:10:02,472 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-22 13:10:02,527 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT id, date, text, user_id, tour_id FROM review]
+2019-02-22 13:10:02,527 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-22 13:10:02,597 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL query
+2019-02-22 13:10:02,597 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [SELECT id, date, text, user_id, tour_id FROM review WHERE id=?]
+2019-02-22 13:10:02,597 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-22 13:11:06,768 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing SQL update and returning generated keys
+2019-02-22 13:11:06,770 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement
+2019-02-22 13:11:06,778 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-22 13:11:06,855 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL query
+2019-02-22 13:11:06,856 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [SELECT id, date, text, user_id, tour_id FROM review WHERE id=?]
+2019-02-22 13:11:06,856 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-22 13:11:07,018 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL update
+2019-02-22 13:11:07,019 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [DELETE FROM review where id=?]
+2019-02-22 13:11:07,019 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-22 13:11:07,092 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL query
+2019-02-22 13:11:07,092 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [SELECT id, date, text, user_id, tour_id FROM review WHERE id=?]
+2019-02-22 13:11:07,092 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-22 13:11:07,145 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL update
+2019-02-22 13:11:07,146 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [UPDATE review SET date=?::DATE, text=?, user_id=?, tour_id=? WHERE id=?]
+2019-02-22 13:11:07,146 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-22 13:11:07,224 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL query
+2019-02-22 13:11:07,224 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [SELECT id, date, text, user_id, tour_id FROM review WHERE id=?]
+2019-02-22 13:11:07,224 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-22 13:11:07,276 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT id, date, text, user_id, tour_id FROM review]
+2019-02-22 13:11:07,276 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-22 13:11:07,348 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL query
+2019-02-22 13:11:07,348 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [SELECT id, date, text, user_id, tour_id FROM review WHERE id=?]
+2019-02-22 13:11:07,348 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-22 13:12:24,547 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing SQL update and returning generated keys
+2019-02-22 13:12:24,549 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement
+2019-02-22 13:12:24,556 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-22 13:12:24,633 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL query
+2019-02-22 13:12:24,634 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [SELECT id, date, text, user_id, tour_id FROM review WHERE id=?]
+2019-02-22 13:12:24,634 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-22 13:12:24,696 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL update
+2019-02-22 13:12:24,696 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [DELETE FROM review where id=?]
+2019-02-22 13:12:24,696 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-22 13:12:24,771 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL query
+2019-02-22 13:12:24,771 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [SELECT id, date, text, user_id, tour_id FROM review WHERE id=?]
+2019-02-22 13:12:24,771 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-22 13:12:24,826 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL update
+2019-02-22 13:12:24,826 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [UPDATE review SET date=?::DATE, text=?, user_id=?, tour_id=? WHERE id=?]
+2019-02-22 13:12:24,826 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-22 13:12:24,884 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL query
+2019-02-22 13:12:24,884 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [SELECT id, date, text, user_id, tour_id FROM review WHERE id=?]
+2019-02-22 13:12:24,884 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-22 13:12:24,939 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT id, date, text, user_id, tour_id FROM review]
+2019-02-22 13:12:24,939 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-22 13:12:24,996 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL query
+2019-02-22 13:12:24,996 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [SELECT id, date, text, user_id, tour_id FROM review WHERE id=?]
+2019-02-22 13:12:24,996 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource

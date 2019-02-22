@@ -13,7 +13,7 @@ public class ReviewRowMapper implements RowMapper<Review> {
         review.setId(resultSet.getInt("id"));
         review.setDate(resultSet.getString("date"));
         review.setText(resultSet.getString("text"));
-        review.setTourId(resultSet.getInt("tour__id"));
+        review.setTourId(resultSet.getInt("tour_id"));
         review.setUserId(resultSet.getInt("user_id"));
         return review;
     }

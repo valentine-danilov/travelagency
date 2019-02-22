@@ -7,8 +7,8 @@ import java.util.List;
 @org.springframework.stereotype.Repository
 public class TourRepository extends Repository<Tour> {
     @Override
-    public void create(Tour entity) {
-        storage.create(entity);
+    public Integer create(Tour entity) {
+        return storage.create(entity);
     }
 
     @Override

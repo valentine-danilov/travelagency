@@ -6,16 +6,9 @@ import com.epam.travelagency.storage.posgresql.UserDataContext;
 import com.opentable.db.postgres.embedded.FlywayPreparer;
 import com.opentable.db.postgres.junit.EmbeddedPostgresRules;
 import com.opentable.db.postgres.junit.PreparedDbRule;
-import config.TestConfig;
 import org.junit.*;
-import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-@RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = TestConfig.class)
 public class UserRepositoryTest {
 
     @ClassRule
@@ -33,6 +26,7 @@ public class UserRepositoryTest {
     public void init() {
         JdbcTemplate template = new JdbcTemplate(db.getTestDatabase());
         UserDataContext dataContext = new UserDataContext(template);
+        userRepository = new UserRepository();
         userRepository.setDataContext(dataContext);
         testUser.setId(1);
         testUser.setLogin("testLogin");
@@ -49,8 +43,8 @@ public class UserRepositoryTest {
     public void shouldBeCreated() {
         testUser.setId(5);
         testUser.setLogin("test");
-        userRepository.create(testUser);
-        Assert.assertEquals(userRepository.read(testUser.getId()), testUser);
+        Integer generatedId = userRepository.create(testUser);
+        Assert.assertEquals(userRepository.read(generatedId), testUser);
     }
 
     @Test

@@ -6,8 +6,8 @@ import java.util.List;
 
 public class CountryRepository extends Repository<Country> {
     @Override
-    public void create(Country entity) {
-        storage.create(entity);
+    public Integer create(Country entity) {
+        return storage.create(entity);
     }
 
     @Override

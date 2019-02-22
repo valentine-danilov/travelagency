@@ -5,9 +5,12 @@ import com.epam.travelagency.storage.DataContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.stereotype.Component;
+import org.springframework.jdbc.support.GeneratedKeyHolder;
+import org.springframework.jdbc.support.KeyHolder;
 
+import java.sql.PreparedStatement;
 import java.util.List;
+import java.util.Objects;
 
 public class CountryDataContext implements DataContext<Country> {
 
@@ -19,8 +22,15 @@ public class CountryDataContext implements DataContext<Country> {
     }
 
     @Override
-    public void create(Country entity) {
-        jdbcTemplate.update("INSERT INTO country (name) VALUES (?)", entity.getName());
+    public Integer create(Country entity) {
+        KeyHolder generatedIdHolder = new GeneratedKeyHolder();
+        String sql = "INSERT INTO country (name) VALUES (?)";
+        jdbcTemplate.update(connection -> {
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setString(1, entity.getName());
+            return preparedStatement;
+        }, generatedIdHolder);
+        return Objects.requireNonNull(generatedIdHolder.getKey()).intValue();
     }
 
     @Override

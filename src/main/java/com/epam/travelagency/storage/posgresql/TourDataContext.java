@@ -5,9 +5,13 @@ import com.epam.travelagency.storage.DataContext;
 import com.epam.travelagency.storage.mapper.TourRowMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.support.GeneratedKeyHolder;
+import org.springframework.jdbc.support.KeyHolder;
 
+import java.sql.PreparedStatement;
 import java.sql.Types;
 import java.util.List;
+import java.util.Objects;
 
 public class TourDataContext implements DataContext<Tour> {
 
@@ -23,12 +27,13 @@ public class TourDataContext implements DataContext<Tour> {
     }
 
     @Override
-    public void create(Tour entity) {
-        jdbcTemplate.update(
-                "INSERT INTO tour (photo, date, duration," +
-                        " description, cost, tour_type, hotel_id, country_id)" +
-                        " VALUES (?,?::DATE,?,?,?,?::tour_type,?,?)",
-                preparedStatement -> {
+    public Integer create(Tour entity) {
+        KeyHolder generatedIdHolder = new GeneratedKeyHolder();
+        String sql = "INSERT INTO tour (photo, date, duration," +
+                " description, cost, tour_type, hotel_id, country_id)" +
+                " VALUES (?,?::DATE,?,?,?,?::tour_type,?,?)";
+        jdbcTemplate.update(connection -> {
+                    PreparedStatement preparedStatement = connection.prepareStatement(sql);
                     preparedStatement.setString(1, entity.getPhoto());
                     preparedStatement.setString(2, entity.getDate());
                     preparedStatement.setInt(3, entity.getDuration());
@@ -37,7 +42,10 @@ public class TourDataContext implements DataContext<Tour> {
                     preparedStatement.setString(6, entity.getTourType().name().toLowerCase());
                     preparedStatement.setInt(7, entity.getHotelId());
                     preparedStatement.setInt(8, entity.getCountryId());
-                });
+                    return preparedStatement;
+                },
+                generatedIdHolder);
+        return Objects.requireNonNull(generatedIdHolder.getKey()).intValue();
     }
 
     @Override

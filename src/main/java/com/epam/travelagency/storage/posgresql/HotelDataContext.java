@@ -1,18 +1,16 @@
 package com.epam.travelagency.storage.posgresql;
 
 import com.epam.travelagency.bean.Hotel;
-import com.epam.travelagency.bean.enumeration.HotelFeature;
 import com.epam.travelagency.storage.DataContext;
 import com.epam.travelagency.storage.mapper.HotelRowMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.core.PreparedStatementSetter;
+import org.springframework.jdbc.support.GeneratedKeyHolder;
+import org.springframework.jdbc.support.KeyHolder;
 
-import java.sql.JDBCType;
 import java.sql.PreparedStatement;
-import java.sql.SQLException;
 import java.util.List;
-import java.util.stream.Collectors;
+import java.util.Objects;
 
 public class HotelDataContext implements DataContext<Hotel> {
 
@@ -24,17 +22,21 @@ public class HotelDataContext implements DataContext<Hotel> {
     }
 
     @Override
-    public void create(Hotel entity) {
-        jdbcTemplate.update("INSERT INTO \"hotel\" (name, stars, website, latitude, longitude, feature)" +
-                        " VALUES (?,?,?,?,?,?::hotel_feature)",
-                preparedStatement -> {
-                    preparedStatement.setString(1, entity.getName());
-                    preparedStatement.setByte(2, entity.getStars());
-                    preparedStatement.setString(3, entity.getWebsite());
-                    preparedStatement.setBigDecimal(4, entity.getLatitude());
-                    preparedStatement.setBigDecimal(5, entity.getLongitude());
-                    preparedStatement.setString(6, entity.getFeatures().name().toLowerCase());
-                });
+    public Integer create(Hotel entity) {
+        KeyHolder generatedIdHolder = new GeneratedKeyHolder();
+        final String sql = "INSERT INTO \"hotel\" (name, stars, website, latitude, longitude, feature)" +
+                " VALUES (?,?,?,?,?,?::hotel_feature)";
+        jdbcTemplate.update(connection -> {
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setString(1, entity.getName());
+            preparedStatement.setByte(2, entity.getStars());
+            preparedStatement.setString(3, entity.getWebsite());
+            preparedStatement.setBigDecimal(4, entity.getLatitude());
+            preparedStatement.setBigDecimal(5, entity.getLongitude());
+            preparedStatement.setString(6, entity.getFeatures().name().toLowerCase());
+            return preparedStatement;
+        }, generatedIdHolder);
+        return Objects.requireNonNull(generatedIdHolder.getKey()).intValue();
     }
 
     @Override

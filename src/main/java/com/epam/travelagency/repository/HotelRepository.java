@@ -1,15 +1,14 @@
 package com.epam.travelagency.repository;
 
 import com.epam.travelagency.bean.Hotel;
-import com.epam.travelagency.repository.Repository;
 
 import java.util.List;
 
 @org.springframework.stereotype.Repository
 public class HotelRepository extends Repository<Hotel> {
     @Override
-    public void create(Hotel entity) {
-        storage.create(entity);
+    public Integer create(Hotel entity) {
+        return storage.create(entity);
     }
 
     @Override

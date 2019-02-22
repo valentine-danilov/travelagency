@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 @Repository
 public interface DataContext<T extends AbstractEntity> {
-    void create(T entity);
+    Integer create(T entity);
 
     T read(Integer id);
 

@@ -6,8 +6,8 @@ import java.util.List;
 
 public class ReviewRepository extends Repository<Review> {
     @Override
-    public void create(Review entity) {
-        storage.create(entity);
+    public Integer create(Review entity) {
+        return storage.create(entity);
     }
 
     @Override

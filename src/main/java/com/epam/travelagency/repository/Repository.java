@@ -16,7 +16,7 @@ public abstract class Repository<T extends AbstractEntity> {
         this.storage = storage;
     }
 
-    public abstract void create(T entity);
+    public abstract Integer create(T entity);
 
     public abstract T read(Integer id);
 

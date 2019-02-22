@@ -2,13 +2,15 @@ package com.epam.travelagency.storage.posgresql;
 
 import com.epam.travelagency.bean.User;
 import com.epam.travelagency.storage.DataContext;
-import com.epam.travelagency.storage.mapper.UserRowMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.stereotype.Component;
+import org.springframework.jdbc.support.GeneratedKeyHolder;
+import org.springframework.jdbc.support.KeyHolder;
 
+import java.sql.PreparedStatement;
 import java.util.List;
+import java.util.Objects;
 
 public class UserDataContext implements DataContext<User> {
 
@@ -19,10 +21,17 @@ public class UserDataContext implements DataContext<User> {
         this.jdbcTemplate = jdbcTemplate;
     }
 
-    public void create(User entity) {
-        jdbcTemplate.update("INSERT INTO \"user\" (login, password) VALUES (?,?)",
-                entity.getLogin(),
-                entity.getPassword());
+    public Integer create(User entity) {
+        KeyHolder generatedIdHolder = new GeneratedKeyHolder();
+        final String sql = "INSERT INTO \"user\" (login, password) VALUES (?,?)";
+        jdbcTemplate.update(connection -> {
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setString(1, entity.getLogin());
+            preparedStatement.setString(2, entity.getPassword());
+            return preparedStatement;
+        }, generatedIdHolder);
+
+        return Objects.requireNonNull(generatedIdHolder.getKey()).intValue();
     }
 
     public User read(Integer id) {
@@ -41,7 +50,7 @@ public class UserDataContext implements DataContext<User> {
         jdbcTemplate.update("DELETE FROM \"user\" WHERE \"user\".id=?", id);
     }
 
-    public List<User> read(){
+    public List<User> read() {
         return jdbcTemplate.query("SELECT id, login, password FROM \"user\"", new BeanPropertyRowMapper<>(User.class));
     }
 }

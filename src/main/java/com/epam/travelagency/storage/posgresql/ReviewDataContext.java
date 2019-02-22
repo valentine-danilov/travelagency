@@ -5,9 +5,13 @@ import com.epam.travelagency.storage.DataContext;
 import com.epam.travelagency.storage.mapper.ReviewRowMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.support.GeneratedKeyHolder;
+import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Repository;
 
+import java.sql.PreparedStatement;
 import java.util.List;
+import java.util.Objects;
 
 @Repository
 public class ReviewDataContext implements DataContext<Review> {
@@ -20,14 +24,18 @@ public class ReviewDataContext implements DataContext<Review> {
     }
 
     @Override
-    public void create(Review entity) {
-        jdbcTemplate.update("INSERT INTO review (date, text, user_id, tour_id) VALUES (?::DATE,?,?,?)",
-                preparedStatement -> {
-                    preparedStatement.setString(1, entity.getDate());
-                    preparedStatement.setString(2, entity.getText());
-                    preparedStatement.setInt(3, entity.getUserId());
-                    preparedStatement.setInt(4, entity.getTourId());
-                });
+    public Integer create(Review entity) {
+        KeyHolder generatedIdHolder = new GeneratedKeyHolder();
+        final String sql = "INSERT INTO review (date, text, user_id, tour_id) VALUES (?::DATE,?,?,?)";
+        jdbcTemplate.update(connection -> {
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setString(1, entity.getDate());
+            preparedStatement.setString(2, entity.getText());
+            preparedStatement.setInt(3, entity.getUserId());
+            preparedStatement.setInt(4, entity.getTourId());
+            return preparedStatement;
+        }, generatedIdHolder);
+        return Objects.requireNonNull(generatedIdHolder.getKey()).intValue();
     }
 
     @Override

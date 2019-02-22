@@ -7,8 +7,8 @@ import java.util.List;
 @org.springframework.stereotype.Repository
 public class UserRepository extends Repository<User> {
 
-    public void create(User entity) {
-        storage.create(entity);
+    public Integer create(User entity) {
+        return storage.create(entity);
     }
 
     public User read(Integer id) {

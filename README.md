@@ -1,3 +1,3 @@
  Jenkins credentials
- login: valiantsin_danila
+ login: valiantsin_danilau
  password: 1623107

@@ -46,7 +46,7 @@ public class ReviewRepositoryTest {
     @Test
     public void shouldReadCorrectly(){
         Review review = repository.read(2);
-        testReview.setDate("2012-12-11");
+        testReview.setDate("2012-11-12");
         testReview.setText("Some words2");
         testReview.setUserId(1);
         testReview.setTourId(1);

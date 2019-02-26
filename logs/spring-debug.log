@@ -348,3 +348,339 @@
 2019-02-22 13:12:24,996 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL query
 2019-02-22 13:12:24,996 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [SELECT id, date, text, user_id, tour_id FROM review WHERE id=?]
 2019-02-22 13:12:24,996 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-26 22:04:50,822 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL query
+2019-02-26 22:04:50,823 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [SELECT id, name, stars, website, latitude, longitude, feature FROM hotel WHERE id=?]
+2019-02-26 22:04:50,837 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-26 22:04:50,899 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT id, name, stars, website, latitude, longitude, feature FROM hotel]
+2019-02-26 22:04:50,899 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-26 22:04:50,945 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing SQL update and returning generated keys
+2019-02-26 22:04:50,946 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement
+2019-02-26 22:04:50,946 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-26 22:04:51,103 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL query
+2019-02-26 22:04:51,103 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [SELECT id, name, stars, website, latitude, longitude, feature FROM hotel WHERE id=?]
+2019-02-26 22:04:51,103 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-26 22:04:51,149 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL update
+2019-02-26 22:04:51,149 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [DELETE FROM hotel where id=?]
+2019-02-26 22:04:51,149 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-26 22:04:51,349 DEBUG [main] org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loaded 11 bean definitions from class path resource [org/springframework/jdbc/support/sql-error-codes.xml]
+2019-02-26 22:04:51,356 DEBUG [main] org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'DB2'
+2019-02-26 22:04:51,428 DEBUG [main] org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'Derby'
+2019-02-26 22:04:51,430 DEBUG [main] org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'H2'
+2019-02-26 22:04:51,431 DEBUG [main] org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'HDB'
+2019-02-26 22:04:51,433 DEBUG [main] org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'HSQL'
+2019-02-26 22:04:51,433 DEBUG [main] org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'Informix'
+2019-02-26 22:04:51,434 DEBUG [main] org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'MS-SQL'
+2019-02-26 22:04:51,435 DEBUG [main] org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'MySQL'
+2019-02-26 22:04:51,436 DEBUG [main] org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'Oracle'
+2019-02-26 22:04:51,437 DEBUG [main] org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'PostgreSQL'
+2019-02-26 22:04:51,437 DEBUG [main] org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'Sybase'
+2019-02-26 22:04:51,438 DEBUG [main] org.springframework.jdbc.support.SQLErrorCodesFactory - Looking up default SQLErrorCodes for DataSource [org.postgresql.ds.PGSimpleDataSource@64711bf2]
+2019-02-26 22:04:51,439 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-26 22:04:51,483 DEBUG [main] org.springframework.jdbc.support.SQLErrorCodesFactory - SQL error codes for 'PostgreSQL' found
+2019-02-26 22:04:51,484 DEBUG [main] org.springframework.jdbc.support.SQLErrorCodesFactory - Caching SQL error codes for DataSource [org.postgresql.ds.PGSimpleDataSource@64711bf2]: database product name is 'PostgreSQL'
+2019-02-26 22:04:51,484 DEBUG [main] org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator - Translating SQLException with SQL state '23503', error code '0', message [ОШИБКА: UPDATE или DELETE в таблице "hotel" нарушает ограничение внешнего ключа "tour_hotel_id_fkey" таблицы "tour"
+  Подробности: На ключ (id)=(1) всё ещё есть ссылки в таблице "tour".]; SQL was [DELETE FROM hotel where id=?] for task [PreparedStatementCallback]
+2019-02-26 22:04:52,687 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing SQL update and returning generated keys
+2019-02-26 22:04:52,687 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement
+2019-02-26 22:04:52,687 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-26 22:04:52,847 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL query
+2019-02-26 22:04:52,847 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [SELECT id, date, text, user_id, tour_id FROM review WHERE id=?]
+2019-02-26 22:04:52,847 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-26 22:04:52,958 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL update
+2019-02-26 22:04:52,958 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [DELETE FROM review where id=?]
+2019-02-26 22:04:52,958 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-26 22:04:53,070 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL query
+2019-02-26 22:04:53,070 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [SELECT id, date, text, user_id, tour_id FROM review WHERE id=?]
+2019-02-26 22:04:53,070 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-26 22:04:53,206 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL update
+2019-02-26 22:04:53,207 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [UPDATE review SET date=?::DATE, text=?, user_id=?, tour_id=? WHERE id=?]
+2019-02-26 22:04:53,207 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-26 22:04:53,288 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL query
+2019-02-26 22:04:53,288 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [SELECT id, date, text, user_id, tour_id FROM review WHERE id=?]
+2019-02-26 22:04:53,288 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-26 22:04:53,351 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT id, date, text, user_id, tour_id FROM review]
+2019-02-26 22:04:53,351 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-26 22:04:53,405 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL query
+2019-02-26 22:04:53,405 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [SELECT id, date, text, user_id, tour_id FROM review WHERE id=?]
+2019-02-26 22:04:53,405 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-26 22:04:55,578 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing SQL update and returning generated keys
+2019-02-26 22:04:55,578 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement
+2019-02-26 22:04:55,579 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-26 22:04:55,637 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL query
+2019-02-26 22:04:55,637 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [SELECT id, photo, date, duration, description, cost, tour_type, hotel_id, country_id FROM tour WHERE id=?]
+2019-02-26 22:04:55,637 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-26 22:04:55,681 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT id, photo, date, duration, description, cost, tour_type, hotel_id, country_id FROM tour]
+2019-02-26 22:04:55,681 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-26 22:04:55,740 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL query
+2019-02-26 22:04:55,741 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [SELECT id, photo, date, duration, description, cost, tour_type, hotel_id, country_id FROM tour WHERE id=?]
+2019-02-26 22:04:55,741 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-26 22:04:55,784 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL update
+2019-02-26 22:04:55,784 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [DELETE FROM tour WHERE id=?]
+2019-02-26 22:04:55,784 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-26 22:04:55,929 DEBUG [main] org.springframework.jdbc.support.SQLErrorCodesFactory - Looking up default SQLErrorCodes for DataSource [org.postgresql.ds.PGSimpleDataSource@456abb66]
+2019-02-26 22:04:55,930 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-26 22:04:55,970 DEBUG [main] org.springframework.jdbc.support.SQLErrorCodesFactory - SQL error codes for 'PostgreSQL' found
+2019-02-26 22:04:55,971 DEBUG [main] org.springframework.jdbc.support.SQLErrorCodesFactory - Caching SQL error codes for DataSource [org.postgresql.ds.PGSimpleDataSource@456abb66]: database product name is 'PostgreSQL'
+2019-02-26 22:04:55,971 DEBUG [main] org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator - Translating SQLException with SQL state '23503', error code '0', message [ОШИБКА: UPDATE или DELETE в таблице "tour" нарушает ограничение внешнего ключа "review_tour_id_fkey" таблицы "review"
+  Подробности: На ключ (id)=(1) всё ещё есть ссылки в таблице "review".]; SQL was [DELETE FROM tour WHERE id=?] for task [PreparedStatementCallback]
+2019-02-26 22:04:57,111 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL update
+2019-02-26 22:04:57,111 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [UPDATE "user" SET login=?, password=? WHERE "user".id=?]
+2019-02-26 22:04:57,111 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-26 22:04:57,188 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL query
+2019-02-26 22:04:57,189 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [SELECT id, login, password FROM "user" WHERE "user".id=?]
+2019-02-26 22:04:57,189 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-26 22:04:57,231 DEBUG [main] org.springframework.jdbc.core.BeanPropertyRowMapper - Mapping column 'id' to property 'id' of type 'java.lang.Integer'
+2019-02-26 22:04:57,233 DEBUG [main] org.springframework.jdbc.core.BeanPropertyRowMapper - Mapping column 'login' to property 'login' of type 'java.lang.String'
+2019-02-26 22:04:57,236 DEBUG [main] org.springframework.jdbc.core.BeanPropertyRowMapper - Mapping column 'password' to property 'password' of type 'java.lang.String'
+2019-02-26 22:04:57,237 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT id, login, password FROM "user"]
+2019-02-26 22:04:57,238 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-26 22:04:57,278 DEBUG [main] org.springframework.jdbc.core.BeanPropertyRowMapper - Mapping column 'id' to property 'id' of type 'java.lang.Integer'
+2019-02-26 22:04:57,279 DEBUG [main] org.springframework.jdbc.core.BeanPropertyRowMapper - Mapping column 'login' to property 'login' of type 'java.lang.String'
+2019-02-26 22:04:57,279 DEBUG [main] org.springframework.jdbc.core.BeanPropertyRowMapper - Mapping column 'password' to property 'password' of type 'java.lang.String'
+2019-02-26 22:04:57,280 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing SQL update and returning generated keys
+2019-02-26 22:04:57,280 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement
+2019-02-26 22:04:57,280 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-26 22:04:57,321 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL query
+2019-02-26 22:04:57,321 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [SELECT id, login, password FROM "user" WHERE "user".id=?]
+2019-02-26 22:04:57,321 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-26 22:04:57,361 DEBUG [main] org.springframework.jdbc.core.BeanPropertyRowMapper - Mapping column 'id' to property 'id' of type 'java.lang.Integer'
+2019-02-26 22:04:57,361 DEBUG [main] org.springframework.jdbc.core.BeanPropertyRowMapper - Mapping column 'login' to property 'login' of type 'java.lang.String'
+2019-02-26 22:04:57,361 DEBUG [main] org.springframework.jdbc.core.BeanPropertyRowMapper - Mapping column 'password' to property 'password' of type 'java.lang.String'
+2019-02-26 22:04:57,362 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL update
+2019-02-26 22:04:57,362 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [DELETE FROM "user" WHERE "user".id=?]
+2019-02-26 22:04:57,362 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-26 22:04:57,407 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT id, login, password FROM "user"]
+2019-02-26 22:04:57,407 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-26 22:04:57,447 DEBUG [main] org.springframework.jdbc.core.BeanPropertyRowMapper - Mapping column 'id' to property 'id' of type 'java.lang.Integer'
+2019-02-26 22:04:57,448 DEBUG [main] org.springframework.jdbc.core.BeanPropertyRowMapper - Mapping column 'login' to property 'login' of type 'java.lang.String'
+2019-02-26 22:04:57,448 DEBUG [main] org.springframework.jdbc.core.BeanPropertyRowMapper - Mapping column 'password' to property 'password' of type 'java.lang.String'
+2019-02-26 22:04:57,449 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL query
+2019-02-26 22:04:57,449 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [SELECT id, login, password FROM "user" WHERE "user".id=?]
+2019-02-26 22:04:57,449 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-26 22:04:57,498 DEBUG [main] org.springframework.jdbc.core.BeanPropertyRowMapper - Mapping column 'id' to property 'id' of type 'java.lang.Integer'
+2019-02-26 22:04:57,499 DEBUG [main] org.springframework.jdbc.core.BeanPropertyRowMapper - Mapping column 'login' to property 'login' of type 'java.lang.String'
+2019-02-26 22:04:57,499 DEBUG [main] org.springframework.jdbc.core.BeanPropertyRowMapper - Mapping column 'password' to property 'password' of type 'java.lang.String'
+2019-02-26 22:05:48,419 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL query
+2019-02-26 22:05:48,419 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [SELECT id, name, stars, website, latitude, longitude, feature FROM hotel WHERE id=?]
+2019-02-26 22:05:48,427 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-26 22:05:48,496 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT id, name, stars, website, latitude, longitude, feature FROM hotel]
+2019-02-26 22:05:48,496 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-26 22:05:48,575 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing SQL update and returning generated keys
+2019-02-26 22:05:48,575 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement
+2019-02-26 22:05:48,576 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-26 22:05:48,648 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL query
+2019-02-26 22:05:48,648 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [SELECT id, name, stars, website, latitude, longitude, feature FROM hotel WHERE id=?]
+2019-02-26 22:05:48,648 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-26 22:05:48,701 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL update
+2019-02-26 22:05:48,701 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [DELETE FROM hotel where id=?]
+2019-02-26 22:05:48,701 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-26 22:05:48,899 DEBUG [main] org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loaded 11 bean definitions from class path resource [org/springframework/jdbc/support/sql-error-codes.xml]
+2019-02-26 22:05:48,909 DEBUG [main] org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'DB2'
+2019-02-26 22:05:49,009 DEBUG [main] org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'Derby'
+2019-02-26 22:05:49,010 DEBUG [main] org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'H2'
+2019-02-26 22:05:49,011 DEBUG [main] org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'HDB'
+2019-02-26 22:05:49,013 DEBUG [main] org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'HSQL'
+2019-02-26 22:05:49,014 DEBUG [main] org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'Informix'
+2019-02-26 22:05:49,015 DEBUG [main] org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'MS-SQL'
+2019-02-26 22:05:49,017 DEBUG [main] org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'MySQL'
+2019-02-26 22:05:49,018 DEBUG [main] org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'Oracle'
+2019-02-26 22:05:49,019 DEBUG [main] org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'PostgreSQL'
+2019-02-26 22:05:49,020 DEBUG [main] org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'Sybase'
+2019-02-26 22:05:49,021 DEBUG [main] org.springframework.jdbc.support.SQLErrorCodesFactory - Looking up default SQLErrorCodes for DataSource [org.postgresql.ds.PGSimpleDataSource@492fc69e]
+2019-02-26 22:05:49,022 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-26 22:05:49,066 DEBUG [main] org.springframework.jdbc.support.SQLErrorCodesFactory - SQL error codes for 'PostgreSQL' found
+2019-02-26 22:05:49,066 DEBUG [main] org.springframework.jdbc.support.SQLErrorCodesFactory - Caching SQL error codes for DataSource [org.postgresql.ds.PGSimpleDataSource@492fc69e]: database product name is 'PostgreSQL'
+2019-02-26 22:05:49,067 DEBUG [main] org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator - Translating SQLException with SQL state '23503', error code '0', message [РћРЁРР‘РљРђ: UPDATE РёР»Рё DELETE РІ С‚Р°Р±Р»РёС†Рµ "hotel" РЅР°СЂСѓС€Р°РµС‚ РѕРіСЂР°РЅРёС‡РµРЅРёРµ РІРЅРµС€РЅРµРіРѕ РєР»СЋС‡Р° "tour_hotel_id_fkey" С‚Р°Р±Р»РёС†С‹ "tour"
+  РџРѕРґСЂРѕР±РЅРѕСЃС‚Рё: РќР° РєР»СЋС‡ (id)=(1) РІСЃС‘ РµС‰С‘ РµСЃС‚СЊ СЃСЃС‹Р»РєРё РІ С‚Р°Р±Р»РёС†Рµ "tour".]; SQL was [DELETE FROM hotel where id=?] for task [PreparedStatementCallback]
+2019-02-26 22:05:51,240 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing SQL update and returning generated keys
+2019-02-26 22:05:51,240 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement
+2019-02-26 22:05:51,240 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-26 22:05:51,357 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL query
+2019-02-26 22:05:51,358 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [SELECT id, date, text, user_id, tour_id FROM review WHERE id=?]
+2019-02-26 22:05:51,358 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-26 22:05:51,437 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL update
+2019-02-26 22:05:51,437 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [DELETE FROM review where id=?]
+2019-02-26 22:05:51,438 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-26 22:05:51,480 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL query
+2019-02-26 22:05:51,480 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [SELECT id, date, text, user_id, tour_id FROM review WHERE id=?]
+2019-02-26 22:05:51,480 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-26 22:05:51,522 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL update
+2019-02-26 22:05:51,522 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [UPDATE review SET date=?::DATE, text=?, user_id=?, tour_id=? WHERE id=?]
+2019-02-26 22:05:51,522 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-26 22:05:51,563 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL query
+2019-02-26 22:05:51,563 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [SELECT id, date, text, user_id, tour_id FROM review WHERE id=?]
+2019-02-26 22:05:51,563 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-26 22:05:51,617 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT id, date, text, user_id, tour_id FROM review]
+2019-02-26 22:05:51,617 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-26 22:05:51,655 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL query
+2019-02-26 22:05:51,655 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [SELECT id, date, text, user_id, tour_id FROM review WHERE id=?]
+2019-02-26 22:05:51,655 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-26 22:05:53,121 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing SQL update and returning generated keys
+2019-02-26 22:05:53,121 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement
+2019-02-26 22:05:53,121 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-26 22:05:53,185 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL query
+2019-02-26 22:05:53,185 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [SELECT id, photo, date, duration, description, cost, tour_type, hotel_id, country_id FROM tour WHERE id=?]
+2019-02-26 22:05:53,186 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-26 22:05:53,251 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT id, photo, date, duration, description, cost, tour_type, hotel_id, country_id FROM tour]
+2019-02-26 22:05:53,251 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-26 22:05:53,295 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL query
+2019-02-26 22:05:53,295 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [SELECT id, photo, date, duration, description, cost, tour_type, hotel_id, country_id FROM tour WHERE id=?]
+2019-02-26 22:05:53,295 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-26 22:05:53,338 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL update
+2019-02-26 22:05:53,338 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [DELETE FROM tour WHERE id=?]
+2019-02-26 22:05:53,338 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-26 22:05:53,381 DEBUG [main] org.springframework.jdbc.support.SQLErrorCodesFactory - Looking up default SQLErrorCodes for DataSource [org.postgresql.ds.PGSimpleDataSource@54e81b21]
+2019-02-26 22:05:53,381 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-26 22:05:53,420 DEBUG [main] org.springframework.jdbc.support.SQLErrorCodesFactory - SQL error codes for 'PostgreSQL' found
+2019-02-26 22:05:53,421 DEBUG [main] org.springframework.jdbc.support.SQLErrorCodesFactory - Caching SQL error codes for DataSource [org.postgresql.ds.PGSimpleDataSource@54e81b21]: database product name is 'PostgreSQL'
+2019-02-26 22:05:53,421 DEBUG [main] org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator - Translating SQLException with SQL state '23503', error code '0', message [РћРЁРР‘РљРђ: UPDATE РёР»Рё DELETE РІ С‚Р°Р±Р»РёС†Рµ "tour" РЅР°СЂСѓС€Р°РµС‚ РѕРіСЂР°РЅРёС‡РµРЅРёРµ РІРЅРµС€РЅРµРіРѕ РєР»СЋС‡Р° "review_tour_id_fkey" С‚Р°Р±Р»РёС†С‹ "review"
+  РџРѕРґСЂРѕР±РЅРѕСЃС‚Рё: РќР° РєР»СЋС‡ (id)=(1) РІСЃС‘ РµС‰С‘ РµСЃС‚СЊ СЃСЃС‹Р»РєРё РІ С‚Р°Р±Р»РёС†Рµ "review".]; SQL was [DELETE FROM tour WHERE id=?] for task [PreparedStatementCallback]
+2019-02-26 22:05:54,580 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL update
+2019-02-26 22:05:54,581 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [UPDATE "user" SET login=?, password=? WHERE "user".id=?]
+2019-02-26 22:05:54,581 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-26 22:05:54,670 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL query
+2019-02-26 22:05:54,670 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [SELECT id, login, password FROM "user" WHERE "user".id=?]
+2019-02-26 22:05:54,670 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-26 22:05:54,817 DEBUG [main] org.springframework.jdbc.core.BeanPropertyRowMapper - Mapping column 'id' to property 'id' of type 'java.lang.Integer'
+2019-02-26 22:05:54,819 DEBUG [main] org.springframework.jdbc.core.BeanPropertyRowMapper - Mapping column 'login' to property 'login' of type 'java.lang.String'
+2019-02-26 22:05:54,820 DEBUG [main] org.springframework.jdbc.core.BeanPropertyRowMapper - Mapping column 'password' to property 'password' of type 'java.lang.String'
+2019-02-26 22:05:54,820 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT id, login, password FROM "user"]
+2019-02-26 22:05:54,820 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-26 22:05:54,870 DEBUG [main] org.springframework.jdbc.core.BeanPropertyRowMapper - Mapping column 'id' to property 'id' of type 'java.lang.Integer'
+2019-02-26 22:05:54,870 DEBUG [main] org.springframework.jdbc.core.BeanPropertyRowMapper - Mapping column 'login' to property 'login' of type 'java.lang.String'
+2019-02-26 22:05:54,870 DEBUG [main] org.springframework.jdbc.core.BeanPropertyRowMapper - Mapping column 'password' to property 'password' of type 'java.lang.String'
+2019-02-26 22:05:54,872 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing SQL update and returning generated keys
+2019-02-26 22:05:54,872 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement
+2019-02-26 22:05:54,872 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-26 22:05:54,925 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL query
+2019-02-26 22:05:54,925 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [SELECT id, login, password FROM "user" WHERE "user".id=?]
+2019-02-26 22:05:54,925 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-26 22:05:54,966 DEBUG [main] org.springframework.jdbc.core.BeanPropertyRowMapper - Mapping column 'id' to property 'id' of type 'java.lang.Integer'
+2019-02-26 22:05:54,967 DEBUG [main] org.springframework.jdbc.core.BeanPropertyRowMapper - Mapping column 'login' to property 'login' of type 'java.lang.String'
+2019-02-26 22:05:54,967 DEBUG [main] org.springframework.jdbc.core.BeanPropertyRowMapper - Mapping column 'password' to property 'password' of type 'java.lang.String'
+2019-02-26 22:05:54,967 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL update
+2019-02-26 22:05:54,967 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [DELETE FROM "user" WHERE "user".id=?]
+2019-02-26 22:05:54,967 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-26 22:05:55,014 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT id, login, password FROM "user"]
+2019-02-26 22:05:55,014 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-26 22:05:55,154 DEBUG [main] org.springframework.jdbc.core.BeanPropertyRowMapper - Mapping column 'id' to property 'id' of type 'java.lang.Integer'
+2019-02-26 22:05:55,154 DEBUG [main] org.springframework.jdbc.core.BeanPropertyRowMapper - Mapping column 'login' to property 'login' of type 'java.lang.String'
+2019-02-26 22:05:55,154 DEBUG [main] org.springframework.jdbc.core.BeanPropertyRowMapper - Mapping column 'password' to property 'password' of type 'java.lang.String'
+2019-02-26 22:05:55,155 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL query
+2019-02-26 22:05:55,155 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [SELECT id, login, password FROM "user" WHERE "user".id=?]
+2019-02-26 22:05:55,155 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-26 22:05:55,200 DEBUG [main] org.springframework.jdbc.core.BeanPropertyRowMapper - Mapping column 'id' to property 'id' of type 'java.lang.Integer'
+2019-02-26 22:05:55,200 DEBUG [main] org.springframework.jdbc.core.BeanPropertyRowMapper - Mapping column 'login' to property 'login' of type 'java.lang.String'
+2019-02-26 22:05:55,200 DEBUG [main] org.springframework.jdbc.core.BeanPropertyRowMapper - Mapping column 'password' to property 'password' of type 'java.lang.String'
+2019-02-26 22:06:42,349 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL query
+2019-02-26 22:06:42,352 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [SELECT id, name, stars, website, latitude, longitude, feature FROM hotel WHERE id=?]
+2019-02-26 22:06:42,363 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-26 22:06:42,426 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT id, name, stars, website, latitude, longitude, feature FROM hotel]
+2019-02-26 22:06:42,427 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-26 22:06:42,474 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing SQL update and returning generated keys
+2019-02-26 22:06:42,476 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement
+2019-02-26 22:06:42,476 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-26 22:06:42,524 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL query
+2019-02-26 22:06:42,524 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [SELECT id, name, stars, website, latitude, longitude, feature FROM hotel WHERE id=?]
+2019-02-26 22:06:42,524 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-26 22:06:42,569 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL update
+2019-02-26 22:06:42,570 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [DELETE FROM hotel where id=?]
+2019-02-26 22:06:42,570 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-26 22:06:42,732 DEBUG [main] org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loaded 11 bean definitions from class path resource [org/springframework/jdbc/support/sql-error-codes.xml]
+2019-02-26 22:06:42,738 DEBUG [main] org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'DB2'
+2019-02-26 22:06:42,802 DEBUG [main] org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'Derby'
+2019-02-26 22:06:42,804 DEBUG [main] org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'H2'
+2019-02-26 22:06:42,805 DEBUG [main] org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'HDB'
+2019-02-26 22:06:42,807 DEBUG [main] org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'HSQL'
+2019-02-26 22:06:42,807 DEBUG [main] org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'Informix'
+2019-02-26 22:06:42,808 DEBUG [main] org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'MS-SQL'
+2019-02-26 22:06:42,809 DEBUG [main] org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'MySQL'
+2019-02-26 22:06:42,810 DEBUG [main] org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'Oracle'
+2019-02-26 22:06:42,812 DEBUG [main] org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'PostgreSQL'
+2019-02-26 22:06:42,813 DEBUG [main] org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'Sybase'
+2019-02-26 22:06:42,813 DEBUG [main] org.springframework.jdbc.support.SQLErrorCodesFactory - Looking up default SQLErrorCodes for DataSource [org.postgresql.ds.PGSimpleDataSource@64711bf2]
+2019-02-26 22:06:42,815 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-26 22:06:42,859 DEBUG [main] org.springframework.jdbc.support.SQLErrorCodesFactory - SQL error codes for 'PostgreSQL' found
+2019-02-26 22:06:42,859 DEBUG [main] org.springframework.jdbc.support.SQLErrorCodesFactory - Caching SQL error codes for DataSource [org.postgresql.ds.PGSimpleDataSource@64711bf2]: database product name is 'PostgreSQL'
+2019-02-26 22:06:42,860 DEBUG [main] org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator - Translating SQLException with SQL state '23503', error code '0', message [ОШИБКА: UPDATE или DELETE в таблице "hotel" нарушает ограничение внешнего ключа "tour_hotel_id_fkey" таблицы "tour"
+  Подробности: На ключ (id)=(1) всё ещё есть ссылки в таблице "tour".]; SQL was [DELETE FROM hotel where id=?] for task [PreparedStatementCallback]
+2019-02-26 22:06:44,327 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing SQL update and returning generated keys
+2019-02-26 22:06:44,327 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement
+2019-02-26 22:06:44,327 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-26 22:06:44,401 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL query
+2019-02-26 22:06:44,401 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [SELECT id, date, text, user_id, tour_id FROM review WHERE id=?]
+2019-02-26 22:06:44,401 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-26 22:06:44,447 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL update
+2019-02-26 22:06:44,447 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [DELETE FROM review where id=?]
+2019-02-26 22:06:44,447 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-26 22:06:44,487 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL query
+2019-02-26 22:06:44,487 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [SELECT id, date, text, user_id, tour_id FROM review WHERE id=?]
+2019-02-26 22:06:44,487 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-26 22:06:44,535 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL update
+2019-02-26 22:06:44,535 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [UPDATE review SET date=?::DATE, text=?, user_id=?, tour_id=? WHERE id=?]
+2019-02-26 22:06:44,535 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-26 22:06:44,590 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL query
+2019-02-26 22:06:44,590 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [SELECT id, date, text, user_id, tour_id FROM review WHERE id=?]
+2019-02-26 22:06:44,590 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-26 22:06:44,647 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT id, date, text, user_id, tour_id FROM review]
+2019-02-26 22:06:44,647 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-26 22:06:44,710 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL query
+2019-02-26 22:06:44,710 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [SELECT id, date, text, user_id, tour_id FROM review WHERE id=?]
+2019-02-26 22:06:44,710 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-26 22:06:45,863 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing SQL update and returning generated keys
+2019-02-26 22:06:45,863 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement
+2019-02-26 22:06:45,863 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-26 22:06:46,009 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL query
+2019-02-26 22:06:46,009 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [SELECT id, photo, date, duration, description, cost, tour_type, hotel_id, country_id FROM tour WHERE id=?]
+2019-02-26 22:06:46,009 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-26 22:06:46,053 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT id, photo, date, duration, description, cost, tour_type, hotel_id, country_id FROM tour]
+2019-02-26 22:06:46,053 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-26 22:06:46,095 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL query
+2019-02-26 22:06:46,095 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [SELECT id, photo, date, duration, description, cost, tour_type, hotel_id, country_id FROM tour WHERE id=?]
+2019-02-26 22:06:46,095 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-26 22:06:46,140 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL update
+2019-02-26 22:06:46,140 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [DELETE FROM tour WHERE id=?]
+2019-02-26 22:06:46,140 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-26 22:06:46,184 DEBUG [main] org.springframework.jdbc.support.SQLErrorCodesFactory - Looking up default SQLErrorCodes for DataSource [org.postgresql.ds.PGSimpleDataSource@2f19f2aa]
+2019-02-26 22:06:46,184 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-26 22:06:46,223 DEBUG [main] org.springframework.jdbc.support.SQLErrorCodesFactory - SQL error codes for 'PostgreSQL' found
+2019-02-26 22:06:46,223 DEBUG [main] org.springframework.jdbc.support.SQLErrorCodesFactory - Caching SQL error codes for DataSource [org.postgresql.ds.PGSimpleDataSource@2f19f2aa]: database product name is 'PostgreSQL'
+2019-02-26 22:06:46,223 DEBUG [main] org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator - Translating SQLException with SQL state '23503', error code '0', message [ОШИБКА: UPDATE или DELETE в таблице "tour" нарушает ограничение внешнего ключа "review_tour_id_fkey" таблицы "review"
+  Подробности: На ключ (id)=(1) всё ещё есть ссылки в таблице "review".]; SQL was [DELETE FROM tour WHERE id=?] for task [PreparedStatementCallback]
+2019-02-26 22:06:47,285 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL update
+2019-02-26 22:06:47,285 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [UPDATE "user" SET login=?, password=? WHERE "user".id=?]
+2019-02-26 22:06:47,285 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-26 22:06:47,362 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL query
+2019-02-26 22:06:47,362 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [SELECT id, login, password FROM "user" WHERE "user".id=?]
+2019-02-26 22:06:47,362 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-26 22:06:47,404 DEBUG [main] org.springframework.jdbc.core.BeanPropertyRowMapper - Mapping column 'id' to property 'id' of type 'java.lang.Integer'
+2019-02-26 22:06:47,405 DEBUG [main] org.springframework.jdbc.core.BeanPropertyRowMapper - Mapping column 'login' to property 'login' of type 'java.lang.String'
+2019-02-26 22:06:47,406 DEBUG [main] org.springframework.jdbc.core.BeanPropertyRowMapper - Mapping column 'password' to property 'password' of type 'java.lang.String'
+2019-02-26 22:06:47,407 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT id, login, password FROM "user"]
+2019-02-26 22:06:47,407 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-26 22:06:47,448 DEBUG [main] org.springframework.jdbc.core.BeanPropertyRowMapper - Mapping column 'id' to property 'id' of type 'java.lang.Integer'
+2019-02-26 22:06:47,448 DEBUG [main] org.springframework.jdbc.core.BeanPropertyRowMapper - Mapping column 'login' to property 'login' of type 'java.lang.String'
+2019-02-26 22:06:47,448 DEBUG [main] org.springframework.jdbc.core.BeanPropertyRowMapper - Mapping column 'password' to property 'password' of type 'java.lang.String'
+2019-02-26 22:06:47,450 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing SQL update and returning generated keys
+2019-02-26 22:06:47,450 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement
+2019-02-26 22:06:47,450 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-26 22:06:47,493 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL query
+2019-02-26 22:06:47,493 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [SELECT id, login, password FROM "user" WHERE "user".id=?]
+2019-02-26 22:06:47,493 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-26 22:06:47,533 DEBUG [main] org.springframework.jdbc.core.BeanPropertyRowMapper - Mapping column 'id' to property 'id' of type 'java.lang.Integer'
+2019-02-26 22:06:47,533 DEBUG [main] org.springframework.jdbc.core.BeanPropertyRowMapper - Mapping column 'login' to property 'login' of type 'java.lang.String'
+2019-02-26 22:06:47,533 DEBUG [main] org.springframework.jdbc.core.BeanPropertyRowMapper - Mapping column 'password' to property 'password' of type 'java.lang.String'
+2019-02-26 22:06:47,534 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL update
+2019-02-26 22:06:47,534 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [DELETE FROM "user" WHERE "user".id=?]
+2019-02-26 22:06:47,534 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-26 22:06:47,578 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT id, login, password FROM "user"]
+2019-02-26 22:06:47,578 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-26 22:06:47,618 DEBUG [main] org.springframework.jdbc.core.BeanPropertyRowMapper - Mapping column 'id' to property 'id' of type 'java.lang.Integer'
+2019-02-26 22:06:47,619 DEBUG [main] org.springframework.jdbc.core.BeanPropertyRowMapper - Mapping column 'login' to property 'login' of type 'java.lang.String'
+2019-02-26 22:06:47,619 DEBUG [main] org.springframework.jdbc.core.BeanPropertyRowMapper - Mapping column 'password' to property 'password' of type 'java.lang.String'
+2019-02-26 22:06:47,620 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL query
+2019-02-26 22:06:47,620 DEBUG [main] org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [SELECT id, login, password FROM "user" WHERE "user".id=?]
+2019-02-26 22:06:47,620 DEBUG [main] org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-02-26 22:06:47,772 DEBUG [main] org.springframework.jdbc.core.BeanPropertyRowMapper - Mapping column 'id' to property 'id' of type 'java.lang.Integer'
+2019-02-26 22:06:47,772 DEBUG [main] org.springframework.jdbc.core.BeanPropertyRowMapper - Mapping column 'login' to property 'login' of type 'java.lang.String'
+2019-02-26 22:06:47,772 DEBUG [main] org.springframework.jdbc.core.BeanPropertyRowMapper - Mapping column 'password' to property 'password' of type 'java.lang.String'

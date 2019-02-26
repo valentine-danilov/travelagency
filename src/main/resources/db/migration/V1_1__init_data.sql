@@ -30,6 +30,6 @@ VALUES ('test4.jpg', '12-12-2012', 12, 'description4', 505, 'guided', 4, 1);
 
 INSERT INTO "review" (date, text, user_id, tour_id) VALUES ('12-10-2012', 'Some words1', 1,1);
 INSERT INTO "review" (date, text, user_id, tour_id) VALUES ('12-11-2012', 'Some words2', 1,1);
-INSERT INTO "review" (date, text, user_id, tour_id) VALUES ('12-13-2012', 'Some words3', 1,1);
-INSERT INTO "review" (date, text, user_id, tour_id) VALUES ('12-14-2012', 'Some words4', 1,1);
+INSERT INTO "review" (date, text, user_id, tour_id) VALUES ('12-12-2012', 'Some words3', 1,1);
+INSERT INTO "review" (date, text, user_id, tour_id) VALUES ('12-12-2012', 'Some words4', 1,1);
 

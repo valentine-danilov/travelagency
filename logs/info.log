@@ -44,3 +44,27 @@
 2019-02-22 13:12:24,630 INFO  [main] com.epam.travelagency.storage.posgresql.ReviewDataContext - Review from user 'id=1' for tour 'id=1' was created in database
 2019-02-22 13:12:24,771 INFO  [main] com.epam.travelagency.storage.posgresql.ReviewDataContext - Review with id '1' was deleted from database
 2019-02-22 13:12:24,884 INFO  [main] com.epam.travelagency.storage.posgresql.ReviewDataContext - Review from user 'id=2' for tour 'id=2' was updated in database
+2019-02-26 22:04:51,102 INFO  [main] com.epam.travelagency.storage.posgresql.HotelDataContext - Hotel 'TestHotel' was created in database
+2019-02-26 22:04:52,846 INFO  [main] com.epam.travelagency.storage.posgresql.ReviewDataContext - Review from user 'id=1' for tour 'id=1' was created in database
+2019-02-26 22:04:53,070 INFO  [main] com.epam.travelagency.storage.posgresql.ReviewDataContext - Review with id '1' was deleted from database
+2019-02-26 22:04:53,288 INFO  [main] com.epam.travelagency.storage.posgresql.ReviewDataContext - Review from user 'id=2' for tour 'id=2' was updated in database
+2019-02-26 22:04:55,636 INFO  [main] com.epam.travelagency.storage.posgresql.TourDataContext - Tour [GUIDED] to country {id=1} and with hotel {id=1} was created in database
+2019-02-26 22:04:57,161 INFO  [main] com.epam.travelagency.storage.posgresql.UserDataContext - User 'testLogin' was updated in database
+2019-02-26 22:04:57,320 INFO  [main] com.epam.travelagency.storage.posgresql.UserDataContext - User 'test' was created in database
+2019-02-26 22:04:57,407 INFO  [main] com.epam.travelagency.storage.posgresql.UserDataContext - User with id '2' was deleted from database
+2019-02-26 22:05:48,648 INFO  [main] com.epam.travelagency.storage.posgresql.HotelDataContext - Hotel 'TestHotel' was created in database
+2019-02-26 22:05:51,357 INFO  [main] com.epam.travelagency.storage.posgresql.ReviewDataContext - Review from user 'id=1' for tour 'id=1' was created in database
+2019-02-26 22:05:51,480 INFO  [main] com.epam.travelagency.storage.posgresql.ReviewDataContext - Review with id '1' was deleted from database
+2019-02-26 22:05:51,563 INFO  [main] com.epam.travelagency.storage.posgresql.ReviewDataContext - Review from user 'id=2' for tour 'id=2' was updated in database
+2019-02-26 22:05:53,185 INFO  [main] com.epam.travelagency.storage.posgresql.TourDataContext - Tour [GUIDED] to country {id=1} and with hotel {id=1} was created in database
+2019-02-26 22:05:54,643 INFO  [main] com.epam.travelagency.storage.posgresql.UserDataContext - User 'testLogin' was updated in database
+2019-02-26 22:05:54,925 INFO  [main] com.epam.travelagency.storage.posgresql.UserDataContext - User 'test' was created in database
+2019-02-26 22:05:55,014 INFO  [main] com.epam.travelagency.storage.posgresql.UserDataContext - User with id '2' was deleted from database
+2019-02-26 22:06:42,523 INFO  [main] com.epam.travelagency.storage.posgresql.HotelDataContext - Hotel 'TestHotel' was created in database
+2019-02-26 22:06:44,400 INFO  [main] com.epam.travelagency.storage.posgresql.ReviewDataContext - Review from user 'id=1' for tour 'id=1' was created in database
+2019-02-26 22:06:44,487 INFO  [main] com.epam.travelagency.storage.posgresql.ReviewDataContext - Review with id '1' was deleted from database
+2019-02-26 22:06:44,589 INFO  [main] com.epam.travelagency.storage.posgresql.ReviewDataContext - Review from user 'id=2' for tour 'id=2' was updated in database
+2019-02-26 22:06:46,008 INFO  [main] com.epam.travelagency.storage.posgresql.TourDataContext - Tour [GUIDED] to country {id=1} and with hotel {id=1} was created in database
+2019-02-26 22:06:47,340 INFO  [main] com.epam.travelagency.storage.posgresql.UserDataContext - User 'testLogin' was updated in database
+2019-02-26 22:06:47,492 INFO  [main] com.epam.travelagency.storage.posgresql.UserDataContext - User 'test' was created in database
+2019-02-26 22:06:47,578 INFO  [main] com.epam.travelagency.storage.posgresql.UserDataContext - User with id '2' was deleted from database

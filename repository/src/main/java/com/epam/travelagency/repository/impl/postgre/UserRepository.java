@@ -5,6 +5,7 @@ import com.epam.travelagency.repository.IUserRepository;
 import com.epam.travelagency.repository.specification.ISpecification;
 import org.springframework.stereotype.Repository;
 
+import javax.persistence.NoResultException;
 import javax.persistence.TypedQuery;
 import java.util.List;
 import java.util.Optional;
@@ -27,8 +28,13 @@ public class UserRepository extends BaseRepository<User> implements IUserReposit
 
     @Override
     public Optional<User> findOneByLogin(String login) {
-        TypedQuery<User> query = entityManager.createNamedQuery("User.findOneByLogin", User.class);
-        query.setParameter("login", login);
-        return Optional.of(query.getSingleResult());
+        try {
+            TypedQuery<User> query = entityManager.createNamedQuery("User.findOneByLogin", User.class);
+            query.setParameter("login", login);
+            return Optional.of(query.getSingleResult());
+        } catch (NoResultException e) {
+            return Optional.empty();
+        }
+
     }
 }

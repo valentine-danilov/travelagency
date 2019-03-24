@@ -42,7 +42,6 @@ public class ReviewService {
         repository.delete(id);
     }
 
-    @Transactional
     public void add(Date date,
                     String text,
                     User user,
@@ -66,8 +65,8 @@ public class ReviewService {
         repository.update(review);
     }
 
-    public List<Review> findAllBySpecification(ReviewSpecification specification) {
-        return repository.findAllBySpecification(specification);
+    public List<Review> findAllBySpecification(List<ReviewSpecification> specifications) {
+        return repository.findAllBySpecification(specifications);
     }
 
     private Review constructTour(Integer id,

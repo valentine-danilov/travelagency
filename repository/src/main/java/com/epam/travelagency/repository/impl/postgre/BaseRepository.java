@@ -7,7 +7,9 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Predicate;
@@ -32,7 +34,7 @@ public abstract class BaseRepository<T extends AbstractEntity> implements IRepos
     }
 
     @Override
-    public T get(Integer id) {
+    public T get(Integer id) throws NoResultException {
         return entityManager.find(clazz, id);
     }
 
@@ -50,12 +52,33 @@ public abstract class BaseRepository<T extends AbstractEntity> implements IRepos
     }
 
     @Override
-    public List<T> findAllBySpecification(ISpecification<T> specification) {
+    public <C extends ISpecification<T>> List<T>
+    findAllBySpecification(List<C> specifications) {
         CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
         CriteriaQuery<T> query = criteriaBuilder.createQuery(clazz);
         Root<T> root = query.from(clazz);
-        Predicate predicate = specification.toPredicate(root, criteriaBuilder);
-        query.where(predicate);
+        for (ISpecification<T> specification: specifications) {
+            Predicate predicate = specification.toPredicate(root, criteriaBuilder);
+            query.where(predicate);
+        }
         return entityManager.createQuery(query).getResultList();
+    }
+
+    @Override
+    public <C extends ISpecification<T>> List<T>
+    findAllBySpecificationWithOffsetAndMaxSize(List<C> specifications,
+                                               Integer offset,
+                                               Integer maxResult) {
+        CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
+        CriteriaQuery<T> query = criteriaBuilder.createQuery(clazz);
+        Root<T> root = query.from(clazz);
+        for (ISpecification<T> specification: specifications) {
+            Predicate predicate = specification.toPredicate(root, criteriaBuilder);
+            query.where(predicate);
+        }
+        TypedQuery<T> typedQuery = entityManager.createQuery(query);
+        typedQuery.setFirstResult(offset);
+        typedQuery.setMaxResults(maxResult);
+        return typedQuery.getResultList();
     }
 }

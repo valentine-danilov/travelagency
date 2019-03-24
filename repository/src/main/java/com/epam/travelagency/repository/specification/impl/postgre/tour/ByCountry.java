@@ -10,14 +10,15 @@ import javax.persistence.criteria.Root;
 
 public class ByCountry implements TourSpecification {
 
-    private Country country;
+    private String country;
 
-    public ByCountry(Country country) {
+    public ByCountry(String country) {
         this.country = country;
     }
 
     @Override
     public Predicate toPredicate(Root<Tour> root, CriteriaBuilder builder) {
-        return builder.equal(root.get("country"), country);
+        
+        return builder.like(root.get("country").get("name"), country);
     }
 }

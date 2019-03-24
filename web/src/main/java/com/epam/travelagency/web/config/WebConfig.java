@@ -31,7 +31,8 @@ public class WebConfig implements WebMvcConfigurer {
                 .addResourceLocations("/js/");
         registry.addResourceHandler("/fonts/**")
                 .addResourceLocations("/fonts/");
-
+        registry.addResourceHandler("/img/**")
+                .addResourceLocations("/img/");
     }
 
     @Bean
@@ -47,6 +48,10 @@ public class WebConfig implements WebMvcConfigurer {
         resolver.setCache(true);
         resolver.setPrefix("");
         resolver.setSuffix(".ftl");
+        resolver.setRequestContextAttribute("request");
+        resolver.setExposeSpringMacroHelpers(true);
+        resolver.setExposeRequestAttributes(true);
+        resolver.setExposeSessionAttributes(true);
         return resolver;
     }
 }

@@ -11,7 +11,9 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.List;
 
+@Builder
 @Getter
 @Setter
 @ToString(callSuper = true)
@@ -67,4 +69,7 @@ public class Tour extends AbstractEntity {
     @ManyToOne
     @JoinColumn(name = "hotel_id", nullable = false)
     private Hotel hotel;
+
+    @OneToMany(mappedBy = "tour", fetch = FetchType.EAGER)
+    private List<Review> reviews;
 }

@@ -6,7 +6,7 @@
         <artifactId>core</artifactId>
         <groupId>com.epam.travelagency</groupId>
         <version>1.0-SNAPSHOT</version>
-        <relativePath>pom.xml</relativePath>
+        <relativePath>../pom.xml</relativePath>
     </parent>
     <packaging>war</packaging>
     <modelVersion>4.0.0</modelVersion>
@@ -25,16 +25,6 @@
 
         <dependency>
             <groupId>com.epam.travelagency</groupId>
-            <artifactId>domain</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>com.epam.travelagency</groupId>
-            <artifactId>repository</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>com.epam.travelagency</groupId>
             <artifactId>service</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
@@ -45,6 +35,13 @@
             <artifactId>spring-webmvc</artifactId>
             <version>5.1.5.RELEASE</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-taglibs</artifactId>
+            <version>5.1.4.RELEASE</version>
+        </dependency>
+
 
         <!--SERVLET API & JSTL-->
         <dependency>

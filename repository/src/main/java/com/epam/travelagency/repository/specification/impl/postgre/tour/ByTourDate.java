@@ -12,8 +12,8 @@ public class ByTourDate implements TourSpecification {
 
     private Date date;
 
-    public ByTourDate(String date) {
-        this.date = java.sql.Date.valueOf(date);
+    public ByTourDate(Date date) {
+        this.date = date;
     }
 
     @Override

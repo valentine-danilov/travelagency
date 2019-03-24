@@ -32,12 +32,13 @@ public class TourService {
         return repository.getAll();
     }
 
-    public Tour readById(Integer id) {
-        return repository.get(id);
+    public List<Tour> getAllWithOffsetAndMaxSize(Integer offset, Integer maxResult) {
+        return repository.getAllWithOffsetAndMaxSize(offset, maxResult);
     }
 
-    public List<Tour> searchTour(TourSpecification specification) {
-        return repository.findAllBySpecification(specification);
+    @Transactional
+    public Tour readById(Integer id) {
+        return repository.get(id);
     }
 
     public void deleteById(Integer id) {
@@ -75,6 +76,27 @@ public class TourService {
                 tourType, hotel, country
         );
         repository.update(tour);
+    }
+
+    public List<Tour> findAllBySpecification(List<TourSpecification> specifications) {
+        return repository.findAllBySpecification(specifications);
+    }
+
+    public List<Tour> findAllBySpecificationWithOffsetAndMaxSize
+            (List<TourSpecification> specifications,
+             Integer offset,
+             Integer maxResult) {
+        return repository
+                .findAllBySpecificationWithOffsetAndMaxSize
+                        (specifications, offset, maxResult);
+    }
+
+
+    public Long getPageNumber(Integer pageSize) {
+        Long dataSize = repository.getPageNumber();
+        if (dataSize % 2 == 0) {
+            return dataSize / pageSize;
+        } else return dataSize / pageSize + 1;
     }
 
     private Tour constructTour(Integer id,

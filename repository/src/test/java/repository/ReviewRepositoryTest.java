@@ -3,7 +3,6 @@ package repository;
 import com.epam.travelagency.entity.Review;
 import com.epam.travelagency.entity.Tour;
 import com.epam.travelagency.entity.User;
-import com.epam.travelagency.repository.IRepository;
 import com.epam.travelagency.repository.IReviewRepository;
 import com.epam.travelagency.repository.specification.impl.postgre.review.ByTour;
 import com.epam.travelagency.repository.specification.impl.postgre.review.ByUser;
@@ -20,13 +19,11 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = TestConfig.class)
-@FixMethodOrder(MethodSorters.JVM)
 public class ReviewRepositoryTest {
 
     private static Logger LOG = LoggerFactory.getLogger(ReviewRepositoryTest.class);
@@ -86,10 +83,12 @@ public class ReviewRepositoryTest {
     public void shouldReadBySpecificTour() {
         List<Review> actualResult = reviewRepository
                 .findAllBySpecification(
-                        new ByTour(
+                        List.of(new ByTour(
                                 new Tour() {{
                                     setId(ID_2);
-                                }}));
+                                }})
+                        )
+                );
         List<Review> expected = List.of(
                 new Review() {{
                     setId(1);
@@ -107,10 +106,10 @@ public class ReviewRepositoryTest {
     public void shouldReadBySpecificUser() {
         List<Review> actual = reviewRepository
                 .findAllBySpecification(
-                        new ByUser(
+                        List.of(new ByUser(
                                 new User() {{
                                     setId(1);
-                                }}));
+                                }})));
         List<Review> expected = List.of(
                 new Review() {{
                     setId(1);

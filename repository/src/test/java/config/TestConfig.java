@@ -81,6 +81,7 @@ public class TestConfig {
         return transactionManager;
     }
 
+
     @Bean(name = "testHotel")
     public Hotel hotel() {
         Hotel testHotel = new Hotel();

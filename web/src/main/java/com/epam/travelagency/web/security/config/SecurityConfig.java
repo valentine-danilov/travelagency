@@ -26,7 +26,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
-                .antMatchers("/login", "/bootstrap/**", "/css/**", "/js/**", "/fonts/**").permitAll()
+                .antMatchers(
+                        "/login", "/signup", "/home",
+                        "/bootstrap/**", "/css/**", "/js/**",
+                        "/fonts/**", "/img/**").permitAll()
+                .antMatchers("/user/*").authenticated()
                 .and()
                 .formLogin()
                 .loginPage("/login")
@@ -34,7 +38,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .passwordParameter("password")
                 .loginProcessingUrl("/process_login")
                 .successHandler(successHandler())
-                .failureUrl("/login?error");
+                .failureUrl("/login?error")
+                .and()
+                .logout()
+                .logoutUrl("/process_logout")
+                .logoutSuccessUrl("/login")
+                .deleteCookies("JSESSIONID");
         http.csrf().disable();
     }
 
@@ -45,7 +54,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
     @Bean
-    public AuthenticationSuccessHandler successHandler(){
+    public AuthenticationSuccessHandler successHandler() {
         return new SuccessHandler();
     }
 

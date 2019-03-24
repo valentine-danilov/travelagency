@@ -14,7 +14,7 @@
 <script type="text/javascript" src="/js/lib/jquery.mCustomScrollbar.concat.min.js"></script>
 <script type="text/javascript" src="/bootstrap/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="/js/uui-core.min.js"></script>
-<script type="text/javascript" src="/js/validation.js"></script>
+<script type="text/javascript" src="/js/util.js"></script>
 <script type="text/javascript" src="/js/slick.min.js"></script>
 
 

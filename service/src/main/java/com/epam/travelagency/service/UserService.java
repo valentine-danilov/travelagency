@@ -5,10 +5,8 @@ import com.epam.travelagency.enumeration.Role;
 import com.epam.travelagency.repository.IUserRepository;
 import com.epam.travelagency.service.exception.LoginNotUniqueException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import javax.persistence.NoResultException;
 import java.util.List;
 import java.util.Optional;
 
@@ -60,7 +58,7 @@ public class UserService {
         }
         user.setLogin(login);
         user.setPassword(password);
-        user.setRole(Role.USER);
+        user.setRole(Role.ROLE_MEMBER);
         return user;
     }
 

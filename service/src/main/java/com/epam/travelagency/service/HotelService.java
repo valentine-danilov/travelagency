@@ -64,6 +64,16 @@ public class HotelService {
         repository.update(hotel);
     }
 
+    public Long getPageNumber(Integer pageSize) {
+        Long dataSize = repository.getPageNumber();
+        if (dataSize % 2 == 0) {
+            return dataSize / pageSize;
+        } else return dataSize / pageSize + 1;
+    }
+
+    public List<Hotel> findAllWithOffsetAndMaxResult(Integer offset, Integer maxResult){
+        return repository.getAllWithOffsetAndMaxSize(offset, maxResult);
+    }
 
     private Hotel constructHotel(Integer id,
                                  String name,

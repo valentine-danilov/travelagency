@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import javax.annotation.security.RolesAllowed;
 import java.util.List;
 
 @Controller
@@ -21,17 +22,18 @@ public class HomeController {
         this.tourService = tourService;
     }
 
+    @RolesAllowed({"ROLE_ADMIN", "ROLE_MEMBER"})
     @GetMapping("/home")
     public String userHome(Authentication authentication, ModelMap model) {
         List<Tour> tours = tourService.readAll();
         model.addAttribute("tours", tours);
 
         if (authentication == null) {
-            return "home";
+            return "tours";
         }
 
         UserDetailsImpl userDetails = (UserDetailsImpl) authentication.getPrincipal();
         model.addAttribute("user", userDetails);
-        return "home";
+        return "tours";
     }
 }

@@ -14,7 +14,7 @@ CREATE TYPE travelagency.hotelfeature AS ENUM
 
 CREATE TYPE travelagency."role" AS ENUM
   (
-    'ADMIN', 'USER'
+    'ROLE_ADMIN', 'ROLE_MEMBER'
     );
 
 CREATE TABLE IF NOT EXISTS travelagency."user"
@@ -22,7 +22,7 @@ CREATE TABLE IF NOT EXISTS travelagency."user"
   id       SERIAL,
   login    VARCHAR(255) UNIQUE NOT NULL,
   password VARCHAR(255)        NOT NULL,
-  role     travelagency."role"              NOT NULL DEFAULT 'USER',
+  role     travelagency."role"              NOT NULL DEFAULT 'ROLE_MEMBER',
   PRIMARY KEY (id)
 );
 

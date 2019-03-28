@@ -1,6 +1,7 @@
 package com.epam.travelagency.repository.impl.postgre;
 
 import com.epam.travelagency.entity.AbstractEntity;
+import com.epam.travelagency.entity.Tour;
 import com.epam.travelagency.repository.IRepository;
 import com.epam.travelagency.repository.specification.ISpecification;
 import org.springframework.stereotype.Repository;
@@ -77,6 +78,30 @@ public abstract class BaseRepository<T extends AbstractEntity> implements IRepos
             query.where(predicate);
         }
         TypedQuery<T> typedQuery = entityManager.createQuery(query);
+        typedQuery.setFirstResult(offset);
+        typedQuery.setMaxResults(maxResult);
+        return typedQuery.getResultList();
+    }
+
+    @Override
+    public Long getPageNumber() {
+        CriteriaBuilder builder = entityManager.getCriteriaBuilder();
+
+        CriteriaQuery<Long> countQuery = builder
+                .createQuery(Long.class);
+        countQuery.select(builder
+                .count(countQuery.from(clazz)));
+        return entityManager.createQuery(countQuery)
+                .getSingleResult();
+    }
+
+    @Override
+    public List<T> getAllWithOffsetAndMaxSize(Integer offset, Integer maxResult){
+        CriteriaBuilder builder = entityManager.getCriteriaBuilder();
+        CriteriaQuery<T> criteriaQuery = builder.createQuery(clazz);
+        Root<T> root = criteriaQuery.from(clazz);
+        TypedQuery<T> typedQuery = entityManager
+                .createQuery(criteriaQuery.select(root));
         typedQuery.setFirstResult(offset);
         typedQuery.setMaxResults(maxResult);
         return typedQuery.getResultList();

@@ -1,17 +1,28 @@
 package com.epam.travelagency.web.controller;
 
 import com.epam.travelagency.entity.Tour;
+import com.epam.travelagency.enumeration.TourType;
+import com.epam.travelagency.service.CountryService;
+import com.epam.travelagency.service.HotelService;
+import com.epam.travelagency.web.dto.TourDTO;
+import com.epam.travelagency.web.exception.BadRequestException;
 import com.epam.travelagency.web.pagination.Pagination;
 import com.epam.travelagency.repository.specification.TourSpecification;
 import com.epam.travelagency.repository.specification.impl.postgre.tour.*;
 import com.epam.travelagency.service.TourService;
-import com.epam.travelagency.web.dto.TourDTO;
+import com.epam.travelagency.web.dto.TourSearchDTO;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import javax.annotation.security.RolesAllowed;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.ArrayList;
@@ -20,40 +31,94 @@ import java.util.List;
 @Controller
 public class TourController {
 
-    private final TourService service;
+    private org.slf4j.Logger LOG = LoggerFactory.getLogger(TourController.class);
+
+    private final TourService tourService;
+
+    private final HotelService hotelService;
+
+    private final CountryService countryService;
 
     @Autowired
-    public TourController(TourService service) {
-        this.service = service;
+    public TourController(TourService service,
+                          HotelService hotelService,
+                          CountryService countryService) {
+        this.tourService = service;
+        this.hotelService = hotelService;
+        this.countryService = countryService;
     }
 
     @GetMapping("/tours")
-    public String searchTour(Pagination<Tour> pagination, TourDTO tour,
-                             ModelMap modelMap) {
+    public String searchTour(Pagination<Tour> pagination,
+                             TourSearchDTO tour,
+                             ModelMap modelMap)
+            throws Exception {
         List<TourSpecification> specifications = determineSpecifications(tour);
-        Long pageNumber = service.getPageNumber(2);
+        Long pageNumber = tourService.getPageNumber(2);
         pagination.setPageNumber(pageNumber);
         pagination.setPageSize(2);
-        if(pagination.getPage()==null){
+
+        if (pagination.getPage() == null) {
             pagination.setPage(1);
         }
-        List<Tour> tours = service
+
+        if (pagination.getPage() < 1) {
+            throw new BadRequestException("Requested page can't be loaded.");
+        }
+
+        List<Tour> tours = tourService
                 .findAllBySpecificationWithOffsetAndMaxSize
                         (specifications, pagination.getOffset(), pagination.getPageSize());
         pagination.setContent(tours);
         modelMap.addAttribute("pagination", pagination);
-        return "home";
+        return "tours";
     }
 
     @GetMapping("/tour")
-    public String tourById(@RequestParam Integer id, ModelMap model){
-        Tour tour = service.readById(id);
+    public String tourById(@RequestParam Integer id, ModelMap model) {
+        Tour tour = tourService.readById(id);
         model.addAttribute("tour", tour);
         model.addAttribute("reviews", tour.getReviews());
         return "/tour";
     }
 
-    private List<TourSpecification> determineSpecifications(TourDTO tour) {
+    @RolesAllowed("ROLE_ADMIN")
+    @GetMapping("/tour/add")
+    public String getAddTourForm(ModelMap model) {
+        model.addAttribute("hotels", hotelService.readAll());
+        model.addAttribute("countries", countryService.readAll());
+        model.addAttribute("tourTypes", List.of(TourType.values()));
+        return "tourAddForm";
+    }
+
+    @RolesAllowed("ROLE_ADMIN")
+    @PostMapping("/tour/process_adding")
+    public String processAdd(@ModelAttribute("tour-form") TourDTO tour) {
+        tourService.add("as", java.sql.Date.valueOf(tour.getDate()),
+                tour.getDuration(), tour.getDescription(),
+                new BigDecimal(tour.getCost()),
+                TourType.valueOf(tour.getTourType()),
+                hotelService.readById(tour.getHotel()),
+                countryService.readById(tour.getCountry()));
+        return "redirect:/tours";
+    }
+
+    @RolesAllowed("ROLE_ADMIN")
+    @GetMapping("/tour/process_deleting")
+    public String processDeleting(Integer id,
+                                  RedirectAttributes redirectAttributes) {
+        try {
+            tourService.deleteById(id);
+            return "redirect:/tours";
+        } catch (DataIntegrityViolationException e) {
+            redirectAttributes.addFlashAttribute("errorMessage",
+                    "You can't delete this tour because it still owned by some user");
+            return "redirect:/tours";
+        }
+
+    }
+
+    private List<TourSpecification> determineSpecifications(TourSearchDTO tour) {
         List<TourSpecification> specifications = new ArrayList<>();
         if (tour.getCost() != null && !tour.getCost().trim().equals("")) {
             specifications.add(new ByTourCost(new BigDecimal(tour.getCost())

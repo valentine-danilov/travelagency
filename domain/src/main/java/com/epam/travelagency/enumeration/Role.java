@@ -1,6 +1,6 @@
 package com.epam.travelagency.enumeration;
 
 public enum  Role {
-    USER,
-    ADMIN
+    ROLE_MEMBER,
+    ROLE_ADMIN
 }

@@ -1,5 +1,6 @@
 package com.epam.travelagency.web.security.details;
 
+import com.epam.travelagency.entity.Review;
 import com.epam.travelagency.enumeration.Role;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -21,6 +22,7 @@ public class UserDetailsImpl implements UserDetails {
     private String login;
     private String password;
     private Role role;
+    private List<Review> reviews;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

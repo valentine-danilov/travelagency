@@ -91,6 +91,9 @@ public class TourService {
                         (specifications, offset, maxResult);
     }
 
+    public List<Tour> findAllByUser(Integer id){
+        return repository.findAllByUser(id);
+    }
 
     public Long getPageNumber(Integer pageSize) {
         Long dataSize = repository.getPageNumber();

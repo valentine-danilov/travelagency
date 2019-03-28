@@ -29,6 +29,6 @@ public class SuccessHandler implements AuthenticationSuccessHandler {
 
     private String determineTargetUrl(Authentication authentication) {
         //UserDetailsImpl userDetails = (UserDetailsImpl) authentication.getPrincipal();
-        return "/home";
+        return "/tours";
     }
 }

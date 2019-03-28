@@ -5,13 +5,11 @@ import com.epam.travelagency.entity.Tour;
 import com.epam.travelagency.entity.User;
 import com.epam.travelagency.repository.IReviewRepository;
 import com.epam.travelagency.repository.specification.impl.postgre.review.ByTour;
-import com.epam.travelagency.repository.specification.impl.postgre.review.ByUser;
+import com.epam.travelagency.repository.specification.impl.postgre.review.ByUserId;
 import config.TestConfig;
 import org.junit.Assert;
-import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.junit.runners.MethodSorters;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -106,10 +104,7 @@ public class ReviewRepositoryTest {
     public void shouldReadBySpecificUser() {
         List<Review> actual = reviewRepository
                 .findAllBySpecification(
-                        List.of(new ByUser(
-                                new User() {{
-                                    setId(1);
-                                }})));
+                        List.of(new ByUserId(1)));
         List<Review> expected = List.of(
                 new Review() {{
                     setId(1);

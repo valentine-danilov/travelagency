@@ -22,15 +22,17 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         this.userDetailsService = userDetailsService;
     }
 
+
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
                 .antMatchers(
-                        "/login", "/signup", "/home",
+                        "/tours", "/tour", "/hotels",
                         "/bootstrap/**", "/css/**", "/js/**",
                         "/fonts/**", "/img/**").permitAll()
-                .antMatchers("/user/*").authenticated()
+                .antMatchers("/profile/*", "/user/*").authenticated()
+                .antMatchers("/login", "/signup").anonymous()
                 .and()
                 .formLogin()
                 .loginPage("/login")
@@ -43,7 +45,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .logout()
                 .logoutUrl("/process_logout")
                 .logoutSuccessUrl("/login")
-                .deleteCookies("JSESSIONID");
+                .and()
+                .exceptionHandling().accessDeniedPage("/error/403");
         http.csrf().disable();
     }
 

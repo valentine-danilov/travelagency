@@ -44,7 +44,6 @@ public class User extends AbstractEntity {
     @Type(type = "pgsql_enum")
     private Role role;
 
-
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "user", fetch = FetchType.EAGER)
     private List<Review> reviewList;
 }

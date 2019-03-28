@@ -28,7 +28,6 @@ public class ReviewController {
     }
 
     @PostMapping("/review/add")
-    @Transactional
     public String addReview(String text, Integer tourId, Authentication authentication) {
         if(authentication==null){
             return String.format("redirect:/tour?id=%d", tourId);

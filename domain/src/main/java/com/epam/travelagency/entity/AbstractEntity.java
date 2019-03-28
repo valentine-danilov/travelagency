@@ -17,4 +17,7 @@ public abstract class AbstractEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false, unique = true)
     protected Integer id;
+
+    /*@Version
+    private Long version;*/
 }

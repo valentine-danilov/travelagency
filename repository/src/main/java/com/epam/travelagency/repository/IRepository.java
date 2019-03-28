@@ -8,15 +8,25 @@ import java.util.List;
 
 public interface IRepository<T extends AbstractEntity, I> {
     void add(T e);
+
     T get(I id) throws NoResultException;
+
     void update(T e);
+
     void delete(I id);
+
     List<T> getAll();
-    <C extends ISpecification<T>> List<T> findAllBySpecification(List<C> specifications);
+
+    List<T> getAllWithOffsetAndMaxSize(Integer offset, Integer maxResult);
+
+    <C extends ISpecification<T>> List<T>
+    findAllBySpecification(List<C> specifications);
+
     <C extends ISpecification<T>> List<T>
     findAllBySpecificationWithOffsetAndMaxSize(List<C> specifications,
                                                Integer offset,
                                                Integer maxResult);
 
+    Long getPageNumber();
 
 }

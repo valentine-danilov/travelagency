@@ -1,13 +1,13 @@
 package com.epam.travelagency.web.controller;
 
-import com.epam.travelagency.entity.User;
-import com.epam.travelagency.enumeration.Role;
 import com.epam.travelagency.service.UserService;
 import com.epam.travelagency.service.exception.LoginNotUniqueException;
 import com.epam.travelagency.web.dto.UserDTO;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.MessageSource;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -20,9 +20,12 @@ public class SignUpController {
 
     private final UserService service;
 
+    private final MessageSource messageSource;
+
     @Autowired
-    public SignUpController(UserService service) {
+    public SignUpController(UserService service, MessageSource messageSource) {
         this.service = service;
+        this.messageSource = messageSource;
     }
 
     @GetMapping("/signup")
@@ -47,11 +50,18 @@ public class SignUpController {
                 return "redirect:/signup";
             }
         } else {
-            redirectAttributes.addFlashAttribute("errorMessage",
-                    "Entered data is not valid");
-            if (user.getLogin() != null) {
-                redirectAttributes.addAttribute("login", user.getLogin());
+            for (Object object : result.getAllErrors()) {
+                if(object instanceof FieldError) {
+                    FieldError fieldError = (FieldError) object;
+                    String message = messageSource.getMessage(fieldError, null);
+                    redirectAttributes.addFlashAttribute("errorMessage",
+                            message);
+                    if (user.getLogin() != null) {
+                        redirectAttributes.addAttribute("login", user.getLogin());
+                    }
+                }
             }
+
             return "redirect:/signup";
         }
     }

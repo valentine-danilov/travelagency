@@ -5,10 +5,16 @@ import com.epam.travelagency.service.config.ServiceConfig;
 import com.epam.travelagency.web.config.WebConfig;
 import com.epam.travelagency.web.security.config.SecurityConfig;
 import org.springframework.lang.NonNull;
+import org.springframework.web.context.WebApplicationContext;
+import org.springframework.web.servlet.DispatcherServlet;
+import org.springframework.web.servlet.FrameworkServlet;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
+import javax.servlet.ServletRegistration;
+import javax.validation.constraints.NotNull;
 
-public class AppAppInitializer extends AbstractAnnotationConfigDispatcherServletInitializer  {
+
+public class AppAppInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
 
     @Override
     @NonNull
@@ -19,12 +25,12 @@ public class AppAppInitializer extends AbstractAnnotationConfigDispatcherServlet
     @Override
     @NonNull
     protected String[] getServletMappings() {
-        return new String[] {"/"};
+        return new String[]{"/"};
     }
 
     @Override
     protected Class<?>[] getRootConfigClasses() {
-        return new Class<?>[] { WebConfig.class, SecurityConfig.class, ServiceConfig.class, DataAccessConfig.class};
+        return new Class<?>[]{WebConfig.class, SecurityConfig.class, ServiceConfig.class, DataAccessConfig.class};
     }
 
     @Override
@@ -32,5 +38,8 @@ public class AppAppInitializer extends AbstractAnnotationConfigDispatcherServlet
         return null;
     }
 
-
+    @Override
+    protected void customizeRegistration(ServletRegistration.Dynamic registration) {
+        registration.setInitParameter("throwExceptionIfNoHandlerFound", "true");
+    }
 }

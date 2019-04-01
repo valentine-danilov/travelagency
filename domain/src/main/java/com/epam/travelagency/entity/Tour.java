@@ -61,15 +61,15 @@ public class Tour extends AbstractEntity {
     private TourType tourType;
 
     @NotNull(message = "Tour should have destination country")
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "country_id", nullable = false)
     private Country country;
 
     @NotNull(message = "Tour should provide hotel")
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "hotel_id", nullable = false)
     private Hotel hotel;
 
-    @OneToMany(mappedBy = "tour", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "tour", fetch = FetchType.LAZY)
     private List<Review> reviews;
 }

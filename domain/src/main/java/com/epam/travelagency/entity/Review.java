@@ -26,12 +26,12 @@ public class Review extends AbstractEntity {
     private String text;
 
     @NotNull(message = "Review should have user who wrote it")
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
     @NotNull(message = "Review should have tour it is about")
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "tour_id", nullable = false)
     private Tour tour;
 }

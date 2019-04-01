@@ -15,6 +15,7 @@ import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
+import java.util.ArrayList;
 import java.util.List;
 
 public abstract class BaseRepository<T extends AbstractEntity> implements IRepository<T, Integer> {
@@ -58,7 +59,7 @@ public abstract class BaseRepository<T extends AbstractEntity> implements IRepos
         CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
         CriteriaQuery<T> query = criteriaBuilder.createQuery(clazz);
         Root<T> root = query.from(clazz);
-        for (ISpecification<T> specification: specifications) {
+        for (ISpecification<T> specification : specifications) {
             Predicate predicate = specification.toPredicate(root, criteriaBuilder);
             query.where(predicate);
         }
@@ -70,13 +71,14 @@ public abstract class BaseRepository<T extends AbstractEntity> implements IRepos
     findAllBySpecificationWithOffsetAndMaxSize(List<C> specifications,
                                                Integer offset,
                                                Integer maxResult) {
+        List<Predicate> predicates = new ArrayList<>();
         CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
         CriteriaQuery<T> query = criteriaBuilder.createQuery(clazz);
         Root<T> root = query.from(clazz);
-        for (ISpecification<T> specification: specifications) {
-            Predicate predicate = specification.toPredicate(root, criteriaBuilder);
-            query.where(predicate);
+        for (ISpecification<T> specification : specifications) {
+            predicates.add(specification.toPredicate(root, criteriaBuilder));
         }
+        query.select(root).where(predicates.toArray(new Predicate[]{}));
         TypedQuery<T> typedQuery = entityManager.createQuery(query);
         typedQuery.setFirstResult(offset);
         typedQuery.setMaxResults(maxResult);
@@ -84,19 +86,21 @@ public abstract class BaseRepository<T extends AbstractEntity> implements IRepos
     }
 
     @Override
-    public Long getPageNumber() {
-        CriteriaBuilder builder = entityManager.getCriteriaBuilder();
-
-        CriteriaQuery<Long> countQuery = builder
-                .createQuery(Long.class);
-        countQuery.select(builder
-                .count(countQuery.from(clazz)));
-        return entityManager.createQuery(countQuery)
+    public <C extends ISpecification<T>> Long getPageNumber(List<C> specifications) {
+        List<Predicate> predicates = new ArrayList<>();
+        CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
+        CriteriaQuery<Long> query = criteriaBuilder.createQuery(Long.class);
+        Root<T> root = query.from(clazz);
+        for (ISpecification<T> specification : specifications) {
+            predicates.add(specification.toPredicate(root, criteriaBuilder));
+        }
+        query.select(criteriaBuilder.count(root)).where(predicates.toArray(new Predicate[]{}));
+        return entityManager.createQuery(query)
                 .getSingleResult();
     }
 
     @Override
-    public List<T> getAllWithOffsetAndMaxSize(Integer offset, Integer maxResult){
+    public List<T> getAllWithOffsetAndMaxSize(Integer offset, Integer maxResult) {
         CriteriaBuilder builder = entityManager.getCriteriaBuilder();
         CriteriaQuery<T> criteriaQuery = builder.createQuery(clazz);
         Root<T> root = criteriaQuery.from(clazz);

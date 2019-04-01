@@ -27,6 +27,5 @@ public interface IRepository<T extends AbstractEntity, I> {
                                                Integer offset,
                                                Integer maxResult);
 
-    Long getPageNumber();
-
+    <C extends ISpecification<T>> Long getPageNumber(List<C> specifications);
 }

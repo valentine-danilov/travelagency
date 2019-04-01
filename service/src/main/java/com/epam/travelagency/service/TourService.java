@@ -91,12 +91,12 @@ public class TourService {
                         (specifications, offset, maxResult);
     }
 
-    public List<Tour> findAllByUser(Integer id){
+    public List<Tour> findAllByUser(Integer id) {
         return repository.findAllByUser(id);
     }
 
-    public Long getPageNumber(Integer pageSize) {
-        Long dataSize = repository.getPageNumber();
+    public Long getPageNumber(Integer pageSize, List<TourSpecification> specifications) {
+        Long dataSize = repository.getPageNumber(specifications);
         if (dataSize % 2 == 0) {
             return dataSize / pageSize;
         } else return dataSize / pageSize + 1;
@@ -115,14 +115,18 @@ public class TourService {
         if (id != null) {
             tour.setId(id);
         }
-        tour.setPhoto(photo);
+        if (photo != null) {
+            tour.setPhoto(photo);
+        }
         tour.setDate(date);
         tour.setDuration(duration);
         tour.setCost(cost);
         tour.setTourType(tourType);
         tour.setHotel(hotel);
         tour.setCountry(country);
-        tour.setDescription(description);
+        if (description != null) {
+            tour.setDescription(description);
+        }
         return tour;
     }
 

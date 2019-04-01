@@ -1,5 +1,5 @@
 <#macro addControls page pageNumber >
-    <div class="container">
+    <div class="container" style="margin-bottom: 15px">
         <div class="row">
             <div class="col-lg-12">
                 <div class="col-lg-12">

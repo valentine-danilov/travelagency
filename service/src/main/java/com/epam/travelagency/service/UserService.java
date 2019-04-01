@@ -4,14 +4,16 @@ import com.epam.travelagency.entity.User;
 import com.epam.travelagency.enumeration.Role;
 import com.epam.travelagency.repository.IUserRepository;
 import com.epam.travelagency.service.exception.LoginNotUniqueException;
+import jdk.jfr.TransitionTo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
 
 @Service
-public class UserService {
+public class UserService  {
 
     private final
     IUserRepository repository;
@@ -45,6 +47,7 @@ public class UserService {
         } else throw new LoginNotUniqueException(login);
     }
 
+    @Transactional
     public Optional<User> findOneByLogin(String login) {
         return repository.findOneByLogin(login);
     }

@@ -1,7 +1,11 @@
 package com.epam.travelagency.web.controller;
 
+import com.epam.travelagency.entity.Country;
+import com.epam.travelagency.entity.Hotel;
 import com.epam.travelagency.entity.Tour;
+import com.epam.travelagency.enumeration.Role;
 import com.epam.travelagency.enumeration.TourType;
+import com.epam.travelagency.repository.impl.postgre.TourRepository;
 import com.epam.travelagency.service.CountryService;
 import com.epam.travelagency.service.HotelService;
 import com.epam.travelagency.web.dto.TourDTO;
@@ -11,15 +15,14 @@ import com.epam.travelagency.repository.specification.TourSpecification;
 import com.epam.travelagency.repository.specification.impl.postgre.tour.*;
 import com.epam.travelagency.service.TourService;
 import com.epam.travelagency.web.dto.TourSearchDTO;
+import com.epam.travelagency.web.security.details.UserDetailsImpl;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.annotation.security.RolesAllowed;
@@ -54,9 +57,9 @@ public class TourController {
                              ModelMap modelMap)
             throws Exception {
         List<TourSpecification> specifications = determineSpecifications(tour);
-        Long pageNumber = tourService.getPageNumber(2);
+        Long pageNumber = tourService.getPageNumber(10, specifications);
         pagination.setPageNumber(pageNumber);
-        pagination.setPageSize(2);
+        pagination.setPageSize(10);
 
         if (pagination.getPage() == null) {
             pagination.setPage(1);
@@ -75,7 +78,15 @@ public class TourController {
     }
 
     @GetMapping("/tour")
-    public String tourById(@RequestParam Integer id, ModelMap model) {
+    public String tourById(@RequestParam Integer id, ModelMap model, Authentication authentication) {
+        UserDetailsImpl user = (UserDetailsImpl) authentication.getPrincipal();
+        if (user.getRole().equals(Role.ROLE_ADMIN)) {
+            List<Country> countries = countryService.readAll();
+            List<Hotel> hotels = hotelService.readAll();
+            model.addAttribute("countries", countries);
+            model.addAttribute("hotels", hotels);
+            model.addAttribute("tourTypes", List.of(TourType.values()));
+        }
         Tour tour = tourService.readById(id);
         model.addAttribute("tour", tour);
         model.addAttribute("reviews", tour.getReviews());
@@ -93,7 +104,7 @@ public class TourController {
 
     @RolesAllowed("ROLE_ADMIN")
     @PostMapping("/tour/process_adding")
-    public String processAdd(@ModelAttribute("tour-form") TourDTO tour) {
+    public String processAdd(TourDTO tour) {
         tourService.add("as", java.sql.Date.valueOf(tour.getDate()),
                 tour.getDuration(), tour.getDescription(),
                 new BigDecimal(tour.getCost()),
@@ -101,6 +112,18 @@ public class TourController {
                 hotelService.readById(tour.getHotel()),
                 countryService.readById(tour.getCountry()));
         return "redirect:/tours";
+    }
+
+    /*@RolesAllowed("ROLE_ADMIN")*/
+    @PostMapping("/tour/edit")
+    public String processEditing(Integer id, TourDTO tour) {
+        tourService.update(id, "test1.jpg", java.sql.Date.valueOf(tour.getDate()),
+                tour.getDuration(), tour.getDescription(),
+                new BigDecimal(tour.getCost()),
+                TourType.valueOf(tour.getTourType()),
+                hotelService.readById(tour.getHotel()),
+                countryService.readById(tour.getCountry()));
+        return "redirect:/tour?id=" + id;
     }
 
     @RolesAllowed("ROLE_ADMIN")

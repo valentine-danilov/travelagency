@@ -18,7 +18,7 @@
 </div>
 <div class="container">
     <div class="text-center">
-        <h3>${errorMessage}</h3>
+        <h3>${errorMessage!"Error message"}</h3>
         <#if description??>
             <h3>${description}</h3>
         </#if>

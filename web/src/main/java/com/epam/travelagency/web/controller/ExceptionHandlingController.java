@@ -1,7 +1,7 @@
 package com.epam.travelagency.web.controller;
 
 import com.epam.travelagency.web.exception.BadRequestException;
-import org.springframework.http.HttpRequest;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -10,10 +10,12 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.NoHandlerFoundException;
 
-import java.util.Arrays;
 
 @ControllerAdvice
 public class ExceptionHandlingController {
+
+    private org.slf4j.Logger LOG = LoggerFactory.getLogger(ExceptionHandlingController.class);
+
 
     private static final String DEFAULT_ERROR_VIEW = "error/error";
 
@@ -36,6 +38,7 @@ public class ExceptionHandlingController {
         var modelAndView = new ModelAndView();
         modelAndView.setViewName(DEFAULT_ERROR_VIEW);
         modelAndView.addObject("errorMessage", e.getMessage());
+        LOG.error("WHAT THE FUCK", e);
         return modelAndView;
     }
 

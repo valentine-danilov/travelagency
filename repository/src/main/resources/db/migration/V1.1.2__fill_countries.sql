@@ -1,0 +1,26 @@
+insert into travelagency."country" (name) values ('France');
+insert into travelagency."country" (name) values ('Indonesia');
+insert into travelagency."country" (name) values ('Central African Republic');
+insert into travelagency."country" (name) values ('Sweden');
+insert into travelagency."country" (name) values ('United States');
+insert into travelagency."country" (name) values ('Russia');
+insert into travelagency."country" (name) values ('Nigeria');
+insert into travelagency."country" (name) values ('Dominican Republic');
+insert into travelagency."country" (name) values ('China');
+insert into travelagency."country" (name) values ('Brazil');
+insert into travelagency."country" (name) values ('Ukraine');
+insert into travelagency."country" (name) values ('Morocco');
+insert into travelagency."country" (name) values ('Cyprus');
+insert into travelagency."country" (name) values ('Philippines');
+insert into travelagency."country" (name) values ('Italy');
+insert into travelagency."country" (name) values ('Belarus');
+insert into travelagency."country" (name) values ('South Korea');
+insert into travelagency."country" (name) values ('Poland');
+insert into travelagency."country" (name) values ('Lithuania');
+insert into travelagency."country" (name) values ('Spain');
+insert into travelagency."country" (name) values ('Germany');
+insert into travelagency."country" (name) values ('Japan');
+insert into travelagency."country" (name) values ('Australia');
+insert into travelagency."country" (name) values ('England');
+insert into travelagency."country" (name) values ('Scotland');
+

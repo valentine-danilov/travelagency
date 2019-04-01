@@ -46,3 +46,33 @@ $(document).ready(function () {
 });
 
 
+function editTour() {
+    $("#tour-edit-form input").each(function (index, obj) {
+        $(obj).removeAttr("disabled");
+    });
+    $("#tour-edit-form select").each(function (index, obj) {
+        $(obj).removeAttr("disabled");
+    });
+    $("#tour-edit").attr("disabled", "disabled");
+    $("#tour-save").removeAttr("disabled");
+    $("#edit-cancel").removeAttr("disabled");
+}
+
+function saveTour() {
+    $("#tour-edit-form").submit();
+    $("#tour-edit-form input").each(function (index, obj) {
+        $(obj).attr("disabled", "disabled");
+    });
+
+    $("#tour-edit-form select").each(function (index, obj) {
+        $(obj).attr("disabled", "disabled");
+    });
+}
+
+function cancelEditing() {
+    $("#tour-edit-form").trigger("reset");
+    $("#tour-save").attr("disabled", "disabled");
+    $("#tour-edit").removeAttr("disabled");
+}
+
+

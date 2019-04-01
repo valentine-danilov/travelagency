@@ -65,7 +65,7 @@ public class HotelService {
     }
 
     public Long getPageNumber(Integer pageSize) {
-        Long dataSize = repository.getPageNumber();
+        Long dataSize = repository.getPageNumber(List.of());
         if (dataSize % 2 == 0) {
             return dataSize / pageSize;
         } else return dataSize / pageSize + 1;

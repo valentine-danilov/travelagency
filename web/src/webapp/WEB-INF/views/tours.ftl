@@ -61,11 +61,7 @@
 
         </div>
     </div>
-</div>
-
-<div class="container">
     <#list pagination.content as tour>
-
         <#if tour?counter%2==1 || tour?counter==1>
             <div class="row">
         </#if>
@@ -78,29 +74,29 @@
                     <div class="corner left">
                         <a href="/tour/process_deleting?id=${tour.id}"><span class="far fa-trash-alt"></span></a>
                     </div>
-                    <#if errorMessage??>
-                        <div class="modal uui-modal fade" id="error-modal" tabindex="-1" role="dialog"
-                             aria-labelledby="errorModel"
-                             aria-hidden="false">
-                            <div class="modal-dialog">
-                                <div class="modal-content text-center">
-                                    <div class="modal-header">
-                                        <h4 class="modal-title">Error while deleting</h4>
-                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                                            <span></span><span></span></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        ${errorMessage!"There should've been an error message, but something has gone wrong:("}
-                                    </div>
+                <#if errorMessage??>
+                    <div class="modal uui-modal fade" id="error-modal" tabindex="-1" role="dialog"
+                         aria-labelledby="errorModel"
+                         aria-hidden="false">
+                        <div class="modal-dialog">
+                            <div class="modal-content text-center">
+                                <div class="modal-header">
+                                    <h4 class="modal-title">Error while deleting</h4>
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                        <span></span><span></span></button>
+                                </div>
+                                <div class="modal-body">
+                                    ${errorMessage!"There should've been an error message, but something has gone wrong:("}
                                 </div>
                             </div>
                         </div>
+                    </div>
                     <script>
                         $(document).ready(function () {
                             $("#error-modal").modal("show");
                         });
                     </script>
-                    </#if>
+                </#if>
 
                 </@security.authorize>
                 <div class="image-text-section">
@@ -120,10 +116,7 @@
             <h3>Sorry, there are no tours satisfying your search request</h3>
         </div>
     </#list>
-
+    <@paginControls.addControls page="${pagination.page}" pageNumber="${pagination.pageNumber}"/>
 </div>
-
-<@paginControls.addControls page="${pagination.page}" pageNumber="${pagination.pageNumber}"/>
-
 </body>
 </html>

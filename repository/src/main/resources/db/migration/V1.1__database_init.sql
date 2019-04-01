@@ -31,8 +31,8 @@ CREATE TABLE IF NOT EXISTS travelagency.hotel
   name      VARCHAR(255)              NOT NULL,
   stars     SMALLINT                  NOT NULL,
   website   VARCHAR(255)              NOT NULL,
-  latitude  DECIMAL(8, 6)             NOT NULL,
-  longitude DECIMAL(8, 6)             NOT NULL,
+  latitude  DECIMAL(9, 5)             NOT NULL,
+  longitude DECIMAL(9, 5)             NOT NULL,
   feature   travelagency.hotelfeature NOT NULL,
   PRIMARY KEY (id)
 );

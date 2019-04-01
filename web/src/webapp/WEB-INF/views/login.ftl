@@ -24,7 +24,6 @@
         <p>New on our site?<a href="/signup"> Register</a></p>
     </form>
 </div>
-<#include "utility/footer.ftl"/>
 </body>
 </html>
 

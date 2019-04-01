@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -23,9 +24,9 @@ public class HotelController {
 
     @GetMapping("/hotels")
     public String getHotelList(Pagination<Hotel> pagination, ModelMap model) throws BadRequestException {
-        Long pageNumber = hotelService.getPageNumber(2);
+        Long pageNumber = hotelService.getPageNumber(10);
         pagination.setPageNumber(pageNumber);
-        pagination.setPageSize(2);
+        pagination.setPageSize(10);
 
         if (pagination.getPage() == null) {
             pagination.setPage(1);
@@ -39,5 +40,13 @@ public class HotelController {
         pagination.setContent(hotels);
         model.addAttribute("pagination", pagination);
         return "/hotels";
+    }
+
+    @GetMapping("/hotel")
+    public String tourById(@RequestParam Integer id, ModelMap model) {
+        Hotel hotel = hotelService.readById(id);
+        model.addAttribute("hotel", hotel);
+        model.addAttribute("API_KEY", "AIzaSyDk7s12knE17olahfF5JXsr9d-wSDqSq1k");
+        return "/hotel";
     }
 }

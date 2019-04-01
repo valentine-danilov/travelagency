@@ -38,7 +38,7 @@
         </File>
     </Appenders>
     <Loggers>
-        <Root level="debug" additivity="false">
+        <Root level="all" additivity="false">
             <AppenderRef ref="LogDebugFile"/>
             <AppenderRef ref="ConsoleDebug"/>
         </Root>

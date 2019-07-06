@@ -36,7 +36,7 @@
     </div>
     <div class="row">
         <div class="col-lg-8">
-            <img src="/img/test1.png" alt="" class="img-rounded mr-3 mt-3" style="width:100%;">
+            <img src="/img/${tour.photo}" alt="" class="img-rounded mr-3 mt-3" style="width:100%;">
         </div>
 
         <div class="col-lg-4">
@@ -153,7 +153,7 @@
                             </tbody>
                         </table>
                     </div>
-                    <input type="submit" value="SEND THIS FUCKING PARAMS PLEASE YOU DAMNED ASSHOLE">
+                    <input type="submit" value="Edit">
                 </form>
             </@security.authorize>
         </div>

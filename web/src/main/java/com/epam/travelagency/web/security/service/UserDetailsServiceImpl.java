@@ -22,7 +22,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
     @Override
     @Transactional
-    public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
+        public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
         User user = repository.findOneByLogin(s).orElseThrow(IllegalArgumentException::new);
         return UserDetailsImpl.builder()
                 .id(user.getId())

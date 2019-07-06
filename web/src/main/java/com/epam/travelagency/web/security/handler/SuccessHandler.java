@@ -25,6 +25,7 @@ public class SuccessHandler implements AuthenticationSuccessHandler {
         String targetUrl = determineTargetUrl(authentication);
         redirectStrategy.sendRedirect(httpServletRequest, httpServletResponse, targetUrl);
 
+
     }
 
     private String determineTargetUrl(Authentication authentication) {

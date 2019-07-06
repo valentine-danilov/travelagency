@@ -12,9 +12,6 @@
 <div class="container form-content text-center">
     <form class="form-signin" method="post" action="process_login">
         <h1 class="h3 mb-3 font-weight-normal"><@spring.message code="login.title"></@spring.message></h1>
-        <#if loginError??>
-            <p style="padding: 5px" class="text-danger">${loginError}</p>
-        </#if>
         <div class="uui-input-group uu">
             <input type="text" name="login" class="uui-form-element form-control" placeholder="Login" required
                    autofocus>

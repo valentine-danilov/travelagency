@@ -1,6 +1,7 @@
 package com.epam.travelagency.web.security.details;
 
 import com.epam.travelagency.entity.Review;
+import com.epam.travelagency.entity.Tour;
 import com.epam.travelagency.enumeration.Role;
 import lombok.*;
 import org.springframework.security.core.GrantedAuthority;
@@ -9,6 +10,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
 import java.util.List;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -21,6 +23,7 @@ public class UserDetailsImpl implements UserDetails {
     private String password;
     private Role role;
     private List<Review> reviews;
+    private Set<Tour> cart;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

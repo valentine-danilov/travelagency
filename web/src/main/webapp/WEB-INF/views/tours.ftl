@@ -16,7 +16,29 @@
             data-target="#search-modal">
         <@spring.message code="tours.filter"/>
     </button>
-
+    <#if successMessage??>
+        <div class="modal uui-modal fade" id="success-modal" tabindex="-1" role="dialog"
+             aria-labelledby="errorModel"
+             aria-hidden="false">
+            <div class="modal-dialog">
+                <div class="modal-content text-center">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Success!</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                            <span></span><span></span></button>
+                    </div>
+                    <div class="modal-body">
+                        ${successMessage!"There should've been an error message, but something has gone wrong:("}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            $(document).ready(function () {
+                $("#success-modal").modal("show");
+            });
+        </script>
+    </#if>
     <div class="modal uui-modal fade" id="search-modal" tabindex="-1" role="dialog" aria-labelledby="SearchModal"
          aria-hidden="true">
         <div class="modal-dialog">
@@ -81,7 +103,7 @@
                         <div class="modal-dialog">
                             <div class="modal-content text-center">
                                 <div class="modal-header">
-                                    <h4 class="modal-title">Error while deleting</h4>
+                                    <h4 class="modal-title">Some problems occurred!</h4>
                                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
                                         <span></span><span></span></button>
                                 </div>
@@ -100,11 +122,11 @@
 
                 </@security.authorize>
                 <div class="image-text-section">
-                    <p><span class="text-muted">Tour to </span>${tour.country.name}</p>
-                    <p><span class="text-muted">Leaving: </span>${tour.date}
-                        <span class="text-muted">Duration: </span>${tour.duration}</p>
-                    <p><span class="text-muted">Type: </span>${tour.tourType}
-                        <span class="text-muted">Cost: </span>$${tour.cost}</p>
+                    <h3>${tour.country.name}</h3>
+                    <p><span class="text-muted">Duration: </span>${tour.duration}</p>
+                    <p><span class="text-muted">Cost: </span>$${tour.cost}</p>
+                    <p><a href="/tour/process_adding_to_cart?id=${tour.id}">Add to cart</a></p>
+
                 </div>
             </section>
         </div>
